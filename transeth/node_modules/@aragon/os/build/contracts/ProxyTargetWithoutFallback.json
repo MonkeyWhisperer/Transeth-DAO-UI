@@ -1,0 +1,533 @@
+{
+  "contractName": "ProxyTargetWithoutFallback",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Pong",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "ping",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060ae8061001e6000396000f300608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416635c36b18681146043575b600080fd5b348015604e57600080fd5b5060556057565b005b6040517f4d015fcc2a20c24d7be893b3a525eac864b5a53a5f88ef7201a600465c73314e90600090a15600a165627a7a723058202a90b92fe6009aaf53e9ec47447ff3f5c5b69a31495996d02eac0f94acf311d70029",
+  "deployedBytecode": "0x608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416635c36b18681146043575b600080fd5b348015604e57600080fd5b5060556057565b005b6040517f4d015fcc2a20c24d7be893b3a525eac864b5a53a5f88ef7201a600465c73314e90600090a15600a165627a7a723058202a90b92fe6009aaf53e9ec47447ff3f5c5b69a31495996d02eac0f94acf311d70029",
+  "sourceMap": "25:114:63:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:114:63;;;;;;;",
+  "deployedSourceMap": "25:114:63:-;;;;;;;;;;;;;;;;;;;;;;;86:51;;8:9:-1;5:2;;;30:1;27;20:12;5:2;86:51:63;;;;;;;124:6;;;;;;;86:51::o",
+  "source": "pragma solidity 0.4.24;\n\ncontract ProxyTargetWithoutFallback {\n    event Pong();\n\n    function ping() external {\n      emit Pong();\n    }\n}\n\ncontract ProxyTargetWithFallback is ProxyTargetWithoutFallback {\n    event ReceivedEth();\n\n    function () external payable {\n      emit ReceivedEth();\n    }\n}",
+  "sourcePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/helpers/ProxyTarget.sol",
+  "ast": {
+    "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/helpers/ProxyTarget.sol",
+    "exportedSymbols": {
+      "ProxyTargetWithFallback": [
+        11078
+      ],
+      "ProxyTargetWithoutFallback": [
+        11066
+      ]
+    },
+    "id": 11079,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11056,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:63"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11066,
+        "linearizedBaseContracts": [
+          11066
+        ],
+        "name": "ProxyTargetWithoutFallback",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 11058,
+            "name": "Pong",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11057,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "77:2:63"
+            },
+            "src": "67:13:63"
+          },
+          {
+            "body": {
+              "id": 11064,
+              "nodeType": "Block",
+              "src": "111:26:63",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 11061,
+                      "name": "Pong",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11058,
+                      "src": "124:4:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 11062,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "124:6:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11063,
+                  "nodeType": "EmitStatement",
+                  "src": "119:11:63"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11065,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "ping",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11059,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "99:2:63"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11060,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "111:0:63"
+            },
+            "scope": 11066,
+            "src": "86:51:63",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11079,
+        "src": "25:114:63"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11067,
+              "name": "ProxyTargetWithoutFallback",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 11066,
+              "src": "177:26:63",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ProxyTargetWithoutFallback_$11066",
+                "typeString": "contract ProxyTargetWithoutFallback"
+              }
+            },
+            "id": 11068,
+            "nodeType": "InheritanceSpecifier",
+            "src": "177:26:63"
+          }
+        ],
+        "contractDependencies": [
+          11066
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11078,
+        "linearizedBaseContracts": [
+          11078,
+          11066
+        ],
+        "name": "ProxyTargetWithFallback",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 11070,
+            "name": "ReceivedEth",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11069,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "227:2:63"
+            },
+            "src": "210:20:63"
+          },
+          {
+            "body": {
+              "id": 11076,
+              "nodeType": "Block",
+              "src": "265:33:63",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 11073,
+                      "name": "ReceivedEth",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11070,
+                      "src": "278:11:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 11074,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "278:13:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11075,
+                  "nodeType": "EmitStatement",
+                  "src": "273:18:63"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11077,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11071,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "245:2:63"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 11072,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "265:0:63"
+            },
+            "scope": 11078,
+            "src": "236:62:63",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11079,
+        "src": "141:159:63"
+      }
+    ],
+    "src": "0:300:63"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/helpers/ProxyTarget.sol",
+    "exportedSymbols": {
+      "ProxyTargetWithFallback": [
+        11078
+      ],
+      "ProxyTargetWithoutFallback": [
+        11066
+      ]
+    },
+    "id": 11079,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11056,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:63"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11066,
+        "linearizedBaseContracts": [
+          11066
+        ],
+        "name": "ProxyTargetWithoutFallback",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 11058,
+            "name": "Pong",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11057,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "77:2:63"
+            },
+            "src": "67:13:63"
+          },
+          {
+            "body": {
+              "id": 11064,
+              "nodeType": "Block",
+              "src": "111:26:63",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 11061,
+                      "name": "Pong",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11058,
+                      "src": "124:4:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 11062,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "124:6:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11063,
+                  "nodeType": "EmitStatement",
+                  "src": "119:11:63"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11065,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "ping",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11059,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "99:2:63"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11060,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "111:0:63"
+            },
+            "scope": 11066,
+            "src": "86:51:63",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11079,
+        "src": "25:114:63"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11067,
+              "name": "ProxyTargetWithoutFallback",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 11066,
+              "src": "177:26:63",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ProxyTargetWithoutFallback_$11066",
+                "typeString": "contract ProxyTargetWithoutFallback"
+              }
+            },
+            "id": 11068,
+            "nodeType": "InheritanceSpecifier",
+            "src": "177:26:63"
+          }
+        ],
+        "contractDependencies": [
+          11066
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11078,
+        "linearizedBaseContracts": [
+          11078,
+          11066
+        ],
+        "name": "ProxyTargetWithFallback",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 11070,
+            "name": "ReceivedEth",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11069,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "227:2:63"
+            },
+            "src": "210:20:63"
+          },
+          {
+            "body": {
+              "id": 11076,
+              "nodeType": "Block",
+              "src": "265:33:63",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 11073,
+                      "name": "ReceivedEth",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11070,
+                      "src": "278:11:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 11074,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "278:13:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11075,
+                  "nodeType": "EmitStatement",
+                  "src": "273:18:63"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11077,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11071,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "245:2:63"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 11072,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "265:0:63"
+            },
+            "scope": 11078,
+            "src": "236:62:63",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11079,
+        "src": "141:159:63"
+      }
+    ],
+    "src": "0:300:63"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2020-03-02T14:08:54.082Z"
+}

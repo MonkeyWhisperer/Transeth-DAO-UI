@@ -1,0 +1,1143 @@
+{
+  "contractName": "EVMScriptExecutorRevertMock",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "hasInitialized",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getInitializationBlock",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "ERROR_MOCK_REVERT",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isPetrified",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        },
+        {
+          "name": "",
+          "type": "bytes"
+        },
+        {
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "name": "execScript",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "executorType",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405261001564010000000061001a810204565b610223565b61002b64010000000061011a810204565b60408051808201909152601881527f494e49545f414c52454144595f494e495449414c495a4544000000000000000060208201529015610103576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825283818151815260200191508051906020019080838360005b838110156100c85781810151838201526020016100b0565b50505050905090810190601f1680156100f55780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b50610118600019640100000000610145810204565b565b600061014060008051602061069083398151915264010000000061042a61021b82021704565b905090565b61015664010000000061011a810204565b60408051808201909152601881527f494e49545f414c52454144595f494e495449414c495a45440000000000000000602082015290156101f2576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382528381815181526020019150805190602001908083836000838110156100c85781810151838201526020016100b0565b506102186000805160206106908339815191528264010000000061042e61021f82021704565b50565b5490565b9055565b61045e806102326000396000f3006080604052600436106100775763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630803fac0811461007c578063279cea35146100a55780638333d9b2146101525780638b3dd74914610179578063ae56f02e1461018e578063de4796ed146101a3575b600080fd5b34801561008857600080fd5b506100916101b8565b604080519115158252519081900360200190f35b3480156100b157600080fd5b506100dd60246004803582810192908201359181358083019290820135916044359182019101356101e1565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101175781810151838201526020016100ff565b50505050905090810190601f1680156101445780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561015e57600080fd5b50610167610359565b60408051918252519081900360200190f35b34801561018557600080fd5b5061016761038e565b34801561019a57600080fd5b506100dd6103be565b3480156101af57600080fd5b506100916103f5565b6000806101c361038e565b905080158015906101db5750806101d8610426565b10155b91505090565b60606101eb6101b8565b60408051808201909152601481527f494e49545f4e4f545f494e495449414c495a454400000000000000000000000060208201529015156102c4576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610289578181015183820152602001610271565b50505050905090810190601f1680156102b65780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b50604080518082018252600b81527f4d4f434b5f524556455254000000000000000000000000000000000000000000602080830191825292517f08c379a000000000000000000000000000000000000000000000000000000000815260048101938452825160248201528251929392839260449092019190808383600083811015610289578181015183820152602001610271565b604080517f4d4f434b5f5245564552545f53435249505400000000000000000000000000008152905190819003601201902090565b60006103b97febb05b386a8d34882b8711d156f463690983dc47815980fb82aeeff1aa43579e61042a565b905090565b60408051808201909152600b81527f4d4f434b5f524556455254000000000000000000000000000000000000000000602082015281565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff61042061038e565b14905090565b4390565b5490565b90555600a165627a7a72305820c0ce20fbf93d191b0f0ff5fc5115e2ec55e21632db898cb1b46c58be1d1e5f4c0029ebb05b386a8d34882b8711d156f463690983dc47815980fb82aeeff1aa43579e",
+  "deployedBytecode": "0x6080604052600436106100775763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630803fac0811461007c578063279cea35146100a55780638333d9b2146101525780638b3dd74914610179578063ae56f02e1461018e578063de4796ed146101a3575b600080fd5b34801561008857600080fd5b506100916101b8565b604080519115158252519081900360200190f35b3480156100b157600080fd5b506100dd60246004803582810192908201359181358083019290820135916044359182019101356101e1565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101175781810151838201526020016100ff565b50505050905090810190601f1680156101445780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561015e57600080fd5b50610167610359565b60408051918252519081900360200190f35b34801561018557600080fd5b5061016761038e565b34801561019a57600080fd5b506100dd6103be565b3480156101af57600080fd5b506100916103f5565b6000806101c361038e565b905080158015906101db5750806101d8610426565b10155b91505090565b60606101eb6101b8565b60408051808201909152601481527f494e49545f4e4f545f494e495449414c495a454400000000000000000000000060208201529015156102c4576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610289578181015183820152602001610271565b50505050905090810190601f1680156102b65780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b50604080518082018252600b81527f4d4f434b5f524556455254000000000000000000000000000000000000000000602080830191825292517f08c379a000000000000000000000000000000000000000000000000000000000815260048101938452825160248201528251929392839260449092019190808383600083811015610289578181015183820152602001610271565b604080517f4d4f434b5f5245564552545f53435249505400000000000000000000000000008152905190819003601201902090565b60006103b97febb05b386a8d34882b8711d156f463690983dc47815980fb82aeeff1aa43579e61042a565b905090565b60408051808201909152600b81527f4d4f434b5f524556455254000000000000000000000000000000000000000000602082015281565b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff61042061038e565b14905090565b4390565b5490565b90555600a165627a7a72305820c0ce20fbf93d191b0f0ff5fc5115e2ec55e21632db898cb1b46c58be1d1e5f4c0029",
+  "sourceMap": "92:437:87:-;;;343:9:13;:7;;;;:9;:::i;:::-;92:437:87;;589:84:24;614:24:22;:22;;;;:24;:::i;:::-;645:25;;;;;;;;;;;;;;;;;;614:29;606:65;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;606:65:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;636:30:24;-1:-1:-1;;636:13:24;;;;:30;:::i;:::-;589:84::o;880:137:22:-;935:7;961:49;-1:-1:-1;;;;;;;;;;;961:47:22;;;;;;:49;:::i;:::-;954:56;;880:137;:::o;1750:141::-;614:24;:22;;;;:24;:::i;:::-;645:25;;;;;;;;;;;;;;;;;;614:29;606:65;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;606:65:22;-1:-1:-1;1823:61:22;-1:-1:-1;;;;;;;;;;;1871:12:22;1823:47;;;;;;:61;:::i;:::-;1750:141;:::o;518:134:29:-;629:15;;619:27::o;1027:119::-;1116:22;;1114:26::o;92:437:87:-;;;;;;;",
+  "deployedSourceMap": "92:437:87:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1127:208:22;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1127:208:22;;;;;;;;;;;;;;;;;;;;;;302:126:87;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;302:126:87;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;302:126:87;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;434:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;434:93:87;;;;;;;;;;;;;;;;;;;;880:137:22;;8:9:-1;5:2;;;30:1;27;20:12;5:2;880:137:22;;;;160:56:87;;8:9:-1;5:2;;;30:1;27;20:12;5:2;160:56:87;;;;286:117:24;;8:9:-1;5:2;;;30:1;27;20:12;5:2;286:117:24;;;;1127:208:22;1174:4;1190:27;1220:24;:22;:24::i;:::-;1190:54;-1:-1:-1;1261:24:22;;;;;:67;;;1309:19;1289:16;:14;:16::i;:::-;:39;;1261:67;1254:74;;1127:208;;:::o;302:126:87:-;379:5;736:16:22;:14;:16::i;:::-;754:21;;;;;;;;;;;;;;;;;;728:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;728:48:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;403:17:87;;;;;;;;;;;;;;;;;;;396:25;;;;;;;;;;;;;;;;;;;403:17;;396:25;;;;;;;;403:17;396:25;;403:17;-1:-1:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;434:93:87;264:31;;;;;;;;;;;;;;;;434:93;:::o;880:137:22:-;935:7;961:49;344:66;961:47;:49::i;:::-;954:56;;880:137;:::o;160:56:87:-;;;;;;;;;;;;;;;;;;;:::o;286:117:24:-;330:4;276:2;353:24;:22;:24::i;:::-;:43;346:50;;286:117;:::o;346:94:27:-;421:12;346:94;:::o;518:134:29:-;629:15;;619:27::o;1027:119::-;1116:22;;1114:26::o",
+  "source": "pragma solidity 0.4.24;\n\n\nimport \"../../../evmscript/executors/BaseEVMScriptExecutor.sol\";\n\ncontract EVMScriptExecutorRevertMock is BaseEVMScriptExecutor {\n    string public constant ERROR_MOCK_REVERT = \"MOCK_REVERT\";\n    bytes32 internal constant EXECUTOR_TYPE = keccak256(\"MOCK_REVERT_SCRIPT\");\n\n    function execScript(bytes, bytes, address[]) external isInitialized returns (bytes) {\n        revert(ERROR_MOCK_REVERT);\n    }\n\n    function executorType() external pure returns (bytes32) {\n        return EXECUTOR_TYPE;\n    }\n}\n",
+  "sourcePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/mocks/evmscript/EVMScriptExecutorRevertMock.sol",
+  "ast": {
+    "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/mocks/evmscript/EVMScriptExecutorRevertMock.sol",
+    "exportedSymbols": {
+      "EVMScriptExecutorRevertMock": [
+        12484
+      ]
+    },
+    "id": 12485,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12445,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:87"
+      },
+      {
+        "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/evmscript/executors/BaseEVMScriptExecutor.sol",
+        "file": "../../../evmscript/executors/BaseEVMScriptExecutor.sol",
+        "id": 12446,
+        "nodeType": "ImportDirective",
+        "scope": 12485,
+        "sourceUnit": 4779,
+        "src": "26:64:87",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 12447,
+              "name": "BaseEVMScriptExecutor",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4778,
+              "src": "132:21:87",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BaseEVMScriptExecutor_$4778",
+                "typeString": "contract BaseEVMScriptExecutor"
+              }
+            },
+            "id": 12448,
+            "nodeType": "InheritanceSpecifier",
+            "src": "132:21:87"
+          }
+        ],
+        "contractDependencies": [
+          2962,
+          3280,
+          3341,
+          3670,
+          4647,
+          4778
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 12484,
+        "linearizedBaseContracts": [
+          12484,
+          4778,
+          2962,
+          3341,
+          3280,
+          3670,
+          4647
+        ],
+        "name": "EVMScriptExecutorRevertMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 12451,
+            "name": "ERROR_MOCK_REVERT",
+            "nodeType": "VariableDeclaration",
+            "scope": 12484,
+            "src": "160:56:87",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 12449,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "160:6:87",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "4d4f434b5f524556455254",
+              "id": 12450,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "203:13:87",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_5701dc1b2b7d38cf5a1fef8baf91f52e9262c4908a47f446b4dcc6d6b0d27943",
+                "typeString": "literal_string \"MOCK_REVERT\""
+              },
+              "value": "MOCK_REVERT"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "id": 12456,
+            "name": "EXECUTOR_TYPE",
+            "nodeType": "VariableDeclaration",
+            "scope": 12484,
+            "src": "222:73:87",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 12452,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:7:87",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "4d4f434b5f5245564552545f534352495054",
+                  "id": 12454,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "274:20:87",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_be12cdcaf60510e0a04dd40d2bea9fe701bc6268e4bb92e18766f7217d81cded",
+                    "typeString": "literal_string \"MOCK_REVERT_SCRIPT\""
+                  },
+                  "value": "MOCK_REVERT_SCRIPT"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_be12cdcaf60510e0a04dd40d2bea9fe701bc6268e4bb92e18766f7217d81cded",
+                    "typeString": "literal_string \"MOCK_REVERT_SCRIPT\""
+                  }
+                ],
+                "id": 12453,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 16455,
+                "src": "264:9:87",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                  "typeString": "function () pure returns (bytes32)"
+                }
+              },
+              "id": 12455,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "264:31:87",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 12474,
+              "nodeType": "Block",
+              "src": "386:42:87",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 12471,
+                        "name": "ERROR_MOCK_REVERT",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12451,
+                        "src": "403:17:87",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 12470,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        16466,
+                        16467
+                      ],
+                      "referencedDeclaration": 16467,
+                      "src": "396:6:87",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 12472,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "396:25:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12473,
+                  "nodeType": "ExpressionStatement",
+                  "src": "396:25:87"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 12475,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 12466,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 12465,
+                  "name": "isInitialized",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3222,
+                  "src": "356:13:87",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "356:13:87"
+              }
+            ],
+            "name": "execScript",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12464,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12458,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12475,
+                  "src": "322:5:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12457,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:5:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12460,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12475,
+                  "src": "329:5:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12459,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "329:5:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12463,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12475,
+                  "src": "336:9:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 12461,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "336:7:87",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 12462,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "336:9:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "321:25:87"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12469,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12468,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12475,
+                  "src": "379:5:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12467,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "379:5:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "378:7:87"
+            },
+            "scope": 12484,
+            "src": "302:126:87",
+            "stateMutability": "nonpayable",
+            "superFunction": 4641,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 12482,
+              "nodeType": "Block",
+              "src": "490:37:87",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 12480,
+                    "name": "EXECUTOR_TYPE",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 12456,
+                    "src": "507:13:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 12479,
+                  "id": 12481,
+                  "nodeType": "Return",
+                  "src": "500:20:87"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 12483,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "executorType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12476,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "455:2:87"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12479,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12478,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12483,
+                  "src": "481:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12477,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "481:7:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "480:9:87"
+            },
+            "scope": 12484,
+            "src": "434:93:87",
+            "stateMutability": "pure",
+            "superFunction": 4646,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12485,
+        "src": "92:437:87"
+      }
+    ],
+    "src": "0:530:87"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/mocks/evmscript/EVMScriptExecutorRevertMock.sol",
+    "exportedSymbols": {
+      "EVMScriptExecutorRevertMock": [
+        12484
+      ]
+    },
+    "id": 12485,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12445,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:87"
+      },
+      {
+        "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/evmscript/executors/BaseEVMScriptExecutor.sol",
+        "file": "../../../evmscript/executors/BaseEVMScriptExecutor.sol",
+        "id": 12446,
+        "nodeType": "ImportDirective",
+        "scope": 12485,
+        "sourceUnit": 4779,
+        "src": "26:64:87",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 12447,
+              "name": "BaseEVMScriptExecutor",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4778,
+              "src": "132:21:87",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BaseEVMScriptExecutor_$4778",
+                "typeString": "contract BaseEVMScriptExecutor"
+              }
+            },
+            "id": 12448,
+            "nodeType": "InheritanceSpecifier",
+            "src": "132:21:87"
+          }
+        ],
+        "contractDependencies": [
+          2962,
+          3280,
+          3341,
+          3670,
+          4647,
+          4778
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 12484,
+        "linearizedBaseContracts": [
+          12484,
+          4778,
+          2962,
+          3341,
+          3280,
+          3670,
+          4647
+        ],
+        "name": "EVMScriptExecutorRevertMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 12451,
+            "name": "ERROR_MOCK_REVERT",
+            "nodeType": "VariableDeclaration",
+            "scope": 12484,
+            "src": "160:56:87",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 12449,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "160:6:87",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "4d4f434b5f524556455254",
+              "id": 12450,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "203:13:87",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_5701dc1b2b7d38cf5a1fef8baf91f52e9262c4908a47f446b4dcc6d6b0d27943",
+                "typeString": "literal_string \"MOCK_REVERT\""
+              },
+              "value": "MOCK_REVERT"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "id": 12456,
+            "name": "EXECUTOR_TYPE",
+            "nodeType": "VariableDeclaration",
+            "scope": 12484,
+            "src": "222:73:87",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 12452,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:7:87",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "4d4f434b5f5245564552545f534352495054",
+                  "id": 12454,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "274:20:87",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_be12cdcaf60510e0a04dd40d2bea9fe701bc6268e4bb92e18766f7217d81cded",
+                    "typeString": "literal_string \"MOCK_REVERT_SCRIPT\""
+                  },
+                  "value": "MOCK_REVERT_SCRIPT"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_be12cdcaf60510e0a04dd40d2bea9fe701bc6268e4bb92e18766f7217d81cded",
+                    "typeString": "literal_string \"MOCK_REVERT_SCRIPT\""
+                  }
+                ],
+                "id": 12453,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 16455,
+                "src": "264:9:87",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                  "typeString": "function () pure returns (bytes32)"
+                }
+              },
+              "id": 12455,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "264:31:87",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 12474,
+              "nodeType": "Block",
+              "src": "386:42:87",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 12471,
+                        "name": "ERROR_MOCK_REVERT",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12451,
+                        "src": "403:17:87",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 12470,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        16466,
+                        16467
+                      ],
+                      "referencedDeclaration": 16467,
+                      "src": "396:6:87",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 12472,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "396:25:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12473,
+                  "nodeType": "ExpressionStatement",
+                  "src": "396:25:87"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 12475,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 12466,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 12465,
+                  "name": "isInitialized",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3222,
+                  "src": "356:13:87",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "356:13:87"
+              }
+            ],
+            "name": "execScript",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12464,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12458,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12475,
+                  "src": "322:5:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12457,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:5:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12460,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12475,
+                  "src": "329:5:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12459,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "329:5:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12463,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12475,
+                  "src": "336:9:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 12461,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "336:7:87",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 12462,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "336:9:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "321:25:87"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12469,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12468,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12475,
+                  "src": "379:5:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12467,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "379:5:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "378:7:87"
+            },
+            "scope": 12484,
+            "src": "302:126:87",
+            "stateMutability": "nonpayable",
+            "superFunction": 4641,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 12482,
+              "nodeType": "Block",
+              "src": "490:37:87",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 12480,
+                    "name": "EXECUTOR_TYPE",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 12456,
+                    "src": "507:13:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 12479,
+                  "id": 12481,
+                  "nodeType": "Return",
+                  "src": "500:20:87"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 12483,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "executorType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12476,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "455:2:87"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12479,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12478,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12483,
+                  "src": "481:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12477,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "481:7:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "480:9:87"
+            },
+            "scope": 12484,
+            "src": "434:93:87",
+            "stateMutability": "pure",
+            "superFunction": 4646,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12485,
+        "src": "92:437:87"
+      }
+    ],
+    "src": "0:530:87"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2020-03-02T14:08:54.089Z"
+}

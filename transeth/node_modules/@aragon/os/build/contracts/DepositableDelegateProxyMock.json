@@ -1,0 +1,1047 @@
+{
+  "contractName": "DepositableDelegateProxyMock",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isDepositable",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "ProxyDeposit",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "enableDepositsOnMock",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_implementationMock",
+          "type": "address"
+        }
+      ],
+      "name": "setImplementationOnMock",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "proxyType",
+      "outputs": [
+        {
+          "name": "proxyTypeId",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610384806100206000396000f30060806040526004361061006c5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416634555d5c9811461012b57806348a0c8dd146101525780635c60da1b1461017b5780639ba0c92c146101b9578063bceca2a9146101e9575b6127107f665fd576fbbe6f247aff98f5c94a561e3f71ec2d3c988d56f12d342396c50cea6000825a10156100e15760003411361583541616156100dc576040513381523460208201527f15eeaa57c7bd188c1388020bcadc2c436ec60d647d36ef5b9eb3c742217ddee1604082a1005b600080fd5b6100e96101fe565b9050610126816000368080601f0160208091040260200160405190810160405280939291908181526020018383808284375061021a945050505050565b505050005b34801561013757600080fd5b5061014061025b565b60408051918252519081900360200190f35b34801561015e57600080fd5b50610167610260565b604080519115158252519081900360200190f35b34801561018757600080fd5b506101906101fe565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156101c557600080fd5b506101e773ffffffffffffffffffffffffffffffffffffffff60043516610290565b005b3480156101f557600080fd5b506101e76102d7565b60005473ffffffffffffffffffffffffffffffffffffffff1690565b6000610225836102e3565b151561023057600080fd5b612710905060008083516020850186855a03f43d604051816000823e828015610257578282f35b8282fd5b600290565b600061028b7f665fd576fbbe6f247aff98f5c94a561e3f71ec2d3c988d56f12d342396c50cea61031d565b905090565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b6102e16001610321565b565b60008073ffffffffffffffffffffffffffffffffffffffff8316151561030c5760009150610317565b823b90506000811191505b50919050565b5490565b6103517f665fd576fbbe6f247aff98f5c94a561e3f71ec2d3c988d56f12d342396c50cea8263ffffffff61035416565b50565b90555600a165627a7a723058206fec63f670477f7b9b171018b7bb60faae55bfbbea77a4b9f590b52999e261930029",
+  "deployedBytecode": "0x60806040526004361061006c5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416634555d5c9811461012b57806348a0c8dd146101525780635c60da1b1461017b5780639ba0c92c146101b9578063bceca2a9146101e9575b6127107f665fd576fbbe6f247aff98f5c94a561e3f71ec2d3c988d56f12d342396c50cea6000825a10156100e15760003411361583541616156100dc576040513381523460208201527f15eeaa57c7bd188c1388020bcadc2c436ec60d647d36ef5b9eb3c742217ddee1604082a1005b600080fd5b6100e96101fe565b9050610126816000368080601f0160208091040260200160405190810160405280939291908181526020018383808284375061021a945050505050565b505050005b34801561013757600080fd5b5061014061025b565b60408051918252519081900360200190f35b34801561015e57600080fd5b50610167610260565b604080519115158252519081900360200190f35b34801561018757600080fd5b506101906101fe565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156101c557600080fd5b506101e773ffffffffffffffffffffffffffffffffffffffff60043516610290565b005b3480156101f557600080fd5b506101e76102d7565b60005473ffffffffffffffffffffffffffffffffffffffff1690565b6000610225836102e3565b151561023057600080fd5b612710905060008083516020850186855a03f43d604051816000823e828015610257578282f35b8282fd5b600290565b600061028b7f665fd576fbbe6f247aff98f5c94a561e3f71ec2d3c988d56f12d342396c50cea61031d565b905090565b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b6102e16001610321565b565b60008073ffffffffffffffffffffffffffffffffffffffff8316151561030c5760009150610317565b823b90506000811191505b50919050565b5490565b6103517f665fd576fbbe6f247aff98f5c94a561e3f71ec2d3c988d56f12d342396c50cea8263ffffffff61035416565b50565b90555600a165627a7a723058206fec63f670477f7b9b171018b7bb60faae55bfbbea77a4b9f590b52999e261930029",
+  "sourceMap": "82:535:73:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:535:73;;;;;;;",
+  "deployedSourceMap": "82:535:73:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;192:5:15;250:66:17;264:27:16;192:5:15;819:3:16;816:28;813:2;;;1139:1;1128:9;1125:16;1109:12;1102:20;1078:21;1072:28;1068:55;1064:78;1061:2;;;1324:4;1318:11;1389:6;1380:7;1373:23;1500:9;1493:4;1484:7;1480:18;1473:37;1742:66;1736:4;1727:7;1722:87;1831:6;1061:2;2035:1;2032;2025:12;813:2;2088:16;:14;:16::i;:::-;2071:33;;2114:30;2127:6;2135:8;;2114:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2114:12:16;;-1:-1:-1;;;;;2114:30:16:i;:::-;225:1926;;;82:535:73;517:98;;8:9:-1;5:2;;;30:1;27;20:12;5:2;517:98:73;;;;;;;;;;;;;;;;;;;;323:113:17;;8:9:-1;5:2;;;30:1;27;20:12;5:2;323:113:17;;;;;;;;;;;;;;;;;;;;;;413:98:73;;8:9:-1;5:2;;;30:1;27;20:12;5:2;413:98:73;;;;;;;;;;;;;;;;;;;;;;;279:128;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;279:128:73;;;;;;;;;195:78;;8:9:-1;5:2;;;30:1;27;20:12;5:2;195:78:73;;;;413:98;460:7;486:18;;;413:98;:::o;460:679:15:-;567:19;540:16;551:4;540:10;:16::i;:::-;532:25;;;;;;;;192:5;567:35;;735:1;732;720:9;714:16;707:4;696:9;692:20;686:4;672:11;667:3;663:21;650:87;762:14;806:4;800:11;847:4;844:1;839:3;824:28;1046:6;1053:28;;;;1116:4;1111:3;1104:17;1053:28;1074:4;1069:3;1062:17;517:98:73;180:1:57;517:98:73;:::o;323:113:17:-;369:4;392:37;250:66;392:35;:37::i;:::-;385:44;;323:113;:::o;279:128:73:-;360:18;:40;;;;;;;;;;;;;;;279:128::o;195:78::-;246:20;261:4;246:14;:20::i;:::-;195:78::o;425:244:23:-;485:4;;505:21;;;;501:64;;;549:5;542:12;;;;501:64;628:7;616:20;608:28;;661:1;654:4;:8;647:15;;425:244;;;;;:::o;104:128:29:-;209:15;;199:27::o;442:118:17:-;504:49;250:66;540:12;504:49;:35;:49;:::i;:::-;442:118;:::o;658:113:29:-;741:22;;739:26::o",
+  "source": "pragma solidity 0.4.24;\n\nimport \"../../../common/DepositableDelegateProxy.sol\";\n\n\ncontract DepositableDelegateProxyMock is DepositableDelegateProxy {\n    address private implementationMock;\n\n    function enableDepositsOnMock() external {\n        setDepositable(true);\n    }\n\n    function setImplementationOnMock(address _implementationMock) external {\n        implementationMock = _implementationMock;\n    }\n\n    function implementation() public view returns (address) {\n        return implementationMock;\n    }\n\n    function proxyType() public pure returns (uint256 proxyTypeId) {\n        return UPGRADEABLE;\n    }\n}\n",
+  "sourcePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/mocks/apps/DepositableDelegateProxyMock.sol",
+  "ast": {
+    "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/mocks/apps/DepositableDelegateProxyMock.sol",
+    "exportedSymbols": {
+      "DepositableDelegateProxyMock": [
+        11708
+      ]
+    },
+    "id": 11709,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11668,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:73"
+      },
+      {
+        "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/common/DepositableDelegateProxy.sol",
+        "file": "../../../common/DepositableDelegateProxy.sol",
+        "id": 11669,
+        "nodeType": "ImportDirective",
+        "scope": 11709,
+        "sourceUnit": 3083,
+        "src": "25:54:73",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11670,
+              "name": "DepositableDelegateProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3082,
+              "src": "123:24:73",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DepositableDelegateProxy_$3082",
+                "typeString": "contract DepositableDelegateProxy"
+              }
+            },
+            "id": 11671,
+            "nodeType": "InheritanceSpecifier",
+            "src": "123:24:73"
+          }
+        ],
+        "contractDependencies": [
+          3043,
+          3082,
+          3114,
+          3308,
+          7759
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11708,
+        "linearizedBaseContracts": [
+          11708,
+          3082,
+          3043,
+          3308,
+          7759,
+          3114
+        ],
+        "name": "DepositableDelegateProxyMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 11673,
+            "name": "implementationMock",
+            "nodeType": "VariableDeclaration",
+            "scope": 11708,
+            "src": "154:34:73",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 11672,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "154:7:73",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 11680,
+              "nodeType": "Block",
+              "src": "236:37:73",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "74727565",
+                        "id": 11677,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "261:4:73",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "true"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 11676,
+                      "name": "setDepositable",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3113,
+                      "src": "246:14:73",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bool_$returns$__$",
+                        "typeString": "function (bool)"
+                      }
+                    },
+                    "id": 11678,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "246:20:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11679,
+                  "nodeType": "ExpressionStatement",
+                  "src": "246:20:73"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11681,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "enableDepositsOnMock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11674,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "224:2:73"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11675,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "236:0:73"
+            },
+            "scope": 11708,
+            "src": "195:78:73",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 11690,
+              "nodeType": "Block",
+              "src": "350:57:73",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11688,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 11686,
+                      "name": "implementationMock",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11673,
+                      "src": "360:18:73",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 11687,
+                      "name": "_implementationMock",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11683,
+                      "src": "381:19:73",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "360:40:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 11689,
+                  "nodeType": "ExpressionStatement",
+                  "src": "360:40:73"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11691,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setImplementationOnMock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11684,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11683,
+                  "name": "_implementationMock",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11691,
+                  "src": "312:27:73",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11682,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "312:7:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "311:29:73"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11685,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "350:0:73"
+            },
+            "scope": 11708,
+            "src": "279:128:73",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 11698,
+              "nodeType": "Block",
+              "src": "469:42:73",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11696,
+                    "name": "implementationMock",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11673,
+                    "src": "486:18:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 11695,
+                  "id": 11697,
+                  "nodeType": "Return",
+                  "src": "479:25:73"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11699,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "implementation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11692,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "436:2:73"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11695,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11694,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11699,
+                  "src": "460:7:73",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11693,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "460:7:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "459:9:73"
+            },
+            "scope": 11708,
+            "src": "413:98:73",
+            "stateMutability": "view",
+            "superFunction": 7758,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11706,
+              "nodeType": "Block",
+              "src": "580:35:73",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11704,
+                    "name": "UPGRADEABLE",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 7748,
+                    "src": "597:11:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 11703,
+                  "id": 11705,
+                  "nodeType": "Return",
+                  "src": "590:18:73"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11707,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "proxyType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11700,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "535:2:73"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11703,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11702,
+                  "name": "proxyTypeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11707,
+                  "src": "559:19:73",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11701,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "559:7:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "558:21:73"
+            },
+            "scope": 11708,
+            "src": "517:98:73",
+            "stateMutability": "pure",
+            "superFunction": 7753,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11709,
+        "src": "82:535:73"
+      }
+    ],
+    "src": "0:618:73"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/mocks/apps/DepositableDelegateProxyMock.sol",
+    "exportedSymbols": {
+      "DepositableDelegateProxyMock": [
+        11708
+      ]
+    },
+    "id": 11709,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11668,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:73"
+      },
+      {
+        "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/common/DepositableDelegateProxy.sol",
+        "file": "../../../common/DepositableDelegateProxy.sol",
+        "id": 11669,
+        "nodeType": "ImportDirective",
+        "scope": 11709,
+        "sourceUnit": 3083,
+        "src": "25:54:73",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 11670,
+              "name": "DepositableDelegateProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3082,
+              "src": "123:24:73",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DepositableDelegateProxy_$3082",
+                "typeString": "contract DepositableDelegateProxy"
+              }
+            },
+            "id": 11671,
+            "nodeType": "InheritanceSpecifier",
+            "src": "123:24:73"
+          }
+        ],
+        "contractDependencies": [
+          3043,
+          3082,
+          3114,
+          3308,
+          7759
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11708,
+        "linearizedBaseContracts": [
+          11708,
+          3082,
+          3043,
+          3308,
+          7759,
+          3114
+        ],
+        "name": "DepositableDelegateProxyMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 11673,
+            "name": "implementationMock",
+            "nodeType": "VariableDeclaration",
+            "scope": 11708,
+            "src": "154:34:73",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 11672,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "154:7:73",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 11680,
+              "nodeType": "Block",
+              "src": "236:37:73",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "74727565",
+                        "id": 11677,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "261:4:73",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "true"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 11676,
+                      "name": "setDepositable",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3113,
+                      "src": "246:14:73",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bool_$returns$__$",
+                        "typeString": "function (bool)"
+                      }
+                    },
+                    "id": 11678,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "246:20:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11679,
+                  "nodeType": "ExpressionStatement",
+                  "src": "246:20:73"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11681,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "enableDepositsOnMock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11674,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "224:2:73"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11675,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "236:0:73"
+            },
+            "scope": 11708,
+            "src": "195:78:73",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 11690,
+              "nodeType": "Block",
+              "src": "350:57:73",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11688,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 11686,
+                      "name": "implementationMock",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11673,
+                      "src": "360:18:73",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 11687,
+                      "name": "_implementationMock",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11683,
+                      "src": "381:19:73",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "360:40:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 11689,
+                  "nodeType": "ExpressionStatement",
+                  "src": "360:40:73"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11691,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setImplementationOnMock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11684,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11683,
+                  "name": "_implementationMock",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11691,
+                  "src": "312:27:73",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11682,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "312:7:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "311:29:73"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11685,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "350:0:73"
+            },
+            "scope": 11708,
+            "src": "279:128:73",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 11698,
+              "nodeType": "Block",
+              "src": "469:42:73",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11696,
+                    "name": "implementationMock",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11673,
+                    "src": "486:18:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 11695,
+                  "id": 11697,
+                  "nodeType": "Return",
+                  "src": "479:25:73"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11699,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "implementation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11692,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "436:2:73"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11695,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11694,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11699,
+                  "src": "460:7:73",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11693,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "460:7:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "459:9:73"
+            },
+            "scope": 11708,
+            "src": "413:98:73",
+            "stateMutability": "view",
+            "superFunction": 7758,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11706,
+              "nodeType": "Block",
+              "src": "580:35:73",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11704,
+                    "name": "UPGRADEABLE",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 7748,
+                    "src": "597:11:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 11703,
+                  "id": 11705,
+                  "nodeType": "Return",
+                  "src": "590:18:73"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11707,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "proxyType",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11700,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "535:2:73"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11703,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11702,
+                  "name": "proxyTypeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11707,
+                  "src": "559:19:73",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11701,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "559:7:73",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "558:21:73"
+            },
+            "scope": 11708,
+            "src": "517:98:73",
+            "stateMutability": "pure",
+            "superFunction": 7753,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11709,
+        "src": "82:535:73"
+      }
+    ],
+    "src": "0:618:73"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2020-03-02T14:08:54.086Z"
+}

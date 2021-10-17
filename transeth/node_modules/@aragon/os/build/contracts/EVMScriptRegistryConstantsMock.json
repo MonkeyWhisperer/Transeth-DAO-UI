@@ -1,0 +1,340 @@
+{
+  "contractName": "EVMScriptRegistryConstantsMock",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getEVMScriptRegistryAppId",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060b78061001e6000396000f300608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416632bd608f481146043575b600080fd5b348015604e57600080fd5b5060556067565b60408051918252519081900360200190f35b7fddbcfd564f642ab5627cf68b9b7d374fb4f8a36e941a75d89c87998cef03bd61905600a165627a7a723058204c4abf12c24aec7d791d6af6b4e01f2ef0447faf6fe0f2079933f01bd5d8781f0029",
+  "deployedBytecode": "0x608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416632bd608f481146043575b600080fd5b348015604e57600080fd5b5060556067565b60408051918252519081900360200190f35b7fddbcfd564f642ab5627cf68b9b7d374fb4f8a36e941a75d89c87998cef03bd61905600a165627a7a723058204c4abf12c24aec7d791d6af6b4e01f2ef0447faf6fe0f2079933f01bd5d8781f0029",
+  "sourceMap": "79:184:88:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;79:184:88;;;;;;;",
+  "deployedSourceMap": "79:184:88:-;;;;;;;;;;;;;;;;;;;;;;;155:106;;8:9:-1;5:2;;;30:1;27;20:12;5:2;155:106:88;;;;;;;;;;;;;;;;;;;;;329:66:36;155:106:88;:::o",
+  "source": "pragma solidity 0.4.24;\n\nimport \"../../../evmscript/IEVMScriptRegistry.sol\";\n\n\ncontract EVMScriptRegistryConstantsMock is EVMScriptRegistryConstants {\n    function getEVMScriptRegistryAppId() external pure returns (bytes32) { return EVMSCRIPT_REGISTRY_APP_ID; }\n}\n",
+  "sourcePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/mocks/evmscript/EVMScriptRegistryConstantsMock.sol",
+  "ast": {
+    "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/mocks/evmscript/EVMScriptRegistryConstantsMock.sol",
+    "exportedSymbols": {
+      "EVMScriptRegistryConstantsMock": [
+        12498
+      ]
+    },
+    "id": 12499,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12486,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:88"
+      },
+      {
+        "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/evmscript/IEVMScriptRegistry.sol",
+        "file": "../../../evmscript/IEVMScriptRegistry.sol",
+        "id": 12487,
+        "nodeType": "ImportDirective",
+        "scope": 12499,
+        "sourceUnit": 4675,
+        "src": "25:51:88",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 12488,
+              "name": "EVMScriptRegistryConstants",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4654,
+              "src": "122:26:88",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_EVMScriptRegistryConstants_$4654",
+                "typeString": "contract EVMScriptRegistryConstants"
+              }
+            },
+            "id": 12489,
+            "nodeType": "InheritanceSpecifier",
+            "src": "122:26:88"
+          }
+        ],
+        "contractDependencies": [
+          4654
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 12498,
+        "linearizedBaseContracts": [
+          12498,
+          4654
+        ],
+        "name": "EVMScriptRegistryConstantsMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 12496,
+              "nodeType": "Block",
+              "src": "224:37:88",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 12494,
+                    "name": "EVMSCRIPT_REGISTRY_APP_ID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 4653,
+                    "src": "233:25:88",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 12493,
+                  "id": 12495,
+                  "nodeType": "Return",
+                  "src": "226:32:88"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 12497,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getEVMScriptRegistryAppId",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12490,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "189:2:88"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12493,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12492,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12497,
+                  "src": "215:7:88",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12491,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "215:7:88",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "214:9:88"
+            },
+            "scope": 12498,
+            "src": "155:106:88",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12499,
+        "src": "79:184:88"
+      }
+    ],
+    "src": "0:264:88"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/test/mocks/evmscript/EVMScriptRegistryConstantsMock.sol",
+    "exportedSymbols": {
+      "EVMScriptRegistryConstantsMock": [
+        12498
+      ]
+    },
+    "id": 12499,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12486,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:88"
+      },
+      {
+        "absolutePath": "/Users/brett/Development/aragon/aragonOS/contracts/evmscript/IEVMScriptRegistry.sol",
+        "file": "../../../evmscript/IEVMScriptRegistry.sol",
+        "id": 12487,
+        "nodeType": "ImportDirective",
+        "scope": 12499,
+        "sourceUnit": 4675,
+        "src": "25:51:88",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 12488,
+              "name": "EVMScriptRegistryConstants",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4654,
+              "src": "122:26:88",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_EVMScriptRegistryConstants_$4654",
+                "typeString": "contract EVMScriptRegistryConstants"
+              }
+            },
+            "id": 12489,
+            "nodeType": "InheritanceSpecifier",
+            "src": "122:26:88"
+          }
+        ],
+        "contractDependencies": [
+          4654
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 12498,
+        "linearizedBaseContracts": [
+          12498,
+          4654
+        ],
+        "name": "EVMScriptRegistryConstantsMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 12496,
+              "nodeType": "Block",
+              "src": "224:37:88",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 12494,
+                    "name": "EVMSCRIPT_REGISTRY_APP_ID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 4653,
+                    "src": "233:25:88",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 12493,
+                  "id": 12495,
+                  "nodeType": "Return",
+                  "src": "226:32:88"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 12497,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getEVMScriptRegistryAppId",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12490,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "189:2:88"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12493,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12492,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12497,
+                  "src": "215:7:88",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12491,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "215:7:88",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "214:9:88"
+            },
+            "scope": 12498,
+            "src": "155:106:88",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12499,
+        "src": "79:184:88"
+      }
+    ],
+    "src": "0:264:88"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2020-03-02T14:08:54.090Z"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "constant": false,
+    "inputs": [{ "name": "evmCallScript", "type": "bytes" }],
+    "name": "forward",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
