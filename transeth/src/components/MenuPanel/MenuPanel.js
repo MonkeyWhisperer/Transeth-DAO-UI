@@ -201,6 +201,7 @@ function MenuPanel({
               padding-top: ${1 * GU}px;
             `}
           >
+            {/* no restriction */}
             {/* <Details
               label="System"
               opened={systemAppsOpened}

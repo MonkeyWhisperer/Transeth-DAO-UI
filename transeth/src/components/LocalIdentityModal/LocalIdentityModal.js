@@ -97,7 +97,7 @@ function LocalModal({ address, label, onCancel, onDelete, onSave }) {
             wide
             defaultValue={label}
             ref={labelInput}
-            maxLength="42"
+            maxLength="200"
           />
           <div
             css={`

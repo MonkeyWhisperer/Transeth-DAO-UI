@@ -33,7 +33,8 @@ function reduceFields(fields, [field, value]) {
       // 100% quorum is not possible, but any adjustments necessary should be handled in the
       // template frontends themselves
       quorum: value,
-      support: Math.max(fields.support, value),
+      // no restriction
+      // support: Math.max(fields.support, value),
     }
   }
   if (field === 'support') {
@@ -42,7 +43,8 @@ function reduceFields(fields, [field, value]) {
       // 100% support is not possible, but any adjustments necessary should be handled in the
       // template frontends themselves
       support: value,
-      quorum: Math.min(fields.quorum, value),
+      // no restriction
+      // quorum: Math.min(fields.quorum, value),
     }
   }
   return fields
