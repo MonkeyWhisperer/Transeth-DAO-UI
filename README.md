@@ -8,6 +8,7 @@ Install it:
 git clone 
 cd path to clone
 yarn install
+yarn start
 ```
 
 The easiest is to run it connected to rinkeby, and create a testing organization. It requires an internet connection, but it doesn’t require to setup anything else (local Ethereum / IPFS nodes).
