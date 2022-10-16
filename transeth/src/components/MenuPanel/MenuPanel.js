@@ -201,14 +201,13 @@ function MenuPanel({
               padding-top: ${1 * GU}px;
             `}
           >
-            {/* no restriction */}
-            {/* <Details
+            <Details
               label="System"
               opened={systemAppsOpened}
               onToggle={handleToggleSystemApps}
             >
               {systemApps.map(app => renderAppGroup(app))}
-            </Details> */}
+            </Details>
           </div>
         </nav>
       </div>

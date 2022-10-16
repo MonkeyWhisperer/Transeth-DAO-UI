@@ -13,7 +13,6 @@ import {
   TRANSACTION_STATUS_UPCOMING,
 } from '../../symbols'
 import { log } from '../../util/utils'
-import { getGasPrice } from '../../util/web3'
 import {
   loadTemplateState,
   saveTemplateState,
@@ -32,6 +31,7 @@ import { getIpfsGateway } from '../../local-settings'
 import { web3Provider } from '../../Web3Provider'
 import { trackEvent, events } from '../../analytics'
 import { completeDomain } from '../../check-domain'
+import { getPriorityFeeEstimation } from '../../util/web3'
 
 const MAX_RETRY = 5
 
@@ -270,6 +270,7 @@ function useTemplateRepoInformation(templateRepoAddress, setError) {
 function useDeploymentState(
   account,
   applyEstimateGas,
+  applyEstimatePriorityFee,
   attempts,
   status,
   template,
@@ -342,12 +343,12 @@ function useDeploymentState(
           }
           try {
             transaction = await applyEstimateGas(transaction)
+            transaction = await applyEstimatePriorityFee(transaction)
           } catch (_) {}
 
           if (!cancelled) {
             try {
               await walletWeb3.eth.sendTransaction(transaction)
-
               if (!cancelled) {
                 // analytics
                 // we are only interested in the first tx of creating a DAO
@@ -503,14 +504,23 @@ const Create = React.memo(function Create({
         estimatedGas,
         { gasFuzzFactor: 1.1 }
       )
-      const recommendedPrice = await getGasPrice(networkType)
       return {
         ...transaction,
         gas: recommendedLimit,
-        gasPrice: recommendedPrice,
       }
     },
-    [web3, networkType]
+    [web3]
+  )
+
+  const applyEstimatePriorityFee = useCallback(
+    async transaction => {
+      const estimatedPriorityFee = await getPriorityFeeEstimation(web3)
+      return {
+        ...transaction,
+        maxPriorityFeePerGas: estimatedPriorityFee,
+      }
+    },
+    [web3]
   )
 
   const [attempts, setAttempts] = useState(0)
@@ -523,6 +533,7 @@ const Create = React.memo(function Create({
   } = useDeploymentState(
     account,
     applyEstimateGas,
+    applyEstimatePriorityFee,
     attempts,
     status,
     template,

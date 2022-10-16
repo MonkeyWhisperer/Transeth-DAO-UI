@@ -11,18 +11,13 @@ import { getEthSubscriptionEventDelay, getIpfsGateway } from './local-settings'
 import { workerFrameSandboxDisabled } from './security/configuration'
 import { appBaseUrl } from './util/url'
 import { noop, removeStartingSlash, pollEvery } from './util/utils'
-import {
-  getGasPrice,
-  getWeb3,
-  isEmptyAddress,
-  isValidEnsName,
-} from './util/web3'
+import { getWeb3, isEmptyAddress, isValidEnsName } from './util/web3'
 import SandboxedWorker from './worker/SandboxedWorker'
 import WorkerSubscriptionPool from './worker/WorkerSubscriptionPool'
 import { getOrganizationByAddress } from './services/gql'
 import { getNetworkConfig } from './network-config'
-import { getChainId } from './util/network'
-import { KNOWN_CHAINS } from './contexts/wallet'
+import { chains } from 'use-wallet'
+import { getChainId, getNetworkSettings } from './util/network'
 
 const POLL_DELAY_CONNECTIVITY = 2000
 
@@ -279,8 +274,6 @@ const initWrapper = async (
   const wrapper = new Aragon(daoAddress, {
     provider,
     // Let web3 provider handle gas estimations on mainnet
-    defaultGasPriceFn: () =>
-      getGasPrice(networkType, { mainnet: { disableEstimate: true } }),
     apm: {
       ensRegistryAddress: getNetworkConfig(networkType).addresses.ensRegistry,
       ipfs: ipfsConf,
@@ -294,11 +287,12 @@ const initWrapper = async (
     events: {
       // Infura hack: delay event processing for specified number of ms
       subscriptionEventDelay: getEthSubscriptionEventDelay(),
+      blockSizeLimit: getNetworkSettings(networkType).events?.blockSizeLimit,
     },
   })
 
   try {
-    const network = KNOWN_CHAINS.get(getChainId(networkType))
+    const network = chains.getChainInformation(getChainId(networkType))
     await wrapper.init({
       network,
       accounts: {

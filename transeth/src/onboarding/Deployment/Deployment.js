@@ -157,7 +157,7 @@ function BoxProgress({
             color: ${theme.surfaceContentSecondary};
           `}
         >
-          Transeth empowers you to freely organize and collaborate without borders
+          Aragon empowers you to freely organize and collaborate without borders
           or intermediaries. Create global, bureaucracy-free organizations,
           companies, and communities.
         </p>

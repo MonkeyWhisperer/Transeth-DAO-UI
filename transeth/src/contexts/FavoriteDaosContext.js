@@ -20,7 +20,7 @@ const filterFavoritesDaos = daos =>
     daos
       .filter(dao => dao && dao.address)
       .map(dao => ({
-        name: dao.name.slice(0, -13) || '',
+        name: dao.name || '',
         address: dao.address,
       })),
     dao => dao.address.toLowerCase()
@@ -65,7 +65,7 @@ function FavoriteDaosProvider({ children }) {
       )
       if (daoIndex === -1) {
         setFavoriteDaos(
-          storedList.add({ name: dao.name.slice(0, -13), address: dao.address })
+          storedList.add({ name: dao.name, address: dao.address })
         )
 
         // analytics

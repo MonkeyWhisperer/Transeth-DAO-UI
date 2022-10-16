@@ -32,7 +32,7 @@ class Favorites extends React.Component {
       localDaos
         .filter(dao => dao.favorited)
         .map(dao => ({
-          name: dao.name.slice(0, -13),
+          name: dao.name,
           address: dao.address,
         }))
     )
@@ -86,7 +86,7 @@ class Favorites extends React.Component {
     const dao = [currentDao, ...favoriteDaos].find(dao =>
       addressesEqual(dao.address, address)
     )
-    window.location.hash = `/${(dao && dao.name.slice(0, -13)) || address}`
+    window.location.hash = `/${(dao && dao.name) || address}`
   }
 
   handleFavoriteUpdate = (address, favorited) => {

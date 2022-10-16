@@ -11,7 +11,7 @@ import {
   useWallet as useWalletBase,
   UseWalletProvider,
   ChainUnsupportedError,
-  KNOWN_CHAINS,
+  chains,
 } from 'use-wallet'
 import { getWeb3, filterBalanceValue } from '../util/web3'
 import { useWalletConnectors } from '../ethereum-providers/connectors'
@@ -26,8 +26,8 @@ export const WALLET_STATUS = Object.freeze({
   error: 'error',
 })
 
-// default network is mainnet if user is not conncted
-const NETWORK_TYPE_DEFAULT = KNOWN_CHAINS.get(1)?.type
+// default network is mainnet if user is not connected
+const NETWORK_TYPE_DEFAULT = chains.getChainInformation(1)?.type
 
 const WalletContext = React.createContext()
 
@@ -133,7 +133,7 @@ WalletContextProvider.propTypes = { children: PropTypes.node }
 
 export function WalletProvider({ children }) {
   return (
-    <UseWalletProvider connectors={useWalletConnectors}>
+    <UseWalletProvider connectors={useWalletConnectors} autoConnect>
       <WalletContextProvider>{children}</WalletContextProvider>
     </UseWalletProvider>
   )
@@ -144,4 +144,4 @@ export function useWallet() {
   return useContext(WalletContext)
 }
 
-export { ChainUnsupportedError, KNOWN_CHAINS }
+export { ChainUnsupportedError }

@@ -49,11 +49,11 @@ const Welcome = React.memo(function Welcome({
       }}
     >
       <Header
-        title="Welcome to Transeth"
-        subtitle="Create your own DAO in a few minutes!"
+        title="Welcome to Aragon"
+        subtitle="Create your own organization in a few minutes!"
       />
 
-      {suggestedOrgs.length > 9999999 ? (
+      {suggestedOrgs.length > 0 ? (
         <Split
           primary={primaryContent}
           secondary={<Suggestions suggestedOrgs={suggestedOrgs} />}
@@ -69,8 +69,8 @@ const Welcome = React.memo(function Welcome({
           color: ${theme.contentSecondary};
         `}
       >
-        Do you need more information about Transeth?{' '}
-        <Link href="https://transeth.org/" external>
+        Do you need more information about Aragon?{' '}
+        <Link href="https://aragon.org/" external>
           Visit our homepage
         </Link>
       </p>
@@ -105,7 +105,7 @@ function CreateSubtitle({ error }) {
       </span>
     )
   }
-  return 'Start your DAO with Transeth'
+  return 'Start your organization with Aragon'
 }
 
 CreateSubtitle.propTypes = {

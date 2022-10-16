@@ -34,7 +34,9 @@ function DAONotFoundError({ dao }) {
       </ModalTitle>
       <MessageContainer>
         {loading ? (
-          <div />
+          <Message color={theme.surfaceContentSecondary}>
+            Searching for it on other networks...
+          </Message>
         ) : networks?.length ? (
           <NotFoundOnNetworkMessage dao={dao} alternatives={networks} />
         ) : (
@@ -84,18 +86,12 @@ function NotFoundOnNetworkMessage({ dao, alternatives }) {
   const { networkType, changeNetworkTypeDisconnected } = useWallet()
 
   const goToOrg = useCallback(
-    (orgAddress, network) => {
-      changeNetworkTypeDisconnected(network)
+    (orgAddress, networType) => {
+      changeNetworkTypeDisconnected(networType)
       routing.update(locator => ({
         ...locator,
         mode: { name: 'org', orgAddress },
       }))
-
-      // analytics
-      trackEvent(events.ORGANIZATION_LINK_CLICKED, {
-        dao_identifier: orgAddress,
-        network: network,
-      })
     },
     [routing, changeNetworkTypeDisconnected]
   )

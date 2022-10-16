@@ -33,7 +33,7 @@ class OrganizationItem extends React.Component {
             white-space: nowrap;
           `}
         >
-          {knownOrg ? knownOrg.name : dao.name.slice(0, -13) || dao.address}
+          {knownOrg ? knownOrg.name : dao.name || dao.address}
         </span>
       </div>
     )
