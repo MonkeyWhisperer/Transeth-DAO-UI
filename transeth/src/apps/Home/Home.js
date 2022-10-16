@@ -67,9 +67,9 @@ function Home({ apps, onOpenApp }) {
         display: grid;
         align-items: center;
         justify-content: center;
-        // background: fixed ${layoutName === 'small' ? '0%' : '50%'} 100% /
-        //   ${EAGLE_DIMENSIONS[0]}px ${EAGLE_DIMENSIONS[1]}px no-repeat
-        //   url(${imgEagle});
+        background: fixed ${layoutName === 'small' ? '0%' : '50%'} 100% /
+          ${EAGLE_DIMENSIONS[0]}px ${EAGLE_DIMENSIONS[1]}px no-repeat
+          url(${imgEagle});
         overflow: auto;
       `}
     >
