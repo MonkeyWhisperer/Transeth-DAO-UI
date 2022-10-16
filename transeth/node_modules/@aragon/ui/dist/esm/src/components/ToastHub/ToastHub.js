@@ -1,15 +1,15 @@
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
 import regenerator from '../../../node_modules/@babel/runtime/regenerator/index.js';
-import _asyncToGenerator from '../../../node_modules/@babel/runtime/helpers/asyncToGenerator.js';
-import _toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import asyncToGenerator from '../../../node_modules/@babel/runtime/helpers/asyncToGenerator.js';
+import toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import _styled from 'styled-components';
 import React, { useContext } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -17,12 +17,12 @@ import { animated as extendedAnimated, Transition } from '../../../node_modules/
 import RootPortal from '../RootPortal/RootPortal.js';
 import { useViewport } from '../../providers/Viewport/Viewport.js';
 import { stylingProps } from '../../utils/components.js';
-import { useTheme } from '../../theme/Theme.js';
-import { springs } from '../../style/springs.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { RADIUS, GU } from '../../style/constants.js';
+import { springs } from '../../style/springs.js';
 import { textStyle } from '../../style/text-styles.js';
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var id = 0;
@@ -36,14 +36,14 @@ var ToastContext = /*#__PURE__*/React.createContext(function () {
 });
 
 var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
-  _inherits(ToastHubProvider, _React$PureComponent);
+  inherits(ToastHubProvider, _React$PureComponent);
 
   var _super = _createSuper(ToastHubProvider);
 
   function ToastHubProvider() {
     var _this;
 
-    _classCallCheck(this, ToastHubProvider);
+    classCallCheck(this, ToastHubProvider);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -51,15 +51,15 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    defineProperty(assertThisInitialized(_this), "state", {
       items: [],
       leaving: [],
       preLeaving: []
     });
 
-    _defineProperty(_assertThisInitialized(_this), "cancelMap", new WeakMap());
+    defineProperty(assertThisInitialized(_this), "cancelMap", new WeakMap());
 
-    _defineProperty(_assertThisInitialized(_this), "add", function (msg) {
+    defineProperty(assertThisInitialized(_this), "add", function (msg) {
       var threshold = _this.props.threshold;
 
       _this.setState(function (state) {
@@ -71,7 +71,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
         }
 
         return {
-          items: [].concat(_toConsumableArray(state.items), [{
+          items: [].concat(toConsumableArray(state.items), [{
             key: id++,
             msg: msg
           }]),
@@ -80,18 +80,18 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "remove", function (item) {
+    defineProperty(assertThisInitialized(_this), "remove", function (item) {
       _this.setState(function (state) {
         return {
           items: state.items.filter(function (i) {
             return i.key !== item.key;
           }),
-          leaving: state.leaving.includes(item) ? state.leaving : [item].concat(_toConsumableArray(state.leaving))
+          leaving: state.leaving.includes(item) ? state.leaving : [item].concat(toConsumableArray(state.leaving))
         };
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "config", function (item, state) {
+    defineProperty(assertThisInitialized(_this), "config", function (item, state) {
       var config = springs.lazy; // Return custom configs on leave (includes the life-line duration)
 
       return state === 'leave' ? [{
@@ -99,7 +99,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
       }, config, config] : config;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "cancel", function (item) {
+    defineProperty(assertThisInitialized(_this), "cancel", function (item) {
       var secondPass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
       if (_this.cancelMap.has(item)) {
@@ -111,9 +111,9 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "leave", function (item) {
+    defineProperty(assertThisInitialized(_this), "leave", function (item) {
       return /*#__PURE__*/function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee(next, cancel) {
+        var _ref = asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee(next, cancel) {
           return regenerator.wrap(function _callee$(_context) {
             while (1) {
               switch (_context.prev = _context.next) {
@@ -134,7 +134,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
                   // displayed even though they are still finishing their leaving transition.
                   _this.setState(function (state) {
                     return {
-                      preLeaving: [].concat(_toConsumableArray(state.preLeaving), [item])
+                      preLeaving: [].concat(toConsumableArray(state.preLeaving), [item])
                     };
                   }); // Then fade out
 
@@ -183,7 +183,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
     return _this;
   }
 
-  _createClass(ToastHubProvider, [{
+  createClass(ToastHubProvider, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -203,7 +203,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
           itemsVisible: itemsVisible,
           add: this.add
         }
-      }, children), renderList && /*#__PURE__*/React.createElement(RootPortal, null, /*#__PURE__*/React.createElement(ToastList, _extends({
+      }, children), renderList && /*#__PURE__*/React.createElement(RootPortal, null, /*#__PURE__*/React.createElement(ToastList, _extends_1({
         config: this.config,
         items: items,
         leave: this.leave,
@@ -221,7 +221,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
 }(React.PureComponent); // ToastList is separated from ToastHubProvider so we can skip its rendering
 
 
-_defineProperty(ToastHubProvider, "propTypes", {
+defineProperty(ToastHubProvider, "propTypes", {
   children: propTypes.node,
   position: propTypes.PropTypes.oneOf(['left', 'center', 'right']),
   shift: propTypes.number,
@@ -231,7 +231,7 @@ _defineProperty(ToastHubProvider, "propTypes", {
   top: propTypes.bool
 });
 
-_defineProperty(ToastHubProvider, "defaultProps", {
+defineProperty(ToastHubProvider, "defaultProps", {
   position: 'right',
   showIndicator: false,
   threshold: Infinity,
@@ -298,7 +298,7 @@ var ToastList = /*#__PURE__*/React.memo(function ToastList(_ref2) {
       showIndicator = _ref2.showIndicator,
       top = _ref2.top,
       shift = _ref2.shift,
-      props = _objectWithoutProperties(_ref2, ["config", "items", "leave", "position", "remove", "showIndicator", "top", "shift"]);
+      props = objectWithoutProperties(_ref2, ["config", "items", "leave", "position", "remove", "showIndicator", "top", "shift"]);
 
   var theme = useTheme();
 
@@ -306,7 +306,7 @@ var ToastList = /*#__PURE__*/React.memo(function ToastList(_ref2) {
       below = _useViewport.below;
 
   var spacing = below('medium') ? 2 * GU : 3 * GU;
-  return /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
     _css: top ? "".concat(spacing, "px") : 'unset',
     _css2: top ? 'unset' : "".concat(spacing, "px"),
     _css3: spacing + (shift || 0),
@@ -343,7 +343,7 @@ var ToastList = /*#__PURE__*/React.memo(function ToastList(_ref2) {
       /* eslint-disable react/prop-types */
       function (_ref3) {
         var life = _ref3.life,
-            props = _objectWithoutProperties(_ref3, ["life"]);
+            props = objectWithoutProperties(_ref3, ["life"]);
 
         return /*#__PURE__*/React.createElement(_StyledAnimatedDiv, {
           style: props,

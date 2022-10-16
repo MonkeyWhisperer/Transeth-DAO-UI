@@ -1,10 +1,10 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import SidePanel from './SidePanel.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 
 var _StyledDiv = _styled("div").withConfig({
   displayName: "SidePanelSplit___StyledDiv",
@@ -30,10 +30,10 @@ var _StyledDiv2 = _styled("div").withConfig({
 
 function SidePanelSplit(_ref) {
   var children = _ref.children,
-      props = _objectWithoutProperties(_ref, ["children"]);
+      props = objectWithoutProperties(_ref, ["children"]);
 
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
     _css: SidePanel.HORIZONTAL_PADDING * 2,
     _css2: SidePanel.HORIZONTAL_PADDING,
     _css3: SidePanel.HORIZONTAL_PADDING

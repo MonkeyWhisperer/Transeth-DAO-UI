@@ -1,4 +1,4 @@
-import _slicedToArray from '../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import slicedToArray from '../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import React, { useState, useMemo, useContext, useEffect } from 'react';
 
 function initContainsComponent() {
@@ -13,7 +13,7 @@ function initContainsComponent() {
       var children = _ref.children;
 
       var _useState = useState(0),
-          _useState2 = _slicedToArray(_useState, 2),
+          _useState2 = slicedToArray(_useState, 2),
           count = _useState2[0],
           setCount = _useState2[1];
 

@@ -2,7 +2,7 @@ import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import Radio from '../Input/Radio.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { unselectable } from '../../utils/css.js';
 import { GU } from '../../style/constants.js';
 

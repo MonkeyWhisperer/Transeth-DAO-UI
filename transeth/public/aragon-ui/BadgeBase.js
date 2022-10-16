@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index$1 = require('./index-37353731.js');
@@ -12,12 +12,12 @@ var ButtonBase = require('./ButtonBase.js');
 var Theme = require('./Theme.js');
 var constants = require('./constants.js');
 var textStyles = require('./text-styles.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./extends-5150c1f4.js');
-require('./defineProperty-fdbd3c46.js');
+require('./extends-023d783e.js');
+require('./defineProperty-3cad0327.js');
 require('./FocusVisible.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./keycodes.js');
 require('./css.js');
 require('./environment.js');
@@ -25,7 +25,7 @@ require('./miscellaneous.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./font.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -77,12 +77,12 @@ var BadgeBase = /*#__PURE__*/React__default['default'].memo(function BadgeBase(_
       onClick = _ref.onClick,
       style = _ref.style,
       title = _ref.title;
-      objectWithoutProperties._objectWithoutProperties(_ref, ["badgeRef", "children", "className", "compact", "disabled", "href", "icon", "label", "labelStyle", "onClick", "style", "title"]);
+      objectWithoutProperties.objectWithoutProperties(_ref, ["badgeRef", "children", "className", "compact", "disabled", "href", "icon", "label", "labelStyle", "onClick", "style", "title"]);
 
   var theme = Theme.useTheme();
 
   var _useInside = index.o('DropDown'),
-      _useInside2 = slicedToArray._slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray.slicedToArray(_useInside, 1),
       insideDropDownMenu = _useInside2[0];
 
   if (insideDropDownMenu) {

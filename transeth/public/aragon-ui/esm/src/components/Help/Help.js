@@ -1,11 +1,11 @@
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useRef, useState, useCallback } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { useInside as o } from '../../../node_modules/use-inside/dist/index.js';
 import DiscButton from '../DiscButton/DiscButton.js';
 import Popover from '../Popover/Popover.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import IconQuestion from '../../icons/components/IconQuestion.js';
 import { GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
@@ -48,7 +48,7 @@ function Help(_ref) {
   var buttonElement = useRef();
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       visible = _useState2[0],
       setVisible = _useState2[1];
 
@@ -60,11 +60,11 @@ function Help(_ref) {
   }, []);
 
   var _useInside = o('Box:heading'),
-      _useInside2 = _slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray(_useInside, 1),
       insideBoxHeading = _useInside2[0];
 
   var _useInside3 = o('Field:label'),
-      _useInside4 = _slicedToArray(_useInside3, 1),
+      _useInside4 = slicedToArray(_useInside3, 1),
       insideFieldLabel = _useInside4[0];
 
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_StyledDiscButton, {

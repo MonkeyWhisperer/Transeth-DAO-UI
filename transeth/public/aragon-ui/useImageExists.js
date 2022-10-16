@@ -2,10 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var React = require('react');
-require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 
 var A_DAY = 1000 * 60 * 60 * 24;
 
@@ -77,17 +76,17 @@ function useImageExists(src) {
   var timeUntilFallback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 50;
 
   var _useState = React.useState(false),
-      _useState2 = slicedToArray._slicedToArray(_useState, 2),
+      _useState2 = slicedToArray.slicedToArray(_useState, 2),
       exists = _useState2[0],
       setExists = _useState2[1];
 
   var _useState3 = React.useState(true),
-      _useState4 = slicedToArray._slicedToArray(_useState3, 2),
+      _useState4 = slicedToArray.slicedToArray(_useState3, 2),
       loading = _useState4[0],
       setLoading = _useState4[1];
 
   var _useState5 = React.useState(false),
-      _useState6 = slicedToArray._slicedToArray(_useState5, 2),
+      _useState6 = slicedToArray.slicedToArray(_useState5, 2),
       displayFallback = _useState6[0],
       setDisplayFallback = _useState6[1];
 

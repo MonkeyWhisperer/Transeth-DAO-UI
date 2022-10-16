@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -12,46 +12,46 @@ var BadgeBase = require('./BadgeBase.js');
 var BadgePopoverActionType = require('./BadgePopoverActionType.js');
 var EthIdenticon = require('./EthIdenticon.js');
 var IdentityBadgePopover = require('./IdentityBadgePopover.js');
-var web3 = require('./web3-3474f303.js');
+var web3 = require('./web3-4ef44cda.js');
 var environment = require('./environment.js');
 var constants = require('./constants.js');
 var textStyles = require('./text-styles.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./index-c33eeeef.js');
 require('./ButtonBase.js');
-require('./defineProperty-fdbd3c46.js');
+require('./defineProperty-3cad0327.js');
 require('./FocusVisible.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./Theme.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./keycodes.js');
 require('./css.js');
 require('./miscellaneous.js');
 require('./font.js');
 require('./components.js');
-require('./proptypes-0337766e.js');
+require('./proptypes-316e1def.js');
 require('./AddressField.js');
 require('./TextCopy.js');
 require('./TextInput.js');
 require('./ButtonIcon.js');
 require('./Button.js');
 require('./Layout.js');
-require('./Viewport-d2dce1b4.js');
+require('./Viewport-71f7efe6.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./ToastHub.js');
-require('./web-7e5f0d11.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./web-46d746d6.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 require('./RootPortal.js');
-require('./Root-ffe1134e.js');
+require('./Root-07f851a6.js');
 require('./springs.js');
 require('./IconCopy.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./IconPropTypes-b9997416.js');
 require('./BadgePopoverBase.js');
 require('./Popover.js');
 require('./IconCross.js');
@@ -85,7 +85,7 @@ var IdentityBadge = /*#__PURE__*/React__default['default'].memo(function Identit
       shorten = _ref.shorten,
       customLabel = _ref.customLabel,
       fontSize = _ref.fontSize,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["badgeOnly", "compact", "connectedAccount", "entity", "label", "labelStyle", "networkType", "popoverAction", "popoverTitle", "shorten", "customLabel", "fontSize"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["badgeOnly", "compact", "connectedAccount", "entity", "label", "labelStyle", "networkType", "popoverAction", "popoverTitle", "shorten", "customLabel", "fontSize"]);
 
   if (customLabel) {
     environment.warnOnce('IdentityBadge:customLabel', 'The “customLabel” prop is deprecated. Please use “label” instead.');
@@ -99,7 +99,7 @@ var IdentityBadge = /*#__PURE__*/React__default['default'].memo(function Identit
   var badgeRef = React.useRef(null);
 
   var _useState = React.useState(false),
-      _useState2 = slicedToArray._slicedToArray(_useState, 2),
+      _useState2 = slicedToArray.slicedToArray(_useState, 2),
       opened = _useState2[0],
       setOpened = _useState2[1];
 
@@ -111,7 +111,7 @@ var IdentityBadge = /*#__PURE__*/React__default['default'].memo(function Identit
   }, []);
   var address = web3.isAddress(entity) ? entity : null;
   var displayLabel = label || (address && shorten ? web3.shortenAddress(address) : entity);
-  return /*#__PURE__*/React__default['default'].createElement(BadgeBase['default'], _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(BadgeBase['default'], _extends._extends_1({
     badgeRef: badgeRef,
     compact: compact,
     disabled: badgeOnly,

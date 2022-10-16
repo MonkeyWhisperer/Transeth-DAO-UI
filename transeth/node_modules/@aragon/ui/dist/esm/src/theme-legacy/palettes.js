@@ -1,4 +1,4 @@
-import _slicedToArray from '../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import slicedToArray from '../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import aragon from './aragon.js';
 import { warnOnce, warn } from '../utils/environment.js';
 
@@ -21,7 +21,7 @@ var resolveColor = function resolveColor(value, palettes) {
   }
 
   var _value$slice$split = value.slice(1).split('.'),
-      _value$slice$split2 = _slicedToArray(_value$slice$split, 2),
+      _value$slice$split2 = slicedToArray(_value$slice$split, 2),
       paletteName = _value$slice$split2[0],
       key = _value$slice$split2[1];
 
@@ -42,7 +42,7 @@ var resolveColor = function resolveColor(value, palettes) {
 
 var resolveColors = function resolveColors(palette, palettes) {
   return Object.entries(palette).reduce(function (pal, _ref) {
-    var _ref2 = _slicedToArray(_ref, 2),
+    var _ref2 = slicedToArray(_ref, 2),
         name = _ref2[0],
         value = _ref2[1];
 
@@ -57,7 +57,7 @@ var resolveColors = function resolveColors(palette, palettes) {
 
 var generateGroups = function generateGroups(palettes) {
   return Object.entries(palettes).reduce(function (groups, _ref3) {
-    var _ref4 = _slicedToArray(_ref3, 2),
+    var _ref4 = slicedToArray(_ref3, 2),
         paletteName = _ref4[0],
         palette = _ref4[1];
 
@@ -77,7 +77,7 @@ var generateGroups = function generateGroups(palettes) {
 
 
 var _Object$fromEntries = Object.fromEntries(Object.entries(generateGroups(aragon)).map(function (_ref5) {
-  var _ref6 = _slicedToArray(_ref5, 2),
+  var _ref6 = slicedToArray(_ref5, 2),
       name = _ref6[0],
       group = _ref6[1];
 

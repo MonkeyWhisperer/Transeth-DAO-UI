@@ -1,10 +1,10 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { GU } from '../../style/constants.js';
 
 var _StyledButtonBase = _styled(ButtonBaseWithFocus).withConfig({
@@ -24,10 +24,10 @@ var DiscButton = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var children = _ref.children,
       description = _ref.description,
       size = _ref.size,
-      props = _objectWithoutProperties(_ref, ["children", "description", "size"]);
+      props = objectWithoutProperties(_ref, ["children", "description", "size"]);
 
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends({
+  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends_1({
     ref: ref,
     focusRingSpacing: 4,
     focusRingRadius: size,

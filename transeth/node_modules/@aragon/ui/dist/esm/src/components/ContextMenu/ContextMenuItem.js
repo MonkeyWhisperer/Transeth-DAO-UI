@@ -1,8 +1,8 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
 import _styled from 'styled-components';
 import React from 'react';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { textStyle } from '../../style/text-styles.js';
 import { unselectable } from '../../utils/css.js';
 
@@ -19,7 +19,7 @@ var _StyledButtonBase = _styled(ButtonBaseWithFocus).withConfig({
 
 var ContextMenuItem = /*#__PURE__*/React.memo(function ContextMenuItem(props) {
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends_1({}, props, {
     _css: textStyle('body2'),
     _css2: unselectable(),
     _css3: theme.surfacePressed

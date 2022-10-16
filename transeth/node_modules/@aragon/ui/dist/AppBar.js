@@ -2,32 +2,32 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
-var getPrototypeOf = require('./getPrototypeOf-e2e819f3.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+var getPrototypeOf = require('./getPrototypeOf-55c9e80c.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
 var _styled = require('styled-components');
 var React = require('react');
-var index$1 = require('./index-37353731.js');
-var web = require('./web-7e5f0d11.js');
-var index = require('./index-c33eeeef.js');
+var index = require('./index-37353731.js');
+var web = require('./web-46d746d6.js');
+var index$1 = require('./index-c33eeeef.js');
 var Text = require('./Text.js');
 var Theme = require('./Theme.js');
+var PublicUrl = require('./PublicUrl-a6067988.js');
 var css = require('./css.js');
 var springs = require('./springs.js');
 var miscellaneous = require('./miscellaneous.js');
-var PublicUrl = require('./PublicUrl-4684cbb6.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 require('./environment.js');
 require('./font.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./getDisplayName-7f913e84.js');
 require('./url.js');
 
@@ -38,7 +38,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 var chevronSvg = "data:image/svg+xml,%3Csvg%20width%3D%227%22%20height%3D%2212%22%20viewBox%3D%220%200%207%2012%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M.446%2012a.512.512%200%2001-.172-.03.422.422%200%2001-.146-.087A.37.37%200%20010%2011.6a.37.37%200%2001.128-.281l5.826-5.361L.217.692A.376.376%200%2001.089.405.378.378%200%2001.217.117.444.444%200%2001.529%200c.123%200%20.228.04.313.117l6.03%205.56A.37.37%200%20017%205.96a.37.37%200%2001-.128.281l-6.12%205.643A.477.477%200%2001.446%2012z%22%20fill%3D%22%2300CBE6%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E";
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf._getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf._getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf._possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf.getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf.getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf.possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
@@ -77,14 +77,14 @@ var _StyledDiv4 = _styled__default['default']("div").withConfig({
 });
 
 var AppBar = /*#__PURE__*/function (_React$Component) {
-  getPrototypeOf._inherits(AppBar, _React$Component);
+  getPrototypeOf.inherits(AppBar, _React$Component);
 
   var _super = _createSuper(AppBar);
 
   function AppBar() {
     var _this;
 
-    getPrototypeOf._classCallCheck(this, AppBar);
+    getPrototypeOf.classCallCheck(this, AppBar);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -92,16 +92,16 @@ var AppBar = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "state", {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "state", {
       tabsHeight: 0
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "_tabsRef", /*#__PURE__*/React__default['default'].createRef());
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "_tabsRef", /*#__PURE__*/React__default['default'].createRef());
 
     return _this;
   }
 
-  getPrototypeOf._createClass(AppBar, [{
+  getPrototypeOf.createClass(AppBar, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.updateTabsHeight();
@@ -139,15 +139,15 @@ var AppBar = /*#__PURE__*/function (_React$Component) {
           tabs = _this$props.tabs,
           title = _this$props.title,
           theme = _this$props.theme,
-          props = objectWithoutProperties._objectWithoutProperties(_this$props, ["children", "endContent", "onTitleClick", "padding", "tabs", "title", "theme"]);
+          props = objectWithoutProperties.objectWithoutProperties(_this$props, ["children", "endContent", "onTitleClick", "padding", "tabs", "title", "theme"]);
 
-      return /*#__PURE__*/React__default['default'].createElement(index.i, {
+      return /*#__PURE__*/React__default['default'].createElement(index$1.i, {
         name: "AppBar"
       }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv, {
         _css: theme.surface,
         _css2: css.unselectable(),
         _css3: theme.border
-      }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv2, _extends._extends({}, props, {
+      }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv2, _extends._extends_1({}, props, {
         _css4: BAR_HEIGHT - 1
       }), title && /*#__PURE__*/React__default['default'].createElement(_StyledDiv3, {
         _css5: padding
@@ -192,17 +192,17 @@ var AppBar = /*#__PURE__*/function (_React$Component) {
   return AppBar;
 }(React__default['default'].Component);
 
-defineProperty._defineProperty(AppBar, "propTypes", {
-  children: index$1.propTypes.node,
-  endContent: index$1.propTypes.node,
-  onTitleClick: index$1.propTypes.func,
-  padding: index$1.propTypes.number,
-  tabs: index$1.propTypes.element,
-  theme: index$1.propTypes.object,
-  title: index$1.propTypes.node
+defineProperty.defineProperty(AppBar, "propTypes", {
+  children: index.propTypes.node,
+  endContent: index.propTypes.node,
+  onTitleClick: index.propTypes.func,
+  padding: index.propTypes.number,
+  tabs: index.propTypes.element,
+  theme: index.propTypes.object,
+  title: index.propTypes.node
 });
 
-defineProperty._defineProperty(AppBar, "defaultProps", {
+defineProperty.defineProperty(AppBar, "defaultProps", {
   onTitleClick: miscellaneous.noop,
   padding: 30,
   title: ''
@@ -224,7 +224,7 @@ var TabsWrapper = _styled__default['default'](web.extendedAnimated.div).withConf
 })(["position:relative;z-index:1;"]);
 function AppBar$1 (props) {
   var theme = Theme.useTheme();
-  return /*#__PURE__*/React__default['default'].createElement(AppBar, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(AppBar, _extends._extends_1({}, props, {
     theme: theme
   }));
 }

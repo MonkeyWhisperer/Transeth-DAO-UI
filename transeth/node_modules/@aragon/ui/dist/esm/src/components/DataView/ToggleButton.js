@@ -2,7 +2,7 @@ import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import ButtonIcon from '../Button/ButtonIcon.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import IconUp from '../../icons/components/IconUp.js';
 import IconDown from '../../icons/components/IconDown.js';
 import { RADIUS } from '../../style/constants.js';

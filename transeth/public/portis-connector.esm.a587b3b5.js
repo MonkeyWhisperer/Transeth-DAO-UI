@@ -134,17 +134,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
-
-  _setPrototypeOf(subClass, superClass);
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
+  subClass.__proto__ = superClass;
 }
 
 function _assertThisInitialized(self) {
@@ -233,8 +223,6 @@ var PortisConnector = /*#__PURE__*/function (_AbstractConnector) {
 
   _proto.activate = function activate() {
     try {
-      var _this3 = this;
-
       var _temp3 = function _temp3() {
         _this3.portis.onLogout(_this3.handleOnLogout);
 
@@ -251,6 +239,8 @@ var PortisConnector = /*#__PURE__*/function (_AbstractConnector) {
           };
         });
       };
+
+      var _this3 = this;
 
       var _temp4 = function () {
         if (!_this3.portis) {
@@ -378,7 +368,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58597" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61626" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

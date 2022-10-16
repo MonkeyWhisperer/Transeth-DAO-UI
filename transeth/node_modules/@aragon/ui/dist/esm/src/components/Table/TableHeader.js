@@ -1,9 +1,9 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
 
@@ -27,10 +27,10 @@ var _StyledTh = _styled("th").withConfig({
 function TableHeader(_ref) {
   var title = _ref.title,
       align = _ref.align,
-      props = _objectWithoutProperties(_ref, ["title", "align"]);
+      props = objectWithoutProperties(_ref, ["title", "align"]);
 
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(_StyledTh, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledTh, _extends_1({}, props, {
     _css: align === 'left' ? 2.5 * GU + 1 : 0,
     _css2: align === 'right' ? 2.5 * GU + 1 : 0,
     _css3: align,

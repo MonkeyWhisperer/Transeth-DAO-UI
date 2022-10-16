@@ -1,11 +1,11 @@
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { useInside as o } from '../../../node_modules/use-inside/dist/index.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { RADIUS, GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
 
@@ -53,12 +53,12 @@ var BadgeBase = /*#__PURE__*/React.memo(function BadgeBase(_ref) {
       onClick = _ref.onClick,
       style = _ref.style,
       title = _ref.title;
-      _objectWithoutProperties(_ref, ["badgeRef", "children", "className", "compact", "disabled", "href", "icon", "label", "labelStyle", "onClick", "style", "title"]);
+      objectWithoutProperties(_ref, ["badgeRef", "children", "className", "compact", "disabled", "href", "icon", "label", "labelStyle", "onClick", "style", "title"]);
 
   var theme = useTheme();
 
   var _useInside = o('DropDown'),
-      _useInside2 = _slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray(_useInside, 1),
       insideDropDownMenu = _useInside2[0];
 
   if (insideDropDownMenu) {

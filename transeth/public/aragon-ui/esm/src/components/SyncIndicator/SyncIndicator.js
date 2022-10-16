@@ -1,5 +1,5 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -24,9 +24,9 @@ function SyncIndicator(_ref) {
       label = _ref.label,
       shift = _ref.shift,
       visible = _ref.visible,
-      props = _objectWithoutProperties(_ref, ["children", "label", "shift", "visible"]);
+      props = objectWithoutProperties(_ref, ["children", "label", "shift", "visible"]);
 
-  return /*#__PURE__*/React.createElement(FloatIndicator, _extends({
+  return /*#__PURE__*/React.createElement(FloatIndicator, _extends_1({
     visible: visible,
     shift: shift
   }, props), /*#__PURE__*/React.createElement(LoadingRing, null), /*#__PURE__*/React.createElement(_StyledDiv, {

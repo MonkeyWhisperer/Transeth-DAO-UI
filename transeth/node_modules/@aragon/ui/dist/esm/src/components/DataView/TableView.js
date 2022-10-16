@@ -1,5 +1,5 @@
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useState, useCallback, useMemo } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -8,14 +8,14 @@ import { useLayout } from '../Layout/Layout.js';
 import CheckBoxWithTheme from '../Input/Checkbox.js';
 import { ToggleButton } from './ToggleButton.js';
 import { OpenedSurfaceBorder } from './OpenedSurfaceBorder.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
 import { springs } from '../../style/springs.js';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function headingsFromFields(fields, _ref) {
   var hasAnyActions = _ref.hasAnyActions,
@@ -93,7 +93,7 @@ function TableView(_ref3) {
       selectedCount = _ref3.selectedCount;
 
   var _useState = useState(-1),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       opened = _useState2[0],
       setOpened = _useState2[1];
 
@@ -291,7 +291,7 @@ function EntryRow(_ref6) {
   return /*#__PURE__*/React.createElement(_StyledTr, {
     _css8: selected ? theme.surfaceSelected : 'none'
   }, cells.map(function (_ref7, index, cells) {
-    var _ref8 = _slicedToArray(_ref7, 3),
+    var _ref8 = slicedToArray(_ref7, 3),
         content = _ref8[0],
         align = _ref8[1],
         compact = _ref8[2];
@@ -360,7 +360,7 @@ function EntryExpansion(_ref9) {
   var theme = useTheme(); // Handles the height of the expansion in free layout mode
 
   var _useState3 = useState(0),
-      _useState4 = _slicedToArray(_useState3, 2),
+      _useState4 = slicedToArray(_useState3, 2),
       freeLayoutContentHeight = _useState4[0],
       setFreeLayoutContentHeight = _useState4[1]; // We don't want to memoize this callback because we need to query for a new height
   // and cover updates when entries get re-ordered

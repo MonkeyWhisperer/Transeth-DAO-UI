@@ -1,15 +1,15 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import React from 'react';
 import useIconSize from '../icon-size.js';
 import IconPropTypes from '../IconPropTypes.js';
 
 function IconUp(_ref) {
   var size = _ref.size,
-      props = _objectWithoutProperties(_ref, ["size"]);
+      props = objectWithoutProperties(_ref, ["size"]);
 
   var sizeValue = useIconSize(size);
-  return /*#__PURE__*/React.createElement("svg", _extends({
+  return /*#__PURE__*/React.createElement("svg", _extends_1({
     width: sizeValue,
     height: sizeValue,
     fill: "none",

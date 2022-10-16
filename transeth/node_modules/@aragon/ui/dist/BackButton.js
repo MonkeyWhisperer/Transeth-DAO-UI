@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index$1 = require('./index-37353731.js');
@@ -16,24 +16,24 @@ var Theme = require('./Theme.js');
 var IconArrowLeft = require('./IconArrowLeft.js');
 var constants = require('./constants.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./defineProperty-fdbd3c46.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./defineProperty-3cad0327.js');
 require('./FocusVisible.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./keycodes.js');
 require('./css.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./text-styles.js');
 require('./font.js');
-require('./Viewport-d2dce1b4.js');
+require('./Viewport-71f7efe6.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./toConsumableArray-cc0d28a9.js');
+require('./IconPropTypes-b9997416.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -75,12 +75,12 @@ var _StyledSpan2 = _styled__default['default']("span").withConfig({
 
 function BackButton(_ref) {
   var label = _ref.label,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["label"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["label"]);
 
   var theme = Theme.useTheme();
 
   var _useInside = index.o('Bar:primary'),
-      _useInside2 = slicedToArray._slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray.slicedToArray(_useInside, 1),
       insideBarPrimary = _useInside2[0];
 
   var _useLayout = Layout.useLayout(),
@@ -88,7 +88,7 @@ function BackButton(_ref) {
 
   var compact = layoutName === 'small';
   var horizontalPadding = (compact ? 2 : 3) * constants.GU;
-  return /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends_1({
     focusRingRadius: constants.RADIUS,
     focusRingSpacing: 1
   }, props, {

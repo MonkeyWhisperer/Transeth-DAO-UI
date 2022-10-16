@@ -1,22 +1,22 @@
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import throttle_1 from '../../../node_modules/lodash/throttle.js';
 import { BREAKPOINTS } from '../../style/breakpoints.js';
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 var NO_DOM_WINDOW_SIZE = {
   width: 0,
   height: 0
@@ -36,14 +36,14 @@ function getCurrentWindowSize() {
 }
 
 var ViewportProvider = /*#__PURE__*/function (_React$Component) {
-  _inherits(ViewportProvider, _React$Component);
+  inherits(ViewportProvider, _React$Component);
 
   var _super = _createSuper(ViewportProvider);
 
   function ViewportProvider() {
     var _this;
 
-    _classCallCheck(this, ViewportProvider);
+    classCallCheck(this, ViewportProvider);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -51,17 +51,17 @@ var ViewportProvider = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    defineProperty(assertThisInitialized(_this), "state", {
       windowSize: _this.getWindowSize()
     });
 
-    _defineProperty(_assertThisInitialized(_this), "updateWindowSize", function () {
+    defineProperty(assertThisInitialized(_this), "updateWindowSize", function () {
       _this.setState({
         windowSize: _this.getWindowSize()
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "within", function (min, max) {
+    defineProperty(assertThisInitialized(_this), "within", function (min, max) {
       var width = _this.state.windowSize.width; // Accept "" or -1 indifferently
 
       if (min === '') min = -1;
@@ -81,18 +81,18 @@ var ViewportProvider = /*#__PURE__*/function (_React$Component) {
       return (min === -1 || width >= min) && (max === -1 || width < max);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "above", function (value) {
+    defineProperty(assertThisInitialized(_this), "above", function (value) {
       return _this.within(value, -1);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "below", function (value) {
+    defineProperty(assertThisInitialized(_this), "below", function (value) {
       return _this.within(-1, value);
     });
 
     return _this;
   }
 
-  _createClass(ViewportProvider, [{
+  createClass(ViewportProvider, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.resizeStart();
@@ -168,12 +168,12 @@ var ViewportProvider = /*#__PURE__*/function (_React$Component) {
 // is only to prevent it.
 
 
-_defineProperty(ViewportProvider, "propTypes", {
+defineProperty(ViewportProvider, "propTypes", {
   children: propTypes.node,
   throttle: propTypes.number
 });
 
-_defineProperty(ViewportProvider, "defaultProps", {
+defineProperty(ViewportProvider, "defaultProps", {
   throttle: 100
 });
 

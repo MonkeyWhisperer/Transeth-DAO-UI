@@ -2,28 +2,28 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
-var _extends = require('./extends-5150c1f4.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+var _extends = require('./extends-023d783e.js');
 var _commonjsHelpers = require('./_commonjsHelpers-1b94f6bc.js');
-var toConsumableArray = require('./toConsumableArray-0f2dcfe0.js');
-var getPrototypeOf = require('./getPrototypeOf-e2e819f3.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
+var toConsumableArray = require('./toConsumableArray-cc0d28a9.js');
+var getPrototypeOf = require('./getPrototypeOf-55c9e80c.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
-var web = require('./web-7e5f0d11.js');
+var web = require('./web-46d746d6.js');
 var RootPortal = require('./RootPortal.js');
-var Viewport = require('./Viewport-d2dce1b4.js');
+var Viewport = require('./Viewport-71f7efe6.js');
 var components = require('./components.js');
 var Theme = require('./Theme.js');
-var springs = require('./springs.js');
 var constants = require('./constants.js');
+var springs = require('./springs.js');
 var textStyles = require('./text-styles.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
-require('./Root-ffe1134e.js');
-require('./slicedToArray-bb07ac16.js');
+require('./Root-07f851a6.js');
+require('./slicedToArray-a8a77f0e.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./theme-dark.js');
@@ -790,7 +790,6 @@ try {
 
 var regenerator = runtime_1;
 
-var asyncToGenerator = _commonjsHelpers.createCommonjsModule(function (module) {
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
     var info = gen[key](arg);
@@ -827,13 +826,9 @@ function _asyncToGenerator(fn) {
   };
 }
 
-module.exports = _asyncToGenerator;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-});
+var asyncToGenerator = _asyncToGenerator;
 
-var _asyncToGenerator = /*@__PURE__*/_commonjsHelpers.unwrapExports(asyncToGenerator);
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf._getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf._getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf._possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf.getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf.getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf.possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var id = 0;
@@ -847,14 +842,14 @@ var ToastContext = /*#__PURE__*/React__default['default'].createContext(function
 });
 
 var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
-  getPrototypeOf._inherits(ToastHubProvider, _React$PureComponent);
+  getPrototypeOf.inherits(ToastHubProvider, _React$PureComponent);
 
   var _super = _createSuper(ToastHubProvider);
 
   function ToastHubProvider() {
     var _this;
 
-    getPrototypeOf._classCallCheck(this, ToastHubProvider);
+    getPrototypeOf.classCallCheck(this, ToastHubProvider);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -862,15 +857,15 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "state", {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "state", {
       items: [],
       leaving: [],
       preLeaving: []
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "cancelMap", new WeakMap());
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "cancelMap", new WeakMap());
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "add", function (msg) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "add", function (msg) {
       var threshold = _this.props.threshold;
 
       _this.setState(function (state) {
@@ -882,7 +877,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
         }
 
         return {
-          items: [].concat(toConsumableArray._toConsumableArray(state.items), [{
+          items: [].concat(toConsumableArray.toConsumableArray(state.items), [{
             key: id++,
             msg: msg
           }]),
@@ -891,18 +886,18 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
       });
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "remove", function (item) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "remove", function (item) {
       _this.setState(function (state) {
         return {
           items: state.items.filter(function (i) {
             return i.key !== item.key;
           }),
-          leaving: state.leaving.includes(item) ? state.leaving : [item].concat(toConsumableArray._toConsumableArray(state.leaving))
+          leaving: state.leaving.includes(item) ? state.leaving : [item].concat(toConsumableArray.toConsumableArray(state.leaving))
         };
       });
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "config", function (item, state) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "config", function (item, state) {
       var config = springs.springs.lazy; // Return custom configs on leave (includes the life-line duration)
 
       return state === 'leave' ? [{
@@ -910,7 +905,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
       }, config, config] : config;
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "cancel", function (item) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "cancel", function (item) {
       var secondPass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
       if (_this.cancelMap.has(item)) {
@@ -922,9 +917,9 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
       }
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "leave", function (item) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "leave", function (item) {
       return /*#__PURE__*/function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee(next, cancel) {
+        var _ref = asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee(next, cancel) {
           return regenerator.wrap(function _callee$(_context) {
             while (1) {
               switch (_context.prev = _context.next) {
@@ -945,7 +940,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
                   // displayed even though they are still finishing their leaving transition.
                   _this.setState(function (state) {
                     return {
-                      preLeaving: [].concat(toConsumableArray._toConsumableArray(state.preLeaving), [item])
+                      preLeaving: [].concat(toConsumableArray.toConsumableArray(state.preLeaving), [item])
                     };
                   }); // Then fade out
 
@@ -994,7 +989,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
     return _this;
   }
 
-  getPrototypeOf._createClass(ToastHubProvider, [{
+  getPrototypeOf.createClass(ToastHubProvider, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -1014,7 +1009,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
           itemsVisible: itemsVisible,
           add: this.add
         }
-      }, children), renderList && /*#__PURE__*/React__default['default'].createElement(RootPortal['default'], null, /*#__PURE__*/React__default['default'].createElement(ToastList, _extends._extends({
+      }, children), renderList && /*#__PURE__*/React__default['default'].createElement(RootPortal['default'], null, /*#__PURE__*/React__default['default'].createElement(ToastList, _extends._extends_1({
         config: this.config,
         items: items,
         leave: this.leave,
@@ -1032,7 +1027,7 @@ var ToastHubProvider = /*#__PURE__*/function (_React$PureComponent) {
 }(React__default['default'].PureComponent); // ToastList is separated from ToastHubProvider so we can skip its rendering
 
 
-defineProperty._defineProperty(ToastHubProvider, "propTypes", {
+defineProperty.defineProperty(ToastHubProvider, "propTypes", {
   children: index.propTypes.node,
   position: index.propTypes.PropTypes.oneOf(['left', 'center', 'right']),
   shift: index.propTypes.number,
@@ -1042,7 +1037,7 @@ defineProperty._defineProperty(ToastHubProvider, "propTypes", {
   top: index.propTypes.bool
 });
 
-defineProperty._defineProperty(ToastHubProvider, "defaultProps", {
+defineProperty.defineProperty(ToastHubProvider, "defaultProps", {
   position: 'right',
   showIndicator: false,
   threshold: Infinity,
@@ -1109,7 +1104,7 @@ var ToastList = /*#__PURE__*/React__default['default'].memo(function ToastList(_
       showIndicator = _ref2.showIndicator,
       top = _ref2.top,
       shift = _ref2.shift,
-      props = objectWithoutProperties._objectWithoutProperties(_ref2, ["config", "items", "leave", "position", "remove", "showIndicator", "top", "shift"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref2, ["config", "items", "leave", "position", "remove", "showIndicator", "top", "shift"]);
 
   var theme = Theme.useTheme();
 
@@ -1117,7 +1112,7 @@ var ToastList = /*#__PURE__*/React__default['default'].memo(function ToastList(_
       below = _useViewport.below;
 
   var spacing = below('medium') ? 2 * constants.GU : 3 * constants.GU;
-  return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends_1({}, props, {
     _css: top ? "".concat(spacing, "px") : 'unset',
     _css2: top ? 'unset' : "".concat(spacing, "px"),
     _css3: spacing + (shift || 0),
@@ -1154,7 +1149,7 @@ var ToastList = /*#__PURE__*/React__default['default'].memo(function ToastList(_
       /* eslint-disable react/prop-types */
       function (_ref3) {
         var life = _ref3.life,
-            props = objectWithoutProperties._objectWithoutProperties(_ref3, ["life"]);
+            props = objectWithoutProperties.objectWithoutProperties(_ref3, ["life"]);
 
         return /*#__PURE__*/React__default['default'].createElement(_StyledAnimatedDiv, {
           style: props,

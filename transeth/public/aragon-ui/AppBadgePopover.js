@@ -2,32 +2,32 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
-var proptypes = require('./proptypes-0337766e.js');
+var proptypes = require('./proptypes-316e1def.js');
 var AddressField = require('./AddressField.js');
 var BadgePopoverBase = require('./BadgePopoverBase.js');
 var BadgePopoverActionType = require('./BadgePopoverActionType.js');
 var Link = require('./Link.js');
-var web3 = require('./web3-3474f303.js');
+var web3 = require('./web3-4ef44cda.js');
 var useImageExists = require('./useImageExists.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./defineProperty-fdbd3c46.js');
+require('./defineProperty-3cad0327.js');
 require('./index-37353731.js');
 require('./TextCopy.js');
 require('./TextInput.js');
 require('./Theme.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./getPrototypeOf-e2e819f3.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./getPrototypeOf-55c9e80c.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./constants.js');
 require('./text-styles.js');
 require('./font.js');
@@ -35,7 +35,7 @@ require('./ButtonIcon.js');
 require('./Button.js');
 require('./index-c33eeeef.js');
 require('./Layout.js');
-require('./Viewport-d2dce1b4.js');
+require('./Viewport-71f7efe6.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./css.js');
@@ -43,15 +43,15 @@ require('./ButtonBase.js');
 require('./FocusVisible.js');
 require('./keycodes.js');
 require('./ToastHub.js');
-require('./web-7e5f0d11.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./web-46d746d6.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 require('./RootPortal.js');
-require('./Root-ffe1134e.js');
+require('./Root-07f851a6.js');
 require('./components.js');
 require('./springs.js');
 require('./IconCopy.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./IconPropTypes-b9997416.js');
 require('./EthIdenticon.js');
 require('./Popover.js');
 require('./IconCross.js');
@@ -118,9 +118,9 @@ var _StyledDiv = _styled__default['default']("div").withConfig({
 
 function Icon(_ref3) {
   var src = _ref3.src,
-      props = objectWithoutProperties._objectWithoutProperties(_ref3, ["src"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref3, ["src"]);
 
-  return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends_1({}, props, {
     _css: src
   }));
 }

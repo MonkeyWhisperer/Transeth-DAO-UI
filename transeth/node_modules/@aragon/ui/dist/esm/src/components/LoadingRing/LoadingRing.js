@@ -1,11 +1,11 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled, { keyframes } from 'styled-components';
 import React, { useState, useMemo } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { useInside as o } from '../../../node_modules/use-inside/dist/index.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 
 var spin = keyframes(["from{transform:rotate(0deg);}to{transform:rotate(360deg);}"]);
 var SIZE_SMALL = 14;
@@ -35,18 +35,18 @@ var _StyledCircle = _styled("circle").withConfig({
 var LoadingRing = /*#__PURE__*/React.memo(function LoadingRing(_ref) {
   var paused = _ref.paused,
       modeProp = _ref.mode,
-      props = _objectWithoutProperties(_ref, ["paused", "mode"]);
+      props = objectWithoutProperties(_ref, ["paused", "mode"]);
 
   var theme = useTheme();
 
   var _useState = useState(function () {
     return "sync-indicator-".concat(lastInstanceId++);
   }),
-      _useState2 = _slicedToArray(_useState, 1),
+      _useState2 = slicedToArray(_useState, 1),
       instanceId = _useState2[0];
 
   var _useInside = o('FloatIndicator'),
-      _useInside2 = _slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray(_useInside, 1),
       insideFloatIndicator = _useInside2[0];
 
   var mode = modeProp || (insideFloatIndicator ? 'half-circle' : 'two-parts');
@@ -68,11 +68,11 @@ var LoadingRing = /*#__PURE__*/React.memo(function LoadingRing(_ref) {
 
     return [length / 2, length / 2];
   }, [mode, size, paused]),
-      _useMemo2 = _slicedToArray(_useMemo, 2),
+      _useMemo2 = slicedToArray(_useMemo, 2),
       gapLength = _useMemo2[0],
       dashLength = _useMemo2[1];
 
-  return /*#__PURE__*/React.createElement(_StyledSpan, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledSpan, _extends_1({}, props, {
     _css: containerSize,
     _css2: containerSize
   }), /*#__PURE__*/React.createElement("svg", {

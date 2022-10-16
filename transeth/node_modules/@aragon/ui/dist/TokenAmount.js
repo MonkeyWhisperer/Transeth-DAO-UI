@@ -2,27 +2,27 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
-var proptypes = require('./proptypes-0337766e.js');
-var web3 = require('./web3-3474f303.js');
+var proptypes = require('./proptypes-316e1def.js');
+var web3 = require('./web3-4ef44cda.js');
 var Theme = require('./Theme.js');
 var useImageExists = require('./useImageExists.js');
 var constants = require('./constants.js');
 var textStyles = require('./text-styles.js');
-require('./_commonjsHelpers-1b94f6bc.js');
-require('./defineProperty-fdbd3c46.js');
+require('./defineProperty-3cad0327.js');
 require('./index-37353731.js');
+require('./_commonjsHelpers-1b94f6bc.js');
 require('./environment.js');
 require('./miscellaneous.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./getPrototypeOf-e2e819f3.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./getPrototypeOf-55c9e80c.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./font.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -177,7 +177,7 @@ var TokenAmount = /*#__PURE__*/React__default['default'].memo(function TokenAmou
       iconUrl = _ref.iconUrl,
       size = _ref.size,
       symbol = _ref.symbol,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["address", "amount", "chainId", "decimals", "digits", "iconUrl", "size", "symbol"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["address", "amount", "chainId", "decimals", "digits", "iconUrl", "size", "symbol"]);
 
   var isValidAddress = web3.isAddress(address);
 

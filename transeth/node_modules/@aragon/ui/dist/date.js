@@ -2,10 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var dayjs_min = require('./dayjs.min-ac79806e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
 
 var UNITS = [['years', 'year'], ['months', 'month'], ['days', 'day'], ['hours', 'hour'], ['minutes', 'minute'], ['seconds', 'second']];
 var DEFAULT_UNITS = ['years', 'months', 'days', 'hours', 'minutes', 'seconds']; // Return the difference between two dates, per unit.
@@ -21,7 +21,7 @@ var difference = function difference(date1, date2) {
 
   var getRightMostUnitIndex = function getRightMostUnitIndex() {
     return [].concat(UNITS).reverse().find(function (_ref) {
-      var _ref2 = slicedToArray._slicedToArray(_ref, 1),
+      var _ref2 = slicedToArray.slicedToArray(_ref, 1),
           unit = _ref2[0];
 
       return units.includes(unit);
@@ -29,7 +29,7 @@ var difference = function difference(date1, date2) {
   };
 
   return UNITS.reduce(function (result, _ref3, index) {
-    var _ref4 = slicedToArray._slicedToArray(_ref3, 2),
+    var _ref4 = slicedToArray.slicedToArray(_ref3, 2),
         name = _ref4[0],
         unitName = _ref4[1];
 

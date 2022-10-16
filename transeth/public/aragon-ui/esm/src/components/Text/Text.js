@@ -1,5 +1,5 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -23,13 +23,13 @@ function Text(_ref) {
       size = _ref.size,
       smallcaps = _ref.smallcaps,
       weight = _ref.weight,
-      props = _objectWithoutProperties(_ref, ["children", "color", "deprecationNotice", "monospace", "size", "smallcaps", "weight"]);
+      props = objectWithoutProperties(_ref, ["children", "color", "deprecationNotice", "monospace", "size", "smallcaps", "weight"]);
 
   if (deprecationNotice) {
     warnOnce('Text', 'Text, Text.Block and Text.Paragraph are deprecated. ' + 'Please use the textStyle() utility function instead.');
   }
 
-  return /*#__PURE__*/React.createElement(_StyledSpan, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledSpan, _extends_1({}, props, {
     _css: font({
       deprecationNotice: false,
       monospace: monospace,
@@ -42,13 +42,13 @@ function Text(_ref) {
 }
 
 var Block = function Block(props) {
-  return /*#__PURE__*/React.createElement(Text, _extends({
+  return /*#__PURE__*/React.createElement(Text, _extends_1({
     as: "div"
   }, props));
 };
 
 var Paragraph = function Paragraph(props) {
-  return /*#__PURE__*/React.createElement(Text, _extends({
+  return /*#__PURE__*/React.createElement(Text, _extends_1({
     as: "p"
   }, props));
 };

@@ -2,35 +2,35 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
-var getPrototypeOf = require('./getPrototypeOf-e2e819f3.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+var getPrototypeOf = require('./getPrototypeOf-55c9e80c.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
-var web = require('./web-7e5f0d11.js');
+var web = require('./web-46d746d6.js');
 var Theme = require('./Theme.js');
 var css = require('./css.js');
 var springs = require('./springs.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf._getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf._getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf._possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf.getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf.getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf.possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var BAR_HEIGHT = 6;
@@ -72,14 +72,14 @@ var _StyledAnimatedDiv = _styled__default['default'](web.extendedAnimated.div).w
 });
 
 var Slider = /*#__PURE__*/function (_React$Component) {
-  getPrototypeOf._inherits(Slider, _React$Component);
+  getPrototypeOf.inherits(Slider, _React$Component);
 
   var _super = _createSuper(Slider);
 
   function Slider() {
     var _this;
 
-    getPrototypeOf._classCallCheck(this, Slider);
+    getPrototypeOf.classCallCheck(this, Slider);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -87,16 +87,16 @@ var Slider = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "state", {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "state", {
       pressed: false
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "handleRef", function (element) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "handleRef", function (element) {
       _this._mainElement = element;
       _this._document = element && element.ownerDocument;
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "getRect", function () {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "getRect", function () {
       var now = Date.now(); // Cache the rect if the last poll was less than a second ago
 
       if (_this._lastRect && now - _this._lastRectTime < 1000) {
@@ -108,7 +108,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
       return _this._lastRect;
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "dragStart", function (event) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "dragStart", function (event) {
       _this.dragStop();
 
       var clientX = _this.clientXFromEvent(event);
@@ -128,7 +128,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
       _this._document.addEventListener('touchmove', _this.dragMove);
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "dragStop", function () {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "dragStop", function () {
       _this.setState({
         pressed: false
       });
@@ -142,7 +142,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
       _this._document.removeEventListener('touchmove', _this.dragMove);
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "dragMove", function (event) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "dragMove", function (event) {
       if (!_this.state.pressed) {
         return;
       }
@@ -153,7 +153,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  getPrototypeOf._createClass(Slider, [{
+  getPrototypeOf.createClass(Slider, [{
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       this.dragStop();
@@ -214,7 +214,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
           _this$props.onUpdate;
           var value = _this$props.value,
           theme = _this$props.theme,
-          props = objectWithoutProperties._objectWithoutProperties(_this$props, ["onUpdate", "value", "theme"]);
+          props = objectWithoutProperties.objectWithoutProperties(_this$props, ["onUpdate", "value", "theme"]);
 
       return /*#__PURE__*/React__default['default'].createElement(web.Spring, {
         native: true,
@@ -226,7 +226,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
       }, function (_ref) {
         var value = _ref.value,
             pressProgress = _ref.pressProgress;
-        return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends({}, props, {
+        return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends_1({}, props, {
           _css: HANDLE_SIZE / 2 + PADDING
         }), /*#__PURE__*/React__default['default'].createElement(_StyledDiv2, {
           ref: _this2.handleRef,
@@ -250,13 +250,13 @@ var Slider = /*#__PURE__*/function (_React$Component) {
   return Slider;
 }(React__default['default'].Component);
 
-defineProperty._defineProperty(Slider, "propTypes", {
+defineProperty.defineProperty(Slider, "propTypes", {
   value: index.propTypes.number,
   onUpdate: index.propTypes.func,
   theme: index.propTypes.object
 });
 
-defineProperty._defineProperty(Slider, "defaultProps", {
+defineProperty.defineProperty(Slider, "defaultProps", {
   value: 0,
   onUpdate: function onUpdate() {}
 });
@@ -294,7 +294,7 @@ var HandlePosition = _styled__default['default'](web.extendedAnimated.div).withC
 })(["width:calc(100% - ", "px);height:100%;transform-origin:50% 50%;"], HANDLE_SIZE + HANDLE_SHADOW_MARGIN * 2);
 var Slider$1 = (function (props) {
   var theme = Theme.useTheme();
-  return /*#__PURE__*/React__default['default'].createElement(Slider, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(Slider, _extends._extends_1({
     theme: theme
   }, props));
 });

@@ -1,12 +1,12 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { Inside as i } from '../../../node_modules/use-inside/dist/index.js';
 import Card from './Card.js';
 import illustrationDefault from './assets/empty-state-card-illustration-default.png.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { usePublicUrl } from '../../providers/PublicUrl/PublicUrl.js';
 import { warnOnce } from '../../utils/environment.js';
 import { GU } from '../../style/constants.js';
@@ -42,7 +42,7 @@ var EmptyStateCard = /*#__PURE__*/React.memo(function EmptyStateCard(_ref) {
       icon = _ref.icon,
       illustration = _ref.illustration,
       text = _ref.text,
-      props = _objectWithoutProperties(_ref, ["action", "icon", "illustration", "text"]);
+      props = objectWithoutProperties(_ref, ["action", "icon", "illustration", "text"]);
 
   var theme = useTheme();
   var publicUrl = usePublicUrl();
@@ -66,7 +66,7 @@ var EmptyStateCard = /*#__PURE__*/React.memo(function EmptyStateCard(_ref) {
 
   return /*#__PURE__*/React.createElement(i, {
     name: "EmptyStateCard"
-  }, /*#__PURE__*/React.createElement(_StyledCard, _extends({}, props, {
+  }, /*#__PURE__*/React.createElement(_StyledCard, _extends_1({}, props, {
     _css: 20 * GU,
     _css2: 42 * GU,
     _css3: 2 * GU

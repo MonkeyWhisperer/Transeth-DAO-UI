@@ -2,13 +2,13 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var React = require('react');
-var IconPropTypes = require('./IconPropTypes-f5b14dc5.js');
+var IconPropTypes = require('./IconPropTypes-b9997416.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./index-c33eeeef.js');
 require('./index-37353731.js');
 require('./constants.js');
@@ -19,10 +19,10 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 function IconArrowDown(_ref) {
   var size = _ref.size,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["size"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["size"]);
 
   var sizeValue = IconPropTypes.useIconSize(size);
-  return /*#__PURE__*/React__default['default'].createElement("svg", _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement("svg", _extends._extends_1({
     width: sizeValue,
     height: sizeValue,
     fill: "none",

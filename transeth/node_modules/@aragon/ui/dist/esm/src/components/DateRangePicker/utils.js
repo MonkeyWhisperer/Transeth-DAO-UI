@@ -1,4 +1,4 @@
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import dayjs_min from '../../../node_modules/dayjs/dayjs.min.js';
 
 function handleDateSelect(_ref) {
@@ -54,7 +54,7 @@ function handleDateSelect(_ref) {
   }
 
   if (isValidDate) {
-    return _defineProperty({}, startDate ? 'endDate' : 'startDate', date);
+    return defineProperty({}, startDate ? 'endDate' : 'startDate', date);
   }
 }
 

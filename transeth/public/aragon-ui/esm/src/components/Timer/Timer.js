@@ -1,26 +1,26 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
-import _toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import memoize_1 from '../../../node_modules/lodash/memoize.js';
 import dayjs_min from '../../../node_modules/dayjs/dayjs.min.js';
 import { formatHtmlDatetime, difference } from '../../utils/date.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import IconClock from '../../icons/components/IconClock.js';
 import { Redraw } from '../../providers/Redraw/Redraw.js';
 import { textStyle } from '../../style/text-styles.js';
 import { unselectable } from '../../utils/css.js';
 import { GU } from '../../style/constants.js';
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var RENDER_EVERY = 1000;
@@ -57,7 +57,7 @@ var unitNames = {
 };
 var getFormat = memoize_1(function (format) {
   return ['y', 'M', 'd', 'h', 'm', 's'].reduce(function (units, symbol) {
-    return formats[format].includes(symbol) ? [].concat(_toConsumableArray(units), [unitNames[symbol]]) : units;
+    return formats[format].includes(symbol) ? [].concat(toConsumableArray(units), [unitNames[symbol]]) : units;
   }, []);
 });
 
@@ -140,14 +140,14 @@ var _StyledSpan5 = _styled("span").withConfig({
 });
 
 var Timer = /*#__PURE__*/function (_React$Component) {
-  _inherits(Timer, _React$Component);
+  inherits(Timer, _React$Component);
 
   var _super = _createSuper(Timer);
 
   function Timer() {
     var _this;
 
-    _classCallCheck(this, Timer);
+    classCallCheck(this, Timer);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -155,7 +155,7 @@ var Timer = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "renderTime", function () {
+    defineProperty(assertThisInitialized(_this), "renderTime", function () {
       var _this$props = _this.props,
           start = _this$props.start,
           end = _this$props.end,
@@ -210,7 +210,7 @@ var Timer = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(Timer, [{
+  createClass(Timer, [{
     key: "render",
     value: function render() {
       var _this$props2 = this.props,
@@ -235,7 +235,7 @@ var Timer = /*#__PURE__*/function (_React$Component) {
   return Timer;
 }(React.Component);
 
-_defineProperty(Timer, "propTypes", {
+defineProperty(Timer, "propTypes", {
   end: propTypes.instanceOf(Date),
   format: propTypes.oneOf(Object.keys(formats)),
   maxUnits: propTypes.number,
@@ -245,7 +245,7 @@ _defineProperty(Timer, "propTypes", {
   theme: propTypes.object
 });
 
-_defineProperty(Timer, "defaultProps", {
+defineProperty(Timer, "defaultProps", {
   format: formats.yMdhms,
   maxUnits: -1,
   showEmpty: false,
@@ -254,7 +254,7 @@ _defineProperty(Timer, "defaultProps", {
 
 var Timer$1 = (function (props) {
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(Timer, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(Timer, _extends_1({}, props, {
     theme: theme
   }));
 });

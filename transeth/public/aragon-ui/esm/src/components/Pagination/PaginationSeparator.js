@@ -1,7 +1,7 @@
 import _styled from 'styled-components';
 import React from 'react';
 import IconEllipsis from '../../icons/components/IconEllipsis.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 
 var _StyledDiv = _styled("div").withConfig({
   displayName: "PaginationSeparator___StyledDiv",

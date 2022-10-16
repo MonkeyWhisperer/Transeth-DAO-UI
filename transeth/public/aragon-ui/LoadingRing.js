@@ -2,24 +2,24 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index$1 = require('./index-37353731.js');
 var index = require('./index-c33eeeef.js');
 var Theme = require('./Theme.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./defineProperty-fdbd3c46.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./defineProperty-3cad0327.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./getPrototypeOf-e2e819f3.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./getPrototypeOf-55c9e80c.js');
+require('./toConsumableArray-cc0d28a9.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -54,18 +54,18 @@ var _StyledCircle = _styled__default['default']("circle").withConfig({
 var LoadingRing = /*#__PURE__*/React__default['default'].memo(function LoadingRing(_ref) {
   var paused = _ref.paused,
       modeProp = _ref.mode,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["paused", "mode"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["paused", "mode"]);
 
   var theme = Theme.useTheme();
 
   var _useState = React.useState(function () {
     return "sync-indicator-".concat(lastInstanceId++);
   }),
-      _useState2 = slicedToArray._slicedToArray(_useState, 1),
+      _useState2 = slicedToArray.slicedToArray(_useState, 1),
       instanceId = _useState2[0];
 
   var _useInside = index.o('FloatIndicator'),
-      _useInside2 = slicedToArray._slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray.slicedToArray(_useInside, 1),
       insideFloatIndicator = _useInside2[0];
 
   var mode = modeProp || (insideFloatIndicator ? 'half-circle' : 'two-parts');
@@ -87,11 +87,11 @@ var LoadingRing = /*#__PURE__*/React__default['default'].memo(function LoadingRi
 
     return [length / 2, length / 2];
   }, [mode, size, paused]),
-      _useMemo2 = slicedToArray._slicedToArray(_useMemo, 2),
+      _useMemo2 = slicedToArray.slicedToArray(_useMemo, 2),
       gapLength = _useMemo2[0],
       dashLength = _useMemo2[1];
 
-  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan, _extends._extends_1({}, props, {
     _css: containerSize,
     _css2: containerSize
   }), /*#__PURE__*/React__default['default'].createElement("svg", {

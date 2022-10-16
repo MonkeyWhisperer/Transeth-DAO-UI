@@ -1,7 +1,7 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useCallback, useState, useEffect, useContext, useRef } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -10,7 +10,7 @@ import { Inside as i } from '../../../node_modules/use-inside/dist/index.js';
 import ButtonIcon from '../Button/ButtonIcon.js';
 import { useViewport } from '../../providers/Viewport/Viewport.js';
 import RootPortal from '../RootPortal/RootPortal.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import IconCross from '../../icons/components/IconCross.js';
 import { KEY_ESC } from '../../utils/keycodes.js';
 import { springs } from '../../style/springs.js';
@@ -21,7 +21,7 @@ import { warn } from '../../utils/environment.js';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 var CONTENT_PADDING = 3 * GU; // The closing position of the panel, on the right side of the viewport.
 // It takes into consideration the shadow of the panel.
 
@@ -104,12 +104,12 @@ function SidePanel(_ref2) {
   }, [opened, close]);
 
   var _useState = useState(opened ? 'opened' : 'closed'),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       status = _useState2[0],
       setStatus = _useState2[1];
 
   var _useState3 = useState(false),
-      _useState4 = _slicedToArray(_useState3, 2),
+      _useState4 = slicedToArray(_useState3, 2),
       readyToFocus = _useState4[0],
       setReadyToFocus = _useState4[1];
 
@@ -228,10 +228,10 @@ var _StyledAnimatedAside = _styled(extendedAnimated.aside).withConfig({
 
 var Panel = /*#__PURE__*/React.memo(function Panel(_ref5) {
   var compact = _ref5.compact,
-      props = _objectWithoutProperties(_ref5, ["compact"]);
+      props = objectWithoutProperties(_ref5, ["compact"]);
 
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(_StyledAnimatedAside, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledAnimatedAside, _extends_1({}, props, {
     _css9: theme.surface,
     _css10: !compact ? 'max-width: 450px;' : ''
   }));

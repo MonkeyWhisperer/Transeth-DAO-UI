@@ -1,9 +1,9 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import React from 'react';
 import Tag from '../Tag/Tag.js';
 import { warnOnce } from '../../utils/environment.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 
 function deprecationWarning() {
   warnOnce('Badge', '"Badge" and its variants have been deprecated. Please use "Tag" instead.');
@@ -16,10 +16,10 @@ function Badge(_ref) {
       foreground = _ref.foreground,
       shape = _ref.shape,
       children = _ref.children,
-      props = _objectWithoutProperties(_ref, ["background", "foreground", "shape", "children"]);
+      props = objectWithoutProperties(_ref, ["background", "foreground", "shape", "children"]);
 
   deprecationWarning();
-  return /*#__PURE__*/React.createElement(Tag, _extends({
+  return /*#__PURE__*/React.createElement(Tag, _extends_1({
     background: background,
     color: foreground,
     size: shape === 'smalldisc' || shape === 'compact' ? 'small' : 'normal'
@@ -33,12 +33,12 @@ function BadgeNumber(_ref2) {
       label = _ref2.label;
       _ref2.shape;
       var small = _ref2.small,
-      props = _objectWithoutProperties(_ref2, ["background", "children", "foreground", "label", "shape", "small"]);
+      props = objectWithoutProperties(_ref2, ["background", "children", "foreground", "label", "shape", "small"]);
 
   deprecationWarning();
 
   if (!children && typeof label === 'number') {
-    return /*#__PURE__*/React.createElement(Badge, _extends({
+    return /*#__PURE__*/React.createElement(Badge, _extends_1({
       limitDigits: true,
       background: background,
       color: foreground,
@@ -47,7 +47,7 @@ function BadgeNumber(_ref2) {
     }, props));
   }
 
-  return /*#__PURE__*/React.createElement(Tag, _extends({
+  return /*#__PURE__*/React.createElement(Tag, _extends_1({
     count: true,
     background: background,
     color: foreground
@@ -59,20 +59,20 @@ function BadgeInfo(props) {
 }
 
 function BadgeIdentity(props) {
-  return /*#__PURE__*/React.createElement(Badge, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(Badge, _extends_1({}, props, {
     uppercase: false
   }));
 }
 
 function BadgeApp(props) {
-  return /*#__PURE__*/React.createElement(Badge, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(Badge, _extends_1({}, props, {
     mode: "identifier"
   }));
 }
 
 function BadgeNotification(props) {
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(BadgeNumber, _extends({
+  return /*#__PURE__*/React.createElement(BadgeNumber, _extends_1({
     background: String(theme.positive),
     foreground: String(theme.positiveContent)
   }, props));

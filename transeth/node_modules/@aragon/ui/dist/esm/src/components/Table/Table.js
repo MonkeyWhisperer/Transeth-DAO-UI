@@ -1,9 +1,9 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 
 var _StyledTable = _styled("table").withConfig({
   displayName: "Table___StyledTable",
@@ -30,10 +30,10 @@ function Table(_ref) {
   var header = _ref.header,
       children = _ref.children,
       noSideBorders = _ref.noSideBorders,
-      props = _objectWithoutProperties(_ref, ["header", "children", "noSideBorders"]);
+      props = objectWithoutProperties(_ref, ["header", "children", "noSideBorders"]);
 
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(_StyledTable, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledTable, _extends_1({}, props, {
     _css: theme.border,
     _css2: theme.border,
     _css3: noSideBorders ? '0' : "1px solid ".concat(theme.border),

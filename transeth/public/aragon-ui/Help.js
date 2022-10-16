@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index$1 = require('./index-37353731.js');
@@ -13,14 +13,14 @@ var Theme = require('./Theme.js');
 var IconQuestion = require('./IconQuestion.js');
 var constants = require('./constants.js');
 var textStyles = require('./text-styles.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./extends-5150c1f4.js');
-require('./objectWithoutProperties-5d2c0728.js');
+require('./extends-023d783e.js');
+require('./objectWithoutProperties-c6d3675c.js');
 require('./ButtonBase.js');
-require('./defineProperty-fdbd3c46.js');
+require('./defineProperty-3cad0327.js');
 require('./FocusVisible.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./keycodes.js');
 require('./css.js');
 require('./environment.js');
@@ -28,17 +28,17 @@ require('./miscellaneous.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./font.js');
-require('./proptypes-0337766e.js');
-require('./web-7e5f0d11.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./proptypes-316e1def.js');
+require('./web-46d746d6.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 require('./RootPortal.js');
-require('./Root-ffe1134e.js');
-require('./components.js');
+require('./Root-07f851a6.js');
 require('./springs.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./components.js');
+require('./IconPropTypes-b9997416.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -83,7 +83,7 @@ function Help(_ref) {
   var buttonElement = React.useRef();
 
   var _useState = React.useState(false),
-      _useState2 = slicedToArray._slicedToArray(_useState, 2),
+      _useState2 = slicedToArray.slicedToArray(_useState, 2),
       visible = _useState2[0],
       setVisible = _useState2[1];
 
@@ -95,11 +95,11 @@ function Help(_ref) {
   }, []);
 
   var _useInside = index.o('Box:heading'),
-      _useInside2 = slicedToArray._slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray.slicedToArray(_useInside, 1),
       insideBoxHeading = _useInside2[0];
 
   var _useInside3 = index.o('Field:label'),
-      _useInside4 = slicedToArray._slicedToArray(_useInside3, 1),
+      _useInside4 = slicedToArray.slicedToArray(_useInside3, 1),
       insideFieldLabel = _useInside4[0];
 
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(_StyledDiscButton, {

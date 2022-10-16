@@ -1,12 +1,12 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useRef, useState, useCallback } from 'react';
 import { animated as extendedAnimated, Transition } from '../../../node_modules/react-spring/web.js';
 import { useInside as o } from '../../../node_modules/use-inside/dist/index.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { useFocusLeave } from '../../hooks/useFocusLeave.js';
 import IconDown from '../../icons/components/IconDown.js';
 import { KEY_ESC } from '../../utils/keycodes.js';
@@ -89,11 +89,11 @@ function TabsFullWidth(_ref) {
   var buttonRef = useRef(null);
 
   var _useInside = o('SidePanel'),
-      _useInside2 = _slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray(_useInside, 1),
       insideSidePanel = _useInside2[0];
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       opened = _useState2[0],
       setOpened = _useState2[1];
 
@@ -202,14 +202,14 @@ var _StyledDiv5 = _styled("div").withConfig({
 function Menu(_ref3) {
   var items = _ref3.items,
       onChange = _ref3.onChange,
-      props = _objectWithoutProperties(_ref3, ["items", "onChange"]);
+      props = objectWithoutProperties(_ref3, ["items", "onChange"]);
 
   var handleRef = useCallback(function (element) {
     if (element) {
       element.focus();
     }
   }, []);
-  return /*#__PURE__*/React.createElement(_StyledDiv5, _extends({
+  return /*#__PURE__*/React.createElement(_StyledDiv5, _extends_1({
     ref: handleRef,
     tabIndex: "0"
   }, props), items.map(function (item, index) {

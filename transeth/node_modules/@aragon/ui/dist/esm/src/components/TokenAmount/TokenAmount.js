@@ -1,10 +1,10 @@
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import ExtendedPropTypes from '../../proptypes.js';
 import { UseTokenProvider, useToken } from '../../../node_modules/use-token/dist/index.js';
 import r from '../../../node_modules/token-amount/dist/index.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { useImageExists } from '../../hooks/useImageExists.js';
 import { isAddress } from '../../utils/web3.js';
 import { GU } from '../../style/constants.js';
@@ -33,7 +33,7 @@ var TokenAmount = /*#__PURE__*/React.memo(function TokenAmount(_ref) {
       iconUrl = _ref.iconUrl,
       size = _ref.size,
       symbol = _ref.symbol,
-      props = _objectWithoutProperties(_ref, ["address", "amount", "chainId", "decimals", "digits", "iconUrl", "size", "symbol"]);
+      props = objectWithoutProperties(_ref, ["address", "amount", "chainId", "decimals", "digits", "iconUrl", "size", "symbol"]);
 
   var isValidAddress = isAddress(address);
 

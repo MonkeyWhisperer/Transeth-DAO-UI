@@ -1,11 +1,11 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { Inside as i } from '../../../node_modules/use-inside/dist/index.js';
 import { useLayout } from '../Layout/Layout.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
 
@@ -47,7 +47,7 @@ function Header(_ref) {
   var primary = _ref.primary,
       secondary = _ref.secondary,
       children = _ref.children,
-      props = _objectWithoutProperties(_ref, ["primary", "secondary", "children"]);
+      props = objectWithoutProperties(_ref, ["primary", "secondary", "children"]);
 
   var theme = useTheme();
 
@@ -57,7 +57,7 @@ function Header(_ref) {
   var fullWidth = layoutName === 'small';
   return /*#__PURE__*/React.createElement(i, {
     name: "Header"
-  }, /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+  }, /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
     _css: fullWidth ? 0 : 3 * GU,
     _css2: fullWidth ? theme.surface : 'none',
     _css3: fullWidth ? 2 * GU : 0,
@@ -91,7 +91,7 @@ var _StyledH = _styled("h1").withConfig({
 
 Header.Title = function HeaderTitle(_ref2) {
   var children = _ref2.children,
-      props = _objectWithoutProperties(_ref2, ["children"]);
+      props = objectWithoutProperties(_ref2, ["children"]);
 
   var theme = useTheme();
 
@@ -99,7 +99,7 @@ Header.Title = function HeaderTitle(_ref2) {
       layoutName = _useLayout2.layoutName;
 
   var fullWidth = layoutName === 'small';
-  return /*#__PURE__*/React.createElement(_StyledH, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledH, _extends_1({}, props, {
     _css8: theme.content,
     _css9: textStyle(fullWidth ? 'title3' : 'title2')
   }), children);

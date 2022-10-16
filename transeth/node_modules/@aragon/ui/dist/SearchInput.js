@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var defineProperty = require('./defineProperty-fdbd3c46.js');
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var ButtonIcon = require('./ButtonIcon.js');
@@ -15,12 +15,12 @@ var IconCross = require('./IconCross.js');
 require('./_commonjsHelpers-1b94f6bc.js');
 require('./index-37353731.js');
 require('./Button.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./index-c33eeeef.js');
 require('./Layout.js');
-require('./Viewport-d2dce1b4.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./Viewport-71f7efe6.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./constants.js');
@@ -35,8 +35,8 @@ require('./font.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./toConsumableArray-cc0d28a9.js');
+require('./IconPropTypes-b9997416.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -45,7 +45,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty._defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty.defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 var EMPTY = '';
 
 var _StyledIconSearch = _styled__default['default'](IconSearch['default']).withConfig({
@@ -64,7 +64,7 @@ var _StyledButtonIcon = _styled__default['default'](ButtonIcon['default']).withC
 
 var SearchInput = /*#__PURE__*/React__default['default'].forwardRef(function (_ref2, ref) {
   var onChange = _ref2.onChange,
-      props = objectWithoutProperties._objectWithoutProperties(_ref2, ["onChange"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref2, ["onChange"]);
 
   var theme = Theme.useTheme();
   var fallbackRef = React.useRef();
@@ -86,7 +86,7 @@ var SearchInput = /*#__PURE__*/React__default['default'].forwardRef(function (_r
       _ref.current.focus();
     }
   }, [onChange, _ref]);
-  return /*#__PURE__*/React__default['default'].createElement(TextInput['default'], _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(TextInput['default'], _extends._extends_1({
     ref: _ref,
     adornment: (props.value || '') === EMPTY ? /*#__PURE__*/React__default['default'].createElement(_StyledIconSearch, {
       _css: theme.surfaceIcon

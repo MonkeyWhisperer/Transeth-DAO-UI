@@ -1,6 +1,6 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -8,7 +8,7 @@ import { animated as extendedAnimated, Transition } from '../../../node_modules/
 import ButtonIcon from '../Button/ButtonIcon.js';
 import EscapeOutside from '../EscapeOutside/EscapeOutside.js';
 import RootPortal from '../RootPortal/RootPortal.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { useViewport } from '../../providers/Viewport/Viewport.js';
 import IconCross from '../../icons/components/IconCross.js';
 import { springs } from '../../style/springs.js';
@@ -18,7 +18,7 @@ import { noop } from '../../utils/miscellaneous.js';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 var SPACE_AROUND = 4 * GU;
 
 var _StyledAnimatedDiv = _styled(extendedAnimated.div).withConfig({
@@ -69,7 +69,7 @@ function Modal(_ref) {
       visible = _ref.visible,
       width = _ref.width,
       closeButton = _ref.closeButton,
-      props = _objectWithoutProperties(_ref, ["children", "onClose", "onClosed", "padding", "visible", "width", "closeButton"]);
+      props = objectWithoutProperties(_ref, ["children", "onClose", "onClosed", "padding", "visible", "width", "closeButton"]);
 
   var theme = useTheme();
   var viewport = useViewport();
@@ -100,7 +100,7 @@ function Modal(_ref) {
     function (_ref2) {
       var opacity = _ref2.opacity,
           scale = _ref2.scale;
-      return /*#__PURE__*/React.createElement(_StyledAnimatedDiv, _extends({
+      return /*#__PURE__*/React.createElement(_StyledAnimatedDiv, _extends_1({
         style: {
           opacity: opacity
         }

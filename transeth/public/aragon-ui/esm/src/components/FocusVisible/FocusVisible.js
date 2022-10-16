@@ -1,14 +1,14 @@
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 // supporting it yet.
@@ -23,14 +23,14 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 //
 
 var FocusVisible = /*#__PURE__*/function (_React$Component) {
-  _inherits(FocusVisible, _React$Component);
+  inherits(FocusVisible, _React$Component);
 
   var _super = _createSuper(FocusVisible);
 
   function FocusVisible() {
     var _this;
 
-    _classCallCheck(this, FocusVisible);
+    classCallCheck(this, FocusVisible);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -38,15 +38,15 @@ var FocusVisible = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "_element", /*#__PURE__*/React.createRef());
+    defineProperty(assertThisInitialized(_this), "_element", /*#__PURE__*/React.createRef());
 
-    _defineProperty(_assertThisInitialized(_this), "_document", null);
+    defineProperty(assertThisInitialized(_this), "_document", null);
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    defineProperty(assertThisInitialized(_this), "state", {
       focusVisible: false
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handlePointerEvent", function (e) {
+    defineProperty(assertThisInitialized(_this), "handlePointerEvent", function (e) {
       _this._pointerActive = true;
       _this._timer = setTimeout(function () {
         _this._pointerActive = false;
@@ -59,7 +59,7 @@ var FocusVisible = /*#__PURE__*/function (_React$Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleFocus", function () {
+    defineProperty(assertThisInitialized(_this), "handleFocus", function () {
       _this.setState({
         focusVisible: !_this._pointerActive
       });
@@ -68,7 +68,7 @@ var FocusVisible = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(FocusVisible, [{
+  createClass(FocusVisible, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       // `document` was previously set as a state entry, which was having the
@@ -125,7 +125,7 @@ var FocusVisible = /*#__PURE__*/function (_React$Component) {
   return FocusVisible;
 }(React.Component);
 
-_defineProperty(FocusVisible, "propTypes", {
+defineProperty(FocusVisible, "propTypes", {
   // children is called with an object containing two entries:
   //   - focusVisible represents the visibility of the focus (boolean).
   //   - onFocus() need to be called when the target element is focused.

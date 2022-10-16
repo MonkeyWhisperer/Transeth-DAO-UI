@@ -1,10 +1,10 @@
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useCallback } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { useInside as o } from '../../../node_modules/use-inside/dist/index.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { RADIUS, GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
 
@@ -52,7 +52,7 @@ function Tab(_ref) {
   var theme = useTheme();
 
   var _useInside = o('SidePanel'),
-      _useInside2 = _slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray(_useInside, 1),
       insideSidePanel = _useInside2[0];
 
   var handleClick = useCallback(function () {

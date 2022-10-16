@@ -1,10 +1,10 @@
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useState } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { animated as extendedAnimated, Spring } from '../../../node_modules/react-spring/web.js';
 import FocusVisible from '../FocusVisible/FocusVisible.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { springs } from '../../style/springs.js';
 import { noop } from '../../utils/miscellaneous.js';
 import { GU } from '../../style/constants.js';
@@ -55,7 +55,7 @@ function Switch(_ref) {
   var theme = useTheme();
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       isFocused = _useState2[0],
       setIsFocused = _useState2[1];
 

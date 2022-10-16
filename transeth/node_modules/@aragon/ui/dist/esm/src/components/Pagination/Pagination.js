@@ -1,6 +1,6 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
-import _toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -10,7 +10,7 @@ import { noop } from '../../utils/miscellaneous.js';
 import { GU } from '../../style/constants.js';
 
 function paginationItems(pages, selected) {
-  var all = _toConsumableArray(Array(pages)).map(function (_, i) {
+  var all = toConsumableArray(Array(pages)).map(function (_, i) {
     return i;
   });
 
@@ -24,7 +24,7 @@ function paginationItems(pages, selected) {
   var next = Math.min(all.length, Math.max(0, selected + 1));
   var items = []; // Selected item + previous + next
 
-  items.push.apply(items, _toConsumableArray(all.slice(prev, next + 1))); // Display three items, even if the first / last one is selected
+  items.push.apply(items, toConsumableArray(all.slice(prev, next + 1))); // Display three items, even if the first / last one is selected
 
   if (selected === last) {
     items.unshift(last - 2);
@@ -69,10 +69,10 @@ var Pagination = /*#__PURE__*/React.memo(function Pagination(_ref) {
       selected = _ref.selected,
       onChange = _ref.onChange,
       touchMode = _ref.touchMode,
-      props = _objectWithoutProperties(_ref, ["pages", "selected", "onChange", "touchMode"]);
+      props = objectWithoutProperties(_ref, ["pages", "selected", "onChange", "touchMode"]);
 
   var items = paginationItems(pages, selected);
-  return /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
     _css: 2 * GU,
     _css2: 1 * GU
   }), items.map(function (pageIndex, i) {

@@ -1,6 +1,6 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -8,7 +8,7 @@ import { useInside as o } from '../../../node_modules/use-inside/dist/index.js';
 import Bar from '../Bar/Bar.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
 import { useLayout } from '../Layout/Layout.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import IconArrowLeft from '../../icons/components/IconArrowLeft.js';
 import { RADIUS, GU } from '../../style/constants.js';
 
@@ -47,12 +47,12 @@ var _StyledSpan2 = _styled("span").withConfig({
 
 function BackButton(_ref) {
   var label = _ref.label,
-      props = _objectWithoutProperties(_ref, ["label"]);
+      props = objectWithoutProperties(_ref, ["label"]);
 
   var theme = useTheme();
 
   var _useInside = o('Bar:primary'),
-      _useInside2 = _slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray(_useInside, 1),
       insideBarPrimary = _useInside2[0];
 
   var _useLayout = useLayout(),
@@ -60,7 +60,7 @@ function BackButton(_ref) {
 
   var compact = layoutName === 'small';
   var horizontalPadding = (compact ? 2 : 3) * GU;
-  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends({
+  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends_1({
     focusRingRadius: RADIUS,
     focusRingSpacing: 1
   }, props, {

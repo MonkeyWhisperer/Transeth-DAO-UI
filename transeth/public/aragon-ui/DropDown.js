@@ -2,14 +2,14 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index$1 = require('./index-37353731.js');
 var index = require('./index-c33eeeef.js');
-var Viewport = require('./Viewport-d2dce1b4.js');
+var Viewport = require('./Viewport-71f7efe6.js');
 var ButtonBase = require('./ButtonBase.js');
 var Popover = require('./Popover.js');
 var Theme = require('./Theme.js');
@@ -19,9 +19,9 @@ var constants = require('./constants.js');
 var textStyles = require('./text-styles.js');
 var css = require('./css.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./getPrototypeOf-e2e819f3.js');
-require('./defineProperty-fdbd3c46.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./getPrototypeOf-55c9e80c.js');
+require('./defineProperty-3cad0327.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./FocusVisible.js');
@@ -29,18 +29,18 @@ require('./keycodes.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./miscellaneous.js');
 require('./font.js');
-require('./proptypes-0337766e.js');
-require('./web-7e5f0d11.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./proptypes-316e1def.js');
+require('./web-46d746d6.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 require('./RootPortal.js');
-require('./Root-ffe1134e.js');
-require('./components.js');
+require('./Root-07f851a6.js');
 require('./springs.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./components.js');
+require('./IconPropTypes-b9997416.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -58,12 +58,12 @@ function useDropDown(_ref) {
       var selected = _ref.selected;
 
   var _useState = React.useState(displayedLabel),
-      _useState2 = slicedToArray._slicedToArray(_useState, 2),
+      _useState2 = slicedToArray.slicedToArray(_useState, 2),
       selectedLabel = _useState2[0],
       setSelectedLabel = _useState2[1];
 
   var _useState3 = React.useState(false),
-      _useState4 = slicedToArray._slicedToArray(_useState3, 2),
+      _useState4 = slicedToArray.slicedToArray(_useState3, 2),
       opened = _useState4[0],
       setOpened = _useState4[1];
 
@@ -178,7 +178,7 @@ var DropDown = /*#__PURE__*/React__default['default'].memo(function DropDown(_re
       width = _ref2.width,
       active = _ref2.active,
       label = _ref2.label,
-      props = objectWithoutProperties._objectWithoutProperties(_ref2, ["disabled", "header", "items", "onChange", "placeholder", "renderLabel", "selected", "wide", "width", "active", "label"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref2, ["disabled", "header", "items", "onChange", "placeholder", "renderLabel", "selected", "wide", "width", "active", "label"]);
 
   if (active !== undefined) {
     environment.warnOnce('DropDown:active', 'The “active” prop is deprecated. Please use “selected” to pass the selected index instead.');
@@ -194,23 +194,23 @@ var DropDown = /*#__PURE__*/React__default['default'].memo(function DropDown(_re
       vw = _useViewport.width;
 
   var _split = (width || '').split('px'),
-      _split2 = slicedToArray._slicedToArray(_split, 1),
+      _split2 = slicedToArray.slicedToArray(_split, 1),
       _split2$ = _split2[0],
       widthNoPx = _split2$ === void 0 ? MIN_WIDTH : _split2$;
 
   var _useState5 = React.useState(0),
-      _useState6 = slicedToArray._slicedToArray(_useState5, 2),
+      _useState6 = slicedToArray.slicedToArray(_useState5, 2),
       buttonWidth = _useState6[0],
       setButtonWidth = _useState6[1];
 
   var _useState7 = React.useState(true),
-      _useState8 = slicedToArray._slicedToArray(_useState7, 2),
+      _useState8 = slicedToArray.slicedToArray(_useState7, 2),
       measureWidth = _useState8[0],
       setMeasureWidth = _useState8[1]; // Adjust the button width if the item widths are larger than declared width
 
 
   var _useState9 = React.useState(Math.min(widthNoPx, MIN_WIDTH)),
-      _useState10 = slicedToArray._slicedToArray(_useState9, 2),
+      _useState10 = slicedToArray.slicedToArray(_useState9, 2),
       placeholderMinWidth = _useState10[0],
       setPlaceholderMinWidth = _useState10[1];
 
@@ -269,7 +269,7 @@ var DropDown = /*#__PURE__*/React__default['default'].memo(function DropDown(_re
   var Label = renderLabel;
   return /*#__PURE__*/React__default['default'].createElement(index.i, {
     name: "DropDown"
-  }, /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends({
+  }, /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends_1({
     ref: refCallback,
     disabled: disabled,
     onClick: toggle,

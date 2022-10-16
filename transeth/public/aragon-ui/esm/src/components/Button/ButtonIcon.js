@@ -1,5 +1,5 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -21,21 +21,21 @@ function ButtonIcon(_ref) {
   var label = _ref.label,
       children = _ref.children,
       mode = _ref.mode,
-      props = _objectWithoutProperties(_ref, ["label", "children", "mode"]);
+      props = objectWithoutProperties(_ref, ["label", "children", "mode"]);
 
   if (mode !== undefined) {
     warnOnce('ButtonIcon:mode', 'ButtonIcon: the mode prop is deprecated. Please use Button with the icon prop instead.');
   }
 
   if (mode === 'button') {
-    return /*#__PURE__*/React.createElement(ButtonWithRef, _extends({
+    return /*#__PURE__*/React.createElement(ButtonWithRef, _extends_1({
       label: label,
       icon: children,
       display: "icon"
     }, props));
   }
 
-  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends({
+  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends_1({
     title: label
   }, props, {
     _css: 4 * GU,

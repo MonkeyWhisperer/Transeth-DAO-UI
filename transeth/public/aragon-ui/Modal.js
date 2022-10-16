@@ -2,33 +2,33 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
-var web = require('./web-7e5f0d11.js');
+var web = require('./web-46d746d6.js');
 var ButtonIcon = require('./ButtonIcon.js');
 var EscapeOutside = require('./EscapeOutside.js');
 var RootPortal = require('./RootPortal.js');
 var Theme = require('./Theme.js');
-var Viewport = require('./Viewport-d2dce1b4.js');
+var Viewport = require('./Viewport-71f7efe6.js');
 var IconCross = require('./IconCross.js');
 var springs = require('./springs.js');
 var css = require('./css.js');
 var constants = require('./constants.js');
 var miscellaneous = require('./miscellaneous.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 require('./Button.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./index-c33eeeef.js');
 require('./Layout.js');
 require('./breakpoints.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./ButtonBase.js');
 require('./FocusVisible.js');
@@ -39,9 +39,9 @@ require('./font.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
-require('./Root-ffe1134e.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./toConsumableArray-cc0d28a9.js');
+require('./Root-07f851a6.js');
+require('./IconPropTypes-b9997416.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -50,7 +50,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty._defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty.defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 var SPACE_AROUND = 4 * constants.GU;
 
 var _StyledAnimatedDiv = _styled__default['default'](web.extendedAnimated.div).withConfig({
@@ -101,7 +101,7 @@ function Modal(_ref) {
       visible = _ref.visible,
       width = _ref.width,
       closeButton = _ref.closeButton,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["children", "onClose", "onClosed", "padding", "visible", "width", "closeButton"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["children", "onClose", "onClosed", "padding", "visible", "width", "closeButton"]);
 
   var theme = Theme.useTheme();
   var viewport = Viewport.useViewport();
@@ -132,7 +132,7 @@ function Modal(_ref) {
     function (_ref2) {
       var opacity = _ref2.opacity,
           scale = _ref2.scale;
-      return /*#__PURE__*/React__default['default'].createElement(_StyledAnimatedDiv, _extends._extends({
+      return /*#__PURE__*/React__default['default'].createElement(_StyledAnimatedDiv, _extends._extends_1({
         style: {
           opacity: opacity
         }

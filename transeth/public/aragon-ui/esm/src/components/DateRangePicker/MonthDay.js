@@ -1,12 +1,12 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled, { css } from 'styled-components';
 import React, { useState } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
 import { HoverIndicator } from './components.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
 
@@ -56,17 +56,17 @@ function MonthDay(_ref) {
       selected = _ref.selected,
       today = _ref.today,
       weekDay = _ref.weekDay,
-      props = _objectWithoutProperties(_ref, ["children", "disabled", "inRange", "rangeBoundaryBegin", "rangeBoundaryEnd", "selected", "today", "weekDay"]);
+      props = objectWithoutProperties(_ref, ["children", "disabled", "inRange", "rangeBoundaryBegin", "rangeBoundaryEnd", "selected", "today", "weekDay"]);
 
   var theme = useTheme();
   var dimmedSelectedColor = theme.selected.alpha(0.09);
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       isHovered = _useState2[0],
       setIsHovered = _useState2[1];
 
-  return /*#__PURE__*/React.createElement(_StyledDiv, _extends({
+  return /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({
     onMouseEnter: function onMouseEnter() {
       return setIsHovered(true);
     },
@@ -115,7 +115,7 @@ var _StyledButtonBase = _styled(ButtonBaseWithFocus).withConfig({
 
 function WrappedMonthDay(_ref2) {
   var onClick = _ref2.onClick,
-      props = _objectWithoutProperties(_ref2, ["onClick"]);
+      props = objectWithoutProperties(_ref2, ["onClick"]);
 
   if (onClick && !props.disabled) {
     return /*#__PURE__*/React.createElement(_StyledButtonBase, {
@@ -127,6 +127,18 @@ function WrappedMonthDay(_ref2) {
     return /*#__PURE__*/React.createElement(MonthDay, props);
   }
 }
+
+WrappedMonthDay.propTypes = {
+  children: propTypes.node,
+  disabled: propTypes.bool,
+  selected: propTypes.bool,
+  inRange: propTypes.bool,
+  rangeBoundaryBegin: propTypes.bool,
+  rangeBoundaryEnd: propTypes.bool,
+  today: propTypes.bool,
+  weekDay: propTypes.bool,
+  onClick: propTypes.func
+};
 
 export default WrappedMonthDay;
 //# sourceMappingURL=MonthDay.js.map

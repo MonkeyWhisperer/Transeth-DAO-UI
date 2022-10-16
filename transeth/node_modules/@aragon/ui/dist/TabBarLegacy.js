@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var toConsumableArray = require('./toConsumableArray-0f2dcfe0.js');
-var getPrototypeOf = require('./getPrototypeOf-e2e819f3.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
+var toConsumableArray = require('./toConsumableArray-cc0d28a9.js');
+var getPrototypeOf = require('./getPrototypeOf-55c9e80c.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -12,9 +12,9 @@ var Theme = require('./Theme.js');
 var font = require('./font.js');
 var miscellaneous = require('./miscellaneous.js');
 var css = require('./css.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./slicedToArray-bb07ac16.js');
+require('./slicedToArray-a8a77f0e.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
@@ -25,19 +25,19 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf._getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf._getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf._possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf.getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf.getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf.possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 var TabBar = /*#__PURE__*/function (_React$Component) {
-  getPrototypeOf._inherits(TabBar, _React$Component);
+  getPrototypeOf.inherits(TabBar, _React$Component);
 
   var _super = _createSuper(TabBar);
 
   function TabBar() {
     var _this;
 
-    getPrototypeOf._classCallCheck(this, TabBar);
+    getPrototypeOf.classCallCheck(this, TabBar);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -45,17 +45,17 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "state", {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "state", {
       displayFocusRing: false
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "_barRef", /*#__PURE__*/React__default['default'].createRef());
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "_barRef", /*#__PURE__*/React__default['default'].createRef());
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "handleMouseDown", function () {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "handleMouseDown", function () {
       _this.disableFocusRing();
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "handleKeydown", function (_ref) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "handleKeydown", function (_ref) {
       var key = _ref.key;
 
       if (key === 'Enter') {
@@ -69,7 +69,7 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
       }
     });
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "handleTabMouseDown", function (_ref2) {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "handleTabMouseDown", function (_ref2) {
       var currentTarget = _ref2.currentTarget;
 
       // We would usually avoid using the DOM when possible, and prefer using a
@@ -84,7 +84,7 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  getPrototypeOf._createClass(TabBar, [{
+  getPrototypeOf.createClass(TabBar, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       document.addEventListener('keydown', this.handleKeydown);
@@ -117,7 +117,7 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
         return;
       }
 
-      var index = toConsumableArray._toConsumableArray(this._barRef.current.childNodes).indexOf(element);
+      var index = toConsumableArray.toConsumableArray(this._barRef.current.childNodes).indexOf(element);
 
       if (index === -1) {
         return;
@@ -159,14 +159,14 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
 /* eslint-disable react/prop-types */
 
 
-defineProperty._defineProperty(TabBar, "propTypes", {
+defineProperty.defineProperty(TabBar, "propTypes", {
   items: index.propTypes.arrayOf(index.propTypes.node).isRequired,
   selected: index.propTypes.number,
   onChange: index.propTypes.func,
   inAppBar: index.propTypes.bool
 });
 
-defineProperty._defineProperty(TabBar, "defaultProps", {
+defineProperty.defineProperty(TabBar, "defaultProps", {
   selected: 0,
   onChange: miscellaneous.noop
 });

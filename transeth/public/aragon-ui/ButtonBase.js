@@ -2,10 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
+var _extends = require('./extends-023d783e.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -17,12 +17,12 @@ var constants = require('./constants.js');
 var environment = require('./environment.js');
 var textStyles = require('./text-styles.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./miscellaneous.js');
 require('./font.js');
 
@@ -33,7 +33,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty._defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty.defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function getElementProps(_ref) {
   var element = _ref.element,
@@ -103,7 +103,7 @@ function ButtonBase(_ref2) {
       onClick = _ref2.onClick,
       onKeyDown = _ref2.onKeyDown,
       showFocusRing = _ref2.showFocusRing,
-      props = objectWithoutProperties._objectWithoutProperties(_ref2, ["disabled", "element", "external", "focusRingRadius", "focusRingSpacing", "focusVisible", "href", "innerRef", "onClick", "onKeyDown", "showFocusRing"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref2, ["disabled", "element", "external", "focusRingRadius", "focusRingSpacing", "focusVisible", "href", "innerRef", "onClick", "onKeyDown", "showFocusRing"]);
 
   var theme = Theme.useTheme(); // `external` defaults to `true` if `href` is present, `false` otherwise.
 
@@ -125,7 +125,7 @@ function ButtonBase(_ref2) {
     disabled: disabled,
     external: external
   }),
-      _getElementProps2 = slicedToArray._slicedToArray(_getElementProps, 2),
+      _getElementProps2 = slicedToArray.slicedToArray(_getElementProps, 2),
       elementType = _getElementProps2[0],
       elementProps = _getElementProps2[1];
 
@@ -140,7 +140,7 @@ function ButtonBase(_ref2) {
       onKeyDown(event);
     }
   }, [elementType, onClick, onKeyDown]);
-  return /*#__PURE__*/React__default['default'].createElement(_StyledButton, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(_StyledButton, _extends._extends_1({
     as: element,
     ref: innerRef,
     onClick: disabled ? undefined : onClick,
@@ -180,7 +180,7 @@ ButtonBase.defaultProps = {
 };
 var ButtonBaseWithFocus = /*#__PURE__*/React__default['default'].forwardRef(function (_ref3, ref) {
   var onFocusProp = _ref3.onFocus,
-      props = objectWithoutProperties._objectWithoutProperties(_ref3, ["onFocus"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref3, ["onFocus"]);
 
   return /*#__PURE__*/React__default['default'].createElement(FocusVisible['default'], null, function (_ref4) {
     var focusVisible = _ref4.focusVisible,
@@ -195,7 +195,7 @@ var ButtonBaseWithFocus = /*#__PURE__*/React__default['default'].forwardRef(func
       onFocus(event);
     };
 
-    return /*#__PURE__*/React__default['default'].createElement(ButtonBase, _extends._extends({
+    return /*#__PURE__*/React__default['default'].createElement(ButtonBase, _extends._extends_1({
       innerRef: ref,
       onFocus: handleFocus,
       focusVisible: focusVisible
@@ -207,7 +207,7 @@ ButtonBaseWithFocus.propTypes = _objectSpread(_objectSpread({}, ButtonBase.propT
 });
 var LinkBase = /*#__PURE__*/React__default['default'].forwardRef(function (props, ref) {
   environment.warnOnce('LinkBase', 'LinkBase is deprecated: please use ButtonBase with a href prop instead.');
-  return /*#__PURE__*/React__default['default'].createElement(ButtonBase, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(ButtonBase, _extends._extends_1({
     ref: ref
   }, props));
 });

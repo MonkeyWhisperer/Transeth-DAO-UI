@@ -1,5 +1,5 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { useContext } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -8,7 +8,7 @@ import { Inside as i } from '../../../node_modules/use-inside/dist/index.js';
 import RootPortal from '../RootPortal/RootPortal.js';
 import { useViewport } from '../../providers/Viewport/Viewport.js';
 import { ToastContext } from '../ToastHub/ToastHub.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { RADIUS, GU } from '../../style/constants.js';
 import { springs } from '../../style/springs.js';
 import { textStyle } from '../../style/text-styles.js';
@@ -49,7 +49,7 @@ var FloatIndicator = /*#__PURE__*/React.memo(function FloatIndicator(_ref) {
   var children = _ref.children,
       visible = _ref.visible,
       shift = _ref.shift,
-      props = _objectWithoutProperties(_ref, ["children", "visible", "shift"]);
+      props = objectWithoutProperties(_ref, ["children", "visible", "shift"]);
 
   var theme = useTheme();
 
@@ -84,7 +84,7 @@ var FloatIndicator = /*#__PURE__*/React.memo(function FloatIndicator(_ref) {
         _css: wide ? 2 * GU : 3 * GU,
         _css2: horizontalSpacingEnd,
         _css3: horizontalSpacing
-      }, /*#__PURE__*/React.createElement(_StyledAnimatedDiv, _extends({
+      }, /*#__PURE__*/React.createElement(_StyledAnimatedDiv, _extends_1({
         style: {
           pointerEvents: visible ? 'auto' : 'none',
           opacity: progress,

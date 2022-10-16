@@ -5025,7 +5025,9 @@ var JSONRPCMethod;
   JSONRPCMethod["eth_signTypedData_v3"] = "eth_signTypedData_v3";
   JSONRPCMethod["eth_signTypedData_v4"] = "eth_signTypedData_v4";
   JSONRPCMethod["eth_signTypedData"] = "eth_signTypedData";
-  JSONRPCMethod["walletlink_arbitrary"] = "walletlink_arbitrary"; // asynchronous pub/sub
+  JSONRPCMethod["walletlink_arbitrary"] = "walletlink_arbitrary";
+  JSONRPCMethod["wallet_addEthereumChain"] = "wallet_addEthereumChain";
+  JSONRPCMethod["wallet_switchEthereumChain"] = "wallet_switchEthereumChain"; // asynchronous pub/sub
 
   JSONRPCMethod["eth_subscribe"] = "eth_subscribe";
   JSONRPCMethod["eth_unsubscribe"] = "eth_unsubscribe"; // asynchronous filter methods
@@ -5518,7 +5520,172 @@ class SubscriptionManager {
 }
 
 exports.SubscriptionManager = SubscriptionManager;
-},{"eth-block-tracker":"../node_modules/eth-block-tracker/src/polling.js","eth-json-rpc-filters/subscriptionManager":"../node_modules/eth-json-rpc-filters/subscriptionManager.js"}],"../node_modules/walletlink/dist/provider/WalletLinkProvider.js":[function(require,module,exports) {
+},{"eth-block-tracker":"../node_modules/eth-block-tracker/src/polling.js","eth-json-rpc-filters/subscriptionManager":"../node_modules/eth-json-rpc-filters/subscriptionManager.js"}],"../node_modules/walletlink/dist/EthereumChain.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.EthereumChain = void 0;
+var EthereumChain;
+
+(function (EthereumChain) {
+  // mainnets
+  EthereumChain[EthereumChain["ETHEREUM_MAINNET"] = 1] = "ETHEREUM_MAINNET";
+  EthereumChain[EthereumChain["OPTIMISM_MAINNET"] = 10] = "OPTIMISM_MAINNET";
+  EthereumChain[EthereumChain["POLYGON_MAINNET"] = 137] = "POLYGON_MAINNET";
+  EthereumChain[EthereumChain["ETHEREUM_CLASSIC_MAINNET"] = 61] = "ETHEREUM_CLASSIC_MAINNET";
+  EthereumChain[EthereumChain["BSC_MAINNET"] = 56] = "BSC_MAINNET";
+  EthereumChain[EthereumChain["FANTOM_MAINNET"] = 250] = "FANTOM_MAINNET";
+  EthereumChain[EthereumChain["ARBITRUM_MAINNET"] = 42161] = "ARBITRUM_MAINNET";
+  EthereumChain[EthereumChain["XDAI_MAINNET"] = 100] = "XDAI_MAINNET";
+  EthereumChain[EthereumChain["AVALANCHE_MAINNET"] = 43114] = "AVALANCHE_MAINNET"; // testnets
+
+  EthereumChain[EthereumChain["ROPSTEN"] = 3] = "ROPSTEN";
+  EthereumChain[EthereumChain["RINKEBY"] = 4] = "RINKEBY";
+  EthereumChain[EthereumChain["GOERLI"] = 5] = "GOERLI";
+  EthereumChain[EthereumChain["KOVAN"] = 42] = "KOVAN";
+  EthereumChain[EthereumChain["OPTIMISM_KOVAN"] = 69] = "OPTIMISM_KOVAN";
+  EthereumChain[EthereumChain["POLYGON_TESTNET"] = 80001] = "POLYGON_TESTNET";
+  EthereumChain[EthereumChain["BSC_TESTNET"] = 97] = "BSC_TESTNET";
+  EthereumChain[EthereumChain["FANTOM_TESTNET"] = 4002] = "FANTOM_TESTNET";
+  EthereumChain[EthereumChain["ARBITRUM_TESTNET"] = 421611] = "ARBITRUM_TESTNET";
+  EthereumChain[EthereumChain["AVALANCHE_FUJI"] = 43113] = "AVALANCHE_FUJI";
+})(EthereumChain = exports.EthereumChain || (exports.EthereumChain = {}));
+
+(function (EthereumChain) {
+  function rpcUrl(thiz) {
+    switch (thiz) {
+      case EthereumChain.ETHEREUM_MAINNET:
+        return "https://mainnet-infura.wallet.coinbase.com";
+
+      case EthereumChain.ROPSTEN:
+        return "https://ropsten-infura.wallet.coinbase.com";
+
+      case EthereumChain.RINKEBY:
+        return "https://rinkeby-infura.wallet.coinbase.com";
+
+      case EthereumChain.KOVAN:
+        return "https://kovan-infura.wallet.coinbase.com";
+
+      case EthereumChain.GOERLI:
+        return "https://goerli-node.wallet.coinbase.com";
+
+      case EthereumChain.OPTIMISM_KOVAN:
+        return "https://optimism-node.wallet.coinbase.com";
+
+      case EthereumChain.OPTIMISM_MAINNET:
+        return "https://optimism-mainnet.wallet.coinbase.com";
+
+      case EthereumChain.POLYGON_MAINNET:
+        return "https://polygon-mainnet-infura.wallet.coinbase.com";
+
+      case EthereumChain.POLYGON_TESTNET:
+        return "https://polygon-mumbai-infura.wallet.coinbase.com";
+
+      case EthereumChain.BSC_MAINNET:
+        return "https://bsc-dataseed.binance.org";
+
+      case EthereumChain.BSC_TESTNET:
+        return "https://data-seed-prebsc-1-s1.binance.org:8545";
+
+      case EthereumChain.FANTOM_MAINNET:
+        return "https://rpcapi.fantom.network";
+
+      case EthereumChain.FANTOM_TESTNET:
+        return "https://rpc.testnet.fantom.network";
+
+      case EthereumChain.ARBITRUM_MAINNET:
+        return "https://l2-mainnet.wallet.coinbase.com?targetName=arbitrum";
+
+      case EthereumChain.ARBITRUM_TESTNET:
+        return "https://rinkeby.arbitrum.io/rpc";
+
+      case EthereumChain.XDAI_MAINNET:
+        return "https://rpc.xdaichain.com";
+
+      case EthereumChain.AVALANCHE_MAINNET:
+        return "https://api.avax.network/ext/bc/C/rpc";
+
+      case EthereumChain.AVALANCHE_FUJI:
+        return "https://api.avax-test.network/ext/bc/C/rpc";
+
+      default:
+        return undefined;
+    }
+  }
+
+  EthereumChain.rpcUrl = rpcUrl;
+
+  function fromChainId(chainId) {
+    switch (Number(chainId)) {
+      // mainnets
+      case EthereumChain.ETHEREUM_MAINNET.valueOf():
+        return EthereumChain.ETHEREUM_MAINNET;
+
+      case EthereumChain.OPTIMISM_MAINNET.valueOf():
+        return EthereumChain.OPTIMISM_MAINNET;
+
+      case EthereumChain.POLYGON_MAINNET.valueOf():
+        return EthereumChain.POLYGON_MAINNET;
+
+      case EthereumChain.ETHEREUM_CLASSIC_MAINNET.valueOf():
+        return EthereumChain.ETHEREUM_CLASSIC_MAINNET;
+
+      case EthereumChain.BSC_MAINNET.valueOf():
+        return EthereumChain.BSC_MAINNET;
+
+      case EthereumChain.FANTOM_MAINNET.valueOf():
+        return EthereumChain.FANTOM_MAINNET;
+
+      case EthereumChain.ARBITRUM_MAINNET.valueOf():
+        return EthereumChain.ARBITRUM_MAINNET;
+
+      case EthereumChain.AVALANCHE_MAINNET.valueOf():
+        return EthereumChain.AVALANCHE_MAINNET;
+
+      case EthereumChain.XDAI_MAINNET.valueOf():
+        return EthereumChain.XDAI_MAINNET;
+      // testnets
+
+      case EthereumChain.ROPSTEN.valueOf():
+        return EthereumChain.ROPSTEN;
+
+      case EthereumChain.RINKEBY.valueOf():
+        return EthereumChain.RINKEBY;
+
+      case EthereumChain.GOERLI.valueOf():
+        return EthereumChain.GOERLI;
+
+      case EthereumChain.KOVAN.valueOf():
+        return EthereumChain.KOVAN;
+
+      case EthereumChain.OPTIMISM_KOVAN.valueOf():
+        return EthereumChain.OPTIMISM_KOVAN;
+
+      case EthereumChain.POLYGON_TESTNET.valueOf():
+        return EthereumChain.POLYGON_TESTNET;
+
+      case EthereumChain.BSC_TESTNET.valueOf():
+        return EthereumChain.BSC_TESTNET;
+
+      case EthereumChain.FANTOM_TESTNET.valueOf():
+        return EthereumChain.FANTOM_TESTNET;
+
+      case EthereumChain.ARBITRUM_TESTNET.valueOf():
+        return EthereumChain.ARBITRUM_TESTNET;
+
+      case EthereumChain.AVALANCHE_FUJI.valueOf():
+        return EthereumChain.AVALANCHE_FUJI;
+
+      default:
+        return undefined;
+    }
+  }
+
+  EthereumChain.fromChainId = fromChainId;
+})(EthereumChain = exports.EthereumChain || (exports.EthereumChain = {}));
+},{}],"../node_modules/walletlink/dist/provider/WalletLinkProvider.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 "use strict"; // Copyright (c) 2018-2020 WalletLink.org <https://www.walletlink.org/>
 // Copyright (c) 2018-2020 Coinbase, Inc. <https://www.coinbase.com/>
@@ -5551,7 +5718,12 @@ const safe_event_emitter_1 = __importDefault(require("@metamask/safe-event-emitt
 
 const SubscriptionManager_1 = require("./SubscriptionManager");
 
+const EthereumChain_1 = require("../EthereumChain");
+
 const LOCAL_STORAGE_ADDRESSES_KEY = "Addresses";
+const DEFAULT_CHAIN_ID_KEY = "DefaultChainId"; // Indicates chain has been switched by switchEthereumChain or addEthereumChain request
+
+const HAS_CHAIN_BEEN_SWITCHED_KEY = "HasChainBeenSwitched";
 
 class WalletLinkProvider extends safe_event_emitter_1.default {
   constructor(options) {
@@ -5567,6 +5739,7 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
     this._sendAsync = this.sendAsync;
     this.setProviderInfo = this.setProviderInfo.bind(this);
     this.updateProviderInfo = this.updateProviderInfo.bind(this);
+    this.getChainId = this.getChainId.bind(this);
     this.setAppInfo = this.setAppInfo.bind(this);
     this.enable = this.enable.bind(this);
     this.close = this.close.bind(this);
@@ -5577,13 +5750,13 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
     this.scanQRCode = this.scanQRCode.bind(this);
     this.arbitraryRequest = this.arbitraryRequest.bind(this);
     this.childRequestEthereumAccounts = this.childRequestEthereumAccounts.bind(this);
-    this._chainId = util_1.ensureIntNumber(options.chainId || 1);
     this._jsonRpcUrl = options.jsonRpcUrl;
     this._overrideIsMetaMask = options.overrideIsMetaMask;
     this._relayProvider = options.relayProvider;
     this._storage = options.storage;
     this._relayEventManager = options.relayEventManager;
-    const chainIdStr = util_1.prepend0x(this._chainId.toString(16)); // indicate that we've connected, for EIP-1193 compliance
+    const chainId = this.getChainId();
+    const chainIdStr = util_1.prepend0x(chainId.toString(16)); // indicate that we've connected, for EIP-1193 compliance
 
     this.emit("connect", {
       chainIdStr
@@ -5617,11 +5790,11 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
   }
 
   get networkVersion() {
-    return this._chainId.toString(10);
+    return this.getChainId().toString(10);
   }
 
   get chainId() {
-    return util_1.prepend0x(this._chainId.toString(16));
+    return util_1.prepend0x(this.getChainId().toString(16));
   }
 
   get isWalletLink() {
@@ -5647,23 +5820,48 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
 
   isConnected() {
     return true;
-  }
+  } // @ts-ignore
+
 
   setProviderInfo(jsonRpcUrl, chainId) {
     if (this.isChainOverridden) return;
-    this.updateProviderInfo(jsonRpcUrl, chainId, false);
+    this.updateProviderInfo(jsonRpcUrl, this.getChainId(), false);
   }
 
   updateProviderInfo(jsonRpcUrl, chainId, fromRelay) {
-    if (fromRelay) this.isChainOverridden = true;
-    const originalChainId = this._chainId;
-    this._chainId = util_1.ensureIntNumber(chainId);
-    const chainChanged = this._chainId !== originalChainId;
-    this._jsonRpcUrl = jsonRpcUrl;
+    const hasChainSwitched = this._storage.getItem(HAS_CHAIN_BEEN_SWITCHED_KEY) === "true";
+    if (hasChainSwitched && fromRelay) return;
+
+    if (fromRelay) {
+      this.isChainOverridden = true;
+    }
+
+    this._jsonRpcUrl = jsonRpcUrl; // emit chainChanged event if necessary
+
+    const originalChainId = this.getChainId();
+
+    this._storage.setItem(DEFAULT_CHAIN_ID_KEY, chainId.toString(10));
+
+    const chainChanged = util_1.ensureIntNumber(chainId) !== originalChainId;
 
     if (chainChanged || !this.hasMadeFirstChainChangedEmission) {
-      this.emit("chainChanged", this._chainId);
+      this.emit("chainChanged", this.getChainId());
       this.hasMadeFirstChainChangedEmission = true;
+    }
+  }
+
+  async switchEthereumChain(rpcUrl, chainId) {
+    if (util_1.ensureIntNumber(chainId) === this.getChainId()) {
+      return;
+    }
+
+    const relay = await this.initializeRelay();
+    const res = await relay.switchEthereumChain(chainId.toString(10));
+
+    if (res.result === true) {
+      this._storage.setItem(HAS_CHAIN_BEEN_SWITCHED_KEY, "true");
+
+      this.updateProviderInfo(rpcUrl, chainId, false);
     }
   }
 
@@ -5841,7 +6039,13 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
       throw new Error("addresses is not an array");
     }
 
-    this._addresses = addresses.map(address => util_1.ensureAddressString(address));
+    const newAddresses = addresses.map(address => util_1.ensureAddressString(address));
+
+    if (JSON.stringify(newAddresses) === JSON.stringify(this._addresses)) {
+      return;
+    }
+
+    this._addresses = newAddresses;
     this.emit("accountsChanged", this._addresses);
 
     this._storage.setItem(LOCAL_STORAGE_ADDRESSES_KEY, addresses.join(" "));
@@ -5970,6 +6174,12 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
 
       case JSONRPC_1.JSONRPCMethod.walletlink_arbitrary:
         return this._walletlink_arbitrary(params);
+
+      case JSONRPC_1.JSONRPCMethod.wallet_addEthereumChain:
+        return this._wallet_addEthereumChain(params);
+
+      case JSONRPC_1.JSONRPCMethod.wallet_switchEthereumChain:
+        return this._wallet_switchEthereumChain(params);
     }
 
     if (!this._jsonRpcUrl) throw Error("Error: No jsonRpcUrl provided");
@@ -6066,7 +6276,7 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
     const maxFeePerGas = tx.maxFeePerGas != null ? util_1.ensureBN(tx.maxFeePerGas) : null;
     const maxPriorityFeePerGas = tx.maxPriorityFeePerGas != null ? util_1.ensureBN(tx.maxPriorityFeePerGas) : null;
     const gasLimit = tx.gas != null ? util_1.ensureBN(tx.gas) : null;
-    const chainId = this._chainId;
+    const chainId = this.getChainId();
     return {
       fromAddress,
       toAddress,
@@ -6130,11 +6340,17 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
   }
 
   _net_version() {
-    return this._chainId.toString(10);
+    return this.getChainId().toString(10);
   }
 
   _eth_chainId() {
-    return util_1.hexStringFromIntNumber(this._chainId);
+    return util_1.hexStringFromIntNumber(this.getChainId());
+  }
+
+  getChainId() {
+    const chainIdStr = this._storage.getItem(DEFAULT_CHAIN_ID_KEY) || "1";
+    const chainId = parseInt(chainIdStr, 10);
+    return util_1.ensureIntNumber(chainId);
   }
 
   async _eth_requestAccounts() {
@@ -6225,7 +6441,7 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
   async _eth_sendRawTransaction(params) {
     const signedTransaction = util_1.ensureBuffer(params[0]);
     const relay = await this.initializeRelay();
-    const res = await relay.submitEthereumTransaction(signedTransaction, this._chainId);
+    const res = await relay.submitEthereumTransaction(signedTransaction, this.getChainId());
     return {
       jsonrpc: "2.0",
       id: 0,
@@ -6315,6 +6531,58 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
     };
   }
 
+  async _wallet_addEthereumChain(params) {
+    const request = params[0];
+    const chainIdNumber = parseInt(request.chainId, 16);
+    const ethereumChain = EthereumChain_1.EthereumChain.fromChainId(BigInt(chainIdNumber));
+
+    if (ethereumChain === undefined) {
+      return {
+        jsonrpc: '2.0',
+        id: 0,
+        error: {
+          code: 2,
+          message: `chainId ${request.chainId} not supported`
+        }
+      };
+    }
+
+    const rpcUrl = EthereumChain_1.EthereumChain.rpcUrl(ethereumChain); // @ts-ignore
+
+    await this.switchEthereumChain(rpcUrl, parseInt(request.chainId, 16));
+    return {
+      jsonrpc: '2.0',
+      id: 0,
+      result: null
+    };
+  }
+
+  async _wallet_switchEthereumChain(params) {
+    const request = params[0];
+    const chainIdNumber = parseInt(request.chainId, 16);
+    const ethereumChain = EthereumChain_1.EthereumChain.fromChainId(BigInt(chainIdNumber));
+
+    if (ethereumChain === undefined) {
+      return {
+        jsonrpc: '2.0',
+        id: 0,
+        error: {
+          code: 2,
+          message: `chainId ${request.chainId} not supported`
+        }
+      };
+    }
+
+    const rpcUrl = EthereumChain_1.EthereumChain.rpcUrl(ethereumChain); // @ts-ignore
+
+    await this.switchEthereumChain(rpcUrl, parseInt(request.chainId, 16));
+    return {
+      jsonrpc: "2.0",
+      id: 0,
+      result: null
+    };
+  }
+
   _eth_uninstallFilter(params) {
     const filterId = util_1.ensureHexString(params[0]);
     return this._filterPolyfill.uninstallFilter(filterId);
@@ -6364,11 +6632,12 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
     }
 
     return this._relayProvider().then(relay => {
+      relay.setAccountsCallback(accounts => this._setAddresses(accounts));
       relay.setChainIdCallback(chainId => {
         this.updateProviderInfo(this._jsonRpcUrl, parseInt(chainId, 10), true);
       });
       relay.setJsonRpcUrlCallback(jsonRpcUrl => {
-        this.updateProviderInfo(jsonRpcUrl, this._chainId, true);
+        this.updateProviderInfo(jsonRpcUrl, this.getChainId(), true);
       });
       this._relay = relay;
       return relay;
@@ -6378,7 +6647,7 @@ class WalletLinkProvider extends safe_event_emitter_1.default {
 }
 
 exports.WalletLinkProvider = WalletLinkProvider;
-},{"bn.js":"../node_modules/walletlink/node_modules/bn.js/lib/bn.js","../util":"../node_modules/walletlink/dist/util.js","../vendor-js/eth-eip712-util":"../node_modules/walletlink/dist/vendor-js/eth-eip712-util/index.js","./FilterPolyfill":"../node_modules/walletlink/dist/provider/FilterPolyfill.js","./JSONRPC":"../node_modules/walletlink/dist/provider/JSONRPC.js","eth-rpc-errors":"../node_modules/walletlink/node_modules/eth-rpc-errors/dist/index.js","@metamask/safe-event-emitter":"../node_modules/@metamask/safe-event-emitter/index.js","./SubscriptionManager":"../node_modules/walletlink/dist/provider/SubscriptionManager.js","buffer":"../node_modules/node-libs-browser/node_modules/buffer/index.js"}],"../node_modules/walletlink/dist/lib/ScopedLocalStorage.js":[function(require,module,exports) {
+},{"bn.js":"../node_modules/walletlink/node_modules/bn.js/lib/bn.js","../util":"../node_modules/walletlink/dist/util.js","../vendor-js/eth-eip712-util":"../node_modules/walletlink/dist/vendor-js/eth-eip712-util/index.js","./FilterPolyfill":"../node_modules/walletlink/dist/provider/FilterPolyfill.js","./JSONRPC":"../node_modules/walletlink/dist/provider/JSONRPC.js","eth-rpc-errors":"../node_modules/walletlink/node_modules/eth-rpc-errors/dist/index.js","@metamask/safe-event-emitter":"../node_modules/@metamask/safe-event-emitter/index.js","./SubscriptionManager":"../node_modules/walletlink/dist/provider/SubscriptionManager.js","../EthereumChain":"../node_modules/walletlink/dist/EthereumChain.js","buffer":"../node_modules/node-libs-browser/node_modules/buffer/index.js"}],"../node_modules/walletlink/dist/lib/ScopedLocalStorage.js":[function(require,module,exports) {
 "use strict"; // Copyright (c) 2018-2020 WalletLink.org <https://www.walletlink.org/>
 // Copyright (c) 2018-2020 Coinbase, Inc. <https://www.coinbase.com/>
 // Licensed under the Apache License, version 2.0
@@ -6488,23 +6757,23 @@ exports.injectCssReset = injectCssReset;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.render = S;
-exports.hydrate = q;
-exports.h = exports.createElement = v;
-exports.Fragment = d;
-exports.createRef = p;
 exports.Component = _;
+exports.Fragment = d;
 exports.cloneElement = B;
 exports.createContext = D;
-exports.toChildArray = A;
+exports.h = exports.createElement = v;
+exports.createRef = p;
+exports.hydrate = q;
 exports.options = exports.isValidElement = void 0;
+exports.render = S;
+exports.toChildArray = A;
 var n,
     l,
     u,
     i,
     t,
-    o,
     r,
+    o,
     f,
     e = {},
     c = [],
@@ -6525,22 +6794,22 @@ function h(n) {
 
 function v(l, u, i) {
   var t,
-      o,
       r,
+      o,
       f = {};
 
-  for (r in u) "key" == r ? t = u[r] : "ref" == r ? o = u[r] : f[r] = u[r];
+  for (o in u) "key" == o ? t = u[o] : "ref" == o ? r = u[o] : f[o] = u[o];
 
-  if (arguments.length > 2 && (f.children = arguments.length > 3 ? n.call(arguments, 2) : i), "function" == typeof l && null != l.defaultProps) for (r in l.defaultProps) void 0 === f[r] && (f[r] = l.defaultProps[r]);
-  return y(l, f, t, o, null);
+  if (arguments.length > 2 && (f.children = arguments.length > 3 ? n.call(arguments, 2) : i), "function" == typeof l && null != l.defaultProps) for (o in l.defaultProps) void 0 === f[o] && (f[o] = l.defaultProps[o]);
+  return y(l, f, t, r, null);
 }
 
-function y(n, i, t, o, r) {
+function y(n, i, t, r, o) {
   var f = {
     type: n,
     props: i,
     key: t,
-    ref: o,
+    ref: r,
     __k: null,
     __: null,
     __b: 0,
@@ -6549,9 +6818,9 @@ function y(n, i, t, o, r) {
     __c: null,
     __h: null,
     constructor: void 0,
-    __v: null == r ? ++u : r
+    __v: null == o ? ++u : o
   };
-  return null != l.vnode && l.vnode(f), f;
+  return null == o && null != l.vnode && l.vnode(f), f;
 }
 
 function p() {
@@ -6590,19 +6859,19 @@ function b(n) {
 }
 
 function m(n) {
-  (!n.__d && (n.__d = !0) && t.push(n) && !g.__r++ || r !== l.debounceRendering) && ((r = l.debounceRendering) || o)(g);
+  (!n.__d && (n.__d = !0) && t.push(n) && !g.__r++ || o !== l.debounceRendering) && ((o = l.debounceRendering) || r)(g);
 }
 
 function g() {
   for (var n; g.__r = t.length;) n = t.sort(function (n, l) {
     return n.__v.__b - l.__v.__b;
   }), t = [], n.some(function (n) {
-    var l, u, i, t, o, r;
-    n.__d && (o = (t = (l = n).__v).__e, (r = l.__P) && (u = [], (i = a({}, t)).__v = t.__v + 1, j(r, t, i, l.__n, void 0 !== r.ownerSVGElement, null != t.__h ? [o] : null, u, null == o ? k(t) : o, t.__h), z(u, t), t.__e != o && b(t)));
+    var l, u, i, t, r, o;
+    n.__d && (r = (t = (l = n).__v).__e, (o = l.__P) && (u = [], (i = a({}, t)).__v = t.__v + 1, j(o, t, i, l.__n, void 0 !== o.ownerSVGElement, null != t.__h ? [r] : null, u, null == r ? k(t) : r, t.__h), z(u, t), t.__e != r && b(t)));
   });
 }
 
-function w(n, l, u, i, t, o, r, f, s, a) {
+function w(n, l, u, i, t, r, o, f, s, a) {
   var h,
       v,
       p,
@@ -6624,7 +6893,7 @@ function w(n, l, u, i, t, o, r, f, s, a) {
 
       p = null;
     }
-    j(n, _, p = p || e, t, o, r, f, s, a), b = _.__e, (v = _.ref) && p.ref != v && (g || (g = []), p.ref && g.push(p.ref, null, _), g.push(v, _.__c || b, _)), null != b ? (null == m && (m = b), "function" == typeof _.type && null != _.__k && _.__k === p.__k ? _.__d = s = x(_, s, n) : s = P(n, _, p, w, b, s), a || "option" !== u.type ? "function" == typeof u.type && (u.__d = s) : n.value = "") : s && p.__e == s && s.parentNode != n && (s = k(p));
+    j(n, _, p = p || e, t, r, o, f, s, a), b = _.__e, (v = _.ref) && p.ref != v && (g || (g = []), p.ref && g.push(p.ref, null, _), g.push(v, _.__c || b, _)), null != b ? (null == m && (m = b), "function" == typeof _.type && _.__k === p.__k ? _.__d = s = x(_, s, n) : s = P(n, _, p, w, b, s), "function" == typeof u.type && (u.__d = s)) : s && p.__e == s && s.parentNode != n && (s = k(p));
   }
 
   for (u.__e = m, h = A; h--;) null != w[h] && ("function" == typeof u.type && null != w[h].__e && w[h].__e == u.__d && (u.__d = k(i, h + 1)), N(w[h], w[h]));
@@ -6633,9 +6902,7 @@ function w(n, l, u, i, t, o, r, f, s, a) {
 }
 
 function x(n, l, u) {
-  var i, t;
-
-  for (i = 0; i < n.__k.length; i++) (t = n.__k[i]) && (t.__ = n, l = "function" == typeof t.type ? x(t, l, u) : P(u, t, t, n.__k, t.__e, l));
+  for (var i, t = n.__k, r = 0; t && r < t.length; r++) (i = t[r]) && (i.__ = n, l = "function" == typeof i.type ? x(i, l, u) : P(u, i, i, t, i.__e, l));
 
   return l;
 }
@@ -6646,22 +6913,22 @@ function A(n, l) {
   }) : l.push(n)), l;
 }
 
-function P(n, l, u, i, t, o) {
-  var r, f, e;
-  if (void 0 !== l.__d) r = l.__d, l.__d = void 0;else if (null == u || t != o || null == t.parentNode) n: if (null == o || o.parentNode !== n) n.appendChild(t), r = null;else {
-    for (f = o, e = 0; (f = f.nextSibling) && e < i.length; e += 2) if (f == t) break n;
+function P(n, l, u, i, t, r) {
+  var o, f, e;
+  if (void 0 !== l.__d) o = l.__d, l.__d = void 0;else if (null == u || t != r || null == t.parentNode) n: if (null == r || r.parentNode !== n) n.appendChild(t), o = null;else {
+    for (f = r, e = 0; (f = f.nextSibling) && e < i.length; e += 2) if (f == t) break n;
 
-    n.insertBefore(t, o), r = o;
+    n.insertBefore(t, r), o = r;
   }
-  return void 0 !== r ? r : t.nextSibling;
+  return void 0 !== o ? o : t.nextSibling;
 }
 
 function C(n, l, u, i, t) {
-  var o;
+  var r;
 
-  for (o in u) "children" === o || "key" === o || o in l || H(n, o, null, u[o], i);
+  for (r in u) "children" === r || "key" === r || r in l || H(n, r, null, u[r], i);
 
-  for (o in l) t && "function" != typeof l[o] || "children" === o || "key" === o || "value" === o || "checked" === o || u[o] === l[o] || H(n, o, l[o], u[o], i);
+  for (r in l) t && "function" != typeof l[r] || "children" === r || "key" === r || "value" === r || "checked" === r || u[r] === l[r] || H(n, r, l[r], u[r], i);
 }
 
 function $(n, l, u) {
@@ -6669,14 +6936,14 @@ function $(n, l, u) {
 }
 
 function H(n, l, u, i, t) {
-  var o;
+  var r;
 
   n: if ("style" === l) {
     if ("string" == typeof u) n.style.cssText = u;else {
       if ("string" == typeof i && (n.style.cssText = i = ""), i) for (l in i) u && l in u || $(n.style, l, "");
       if (u) for (l in u) i && u[l] === i[l] || $(n.style, l, u[l]);
     }
-  } else if ("o" === l[0] && "n" === l[1]) o = l !== (l = l.replace(/Capture$/, "")), l = l.toLowerCase() in n ? l.toLowerCase().slice(2) : l.slice(2), n.l || (n.l = {}), n.l[l + o] = u, u ? i || n.addEventListener(l, o ? T : I, o) : n.removeEventListener(l, o ? T : I, o);else if ("dangerouslySetInnerHTML" !== l) {
+  } else if ("o" === l[0] && "n" === l[1]) r = l !== (l = l.replace(/Capture$/, "")), l = l.toLowerCase() in n ? l.toLowerCase().slice(2) : l.slice(2), n.l || (n.l = {}), n.l[l + r] = u, u ? i || n.addEventListener(l, r ? T : I, r) : n.removeEventListener(l, r ? T : I, r);else if ("dangerouslySetInnerHTML" !== l) {
     if (t) l = l.replace(/xlink[H:h]/, "h").replace(/sName$/, "s");else if ("href" !== l && "list" !== l && "form" !== l && "tabIndex" !== l && "download" !== l && l in n) try {
       n[l] = null == u ? "" : u;
       break n;
@@ -6693,7 +6960,7 @@ function T(n) {
   this.l[n.type + !0](l.event ? l.event(n) : n);
 }
 
-function j(n, u, i, t, o, r, f, e, c) {
+function j(n, u, i, t, r, o, f, e, c) {
   var s,
       h,
       v,
@@ -6707,7 +6974,7 @@ function j(n, u, i, t, o, r, f, e, c) {
       A,
       P = u.type;
   if (void 0 !== u.constructor) return null;
-  null != i.__h && (c = i.__h, e = u.__e = i.__e, u.__h = null, r = [e]), (s = l.__b) && s(u);
+  null != i.__h && (c = i.__h, e = u.__e = i.__e, u.__h = null, o = [e]), (s = l.__b) && s(u);
 
   try {
     n: if ("function" == typeof P) {
@@ -6723,12 +6990,12 @@ function j(n, u, i, t, o, r, f, e, c) {
           h.componentDidUpdate(y, p, k);
         });
       }
-      h.context = x, h.props = m, h.state = h.__s, (s = l.__r) && s(u), h.__d = !1, h.__v = u, h.__P = n, s = h.render(h.props, h.state, h.context), h.state = h.__s, null != h.getChildContext && (t = a(a({}, t), h.getChildContext())), v || null == h.getSnapshotBeforeUpdate || (k = h.getSnapshotBeforeUpdate(y, p)), A = null != s && s.type === d && null == s.key ? s.props.children : s, w(n, Array.isArray(A) ? A : [A], u, i, t, o, r, f, e, c), h.base = u.__e, u.__h = null, h.__h.length && f.push(h), b && (h.__E = h.__ = null), h.__e = !1;
-    } else null == r && u.__v === i.__v ? (u.__k = i.__k, u.__e = i.__e) : u.__e = L(i.__e, u, i, t, o, r, f, c);
+      h.context = x, h.props = m, h.state = h.__s, (s = l.__r) && s(u), h.__d = !1, h.__v = u, h.__P = n, s = h.render(h.props, h.state, h.context), h.state = h.__s, null != h.getChildContext && (t = a(a({}, t), h.getChildContext())), v || null == h.getSnapshotBeforeUpdate || (k = h.getSnapshotBeforeUpdate(y, p)), A = null != s && s.type === d && null == s.key ? s.props.children : s, w(n, Array.isArray(A) ? A : [A], u, i, t, r, o, f, e, c), h.base = u.__e, u.__h = null, h.__h.length && f.push(h), b && (h.__E = h.__ = null), h.__e = !1;
+    } else null == o && u.__v === i.__v ? (u.__k = i.__k, u.__e = i.__e) : u.__e = L(i.__e, u, i, t, r, o, f, c);
 
     (s = l.diffed) && s(u);
   } catch (n) {
-    u.__v = null, (c || null != r) && (u.__e = e, u.__h = !!c, r[r.indexOf(e)] = null), l.__e(n, u, i);
+    u.__v = null, (c || null != o) && (u.__e = e, u.__h = !!c, o[o.indexOf(e)] = null), l.__e(n, u, i);
   }
 }
 
@@ -6744,7 +7011,7 @@ function z(n, u) {
   });
 }
 
-function L(l, u, i, t, o, r, f, c) {
+function L(l, u, i, t, r, o, f, c) {
   var s,
       a,
       v,
@@ -6752,23 +7019,23 @@ function L(l, u, i, t, o, r, f, c) {
       p = u.props,
       d = u.type,
       _ = 0;
-  if ("svg" === d && (o = !0), null != r) for (; _ < r.length; _++) if ((s = r[_]) && (s === l || (d ? s.localName == d : 3 == s.nodeType))) {
-    l = s, r[_] = null;
+  if ("svg" === d && (r = !0), null != o) for (; _ < o.length; _++) if ((s = o[_]) && (s === l || (d ? s.localName == d : 3 == s.nodeType))) {
+    l = s, o[_] = null;
     break;
   }
 
   if (null == l) {
     if (null === d) return document.createTextNode(p);
-    l = o ? document.createElementNS("http://www.w3.org/2000/svg", d) : document.createElement(d, p.is && p), r = null, c = !1;
+    l = r ? document.createElementNS("http://www.w3.org/2000/svg", d) : document.createElement(d, p.is && p), o = null, c = !1;
   }
 
   if (null === d) y === p || c && l.data === p || (l.data = p);else {
-    if (r = r && n.call(l.childNodes), a = (y = i.props || e).dangerouslySetInnerHTML, v = p.dangerouslySetInnerHTML, !c) {
-      if (null != r) for (y = {}, _ = 0; _ < l.attributes.length; _++) y[l.attributes[_].name] = l.attributes[_].value;
+    if (o = o && n.call(l.childNodes), a = (y = i.props || e).dangerouslySetInnerHTML, v = p.dangerouslySetInnerHTML, !c) {
+      if (null != o) for (y = {}, _ = 0; _ < l.attributes.length; _++) y[l.attributes[_].name] = l.attributes[_].value;
       (v || a) && (v && (a && v.__html == a.__html || v.__html === l.innerHTML) || (l.innerHTML = v && v.__html || ""));
     }
 
-    if (C(l, p, y, o, c), v) u.__k = [];else if (_ = u.props.children, w(l, Array.isArray(_) ? _ : [_], u, i, t, o && "foreignObject" !== d, r, f, r ? r[0] : i.__k && k(i, 0), c), null != r) for (_ = r.length; _--;) null != r[_] && h(r[_]);
+    if (C(l, p, y, r, c), v) u.__k = [];else if (_ = u.props.children, w(l, Array.isArray(_) ? _ : [_], u, i, t, r && "foreignObject" !== d, o, f, o ? o[0] : i.__k && k(i, 0), c), null != o) for (_ = o.length; _--;) null != o[_] && h(o[_]);
     c || ("value" in p && void 0 !== (_ = p.value) && (_ !== l.value || "progress" === d && !_) && H(l, "value", _, y.value, !1), "checked" in p && void 0 !== (_ = p.checked) && _ !== l.checked && H(l, "checked", _, y.checked, !1));
   }
   return l;
@@ -6783,7 +7050,7 @@ function M(n, u, i) {
 }
 
 function N(n, u, i) {
-  var t, o;
+  var t, r;
 
   if (l.unmount && l.unmount(n), (t = n.ref) && (t.current && t.current !== n.__e || M(t, null, u)), null != (t = n.__c)) {
     if (t.componentWillUnmount) try {
@@ -6794,7 +7061,7 @@ function N(n, u, i) {
     t.base = t.__P = null;
   }
 
-  if (t = n.__k) for (o = 0; o < t.length; o++) t[o] && N(t[o], u, "function" != typeof n.type);
+  if (t = n.__k) for (r = 0; r < t.length; r++) t[r] && N(t[r], u, "function" != typeof n.type);
   i || null == n.__e || h(n.__e), n.__e = n.__d = void 0;
 }
 
@@ -6803,8 +7070,8 @@ function O(n, l, u) {
 }
 
 function S(u, i, t) {
-  var o, r, f;
-  l.__ && l.__(u, i), r = (o = "function" == typeof t) ? null : t && t.__k || i.__k, f = [], j(i, u = (!o && t || i).__k = v(d, null, [u]), r || e, e, void 0 !== i.ownerSVGElement, !o && t ? [t] : r ? null : i.firstChild ? n.call(i.childNodes) : null, f, !o && t ? t : r ? r.__e : i.firstChild, o), z(f, u);
+  var r, o, f;
+  l.__ && l.__(u, i), o = (r = "function" == typeof t) ? null : t && t.__k || i.__k, f = [], j(i, u = (!r && t || i).__k = v(d, null, [u]), o || e, e, void 0 !== i.ownerSVGElement, !r && t ? [t] : o ? null : i.firstChild ? n.call(i.childNodes) : null, f, !r && t ? t : o ? o.__e : i.firstChild, r), z(f, u);
 }
 
 function q(n, l) {
@@ -6813,13 +7080,13 @@ function q(n, l) {
 
 function B(l, u, i) {
   var t,
-      o,
       r,
+      o,
       f = a({}, l.props);
 
-  for (r in u) "key" == r ? t = u[r] : "ref" == r ? o = u[r] : f[r] = u[r];
+  for (o in u) "key" == o ? t = u[o] : "ref" == o ? r = u[o] : f[o] = u[o];
 
-  return arguments.length > 2 && (f.children = arguments.length > 3 ? n.call(arguments, 2) : i), y(l.type, f, t || l.key, o || l.ref, null);
+  return arguments.length > 2 && (f.children = arguments.length > 3 ? n.call(arguments, 2) : i), y(l.type, f, t || l.key, r || l.ref, null);
 }
 
 function D(n, l) {
@@ -6865,7 +7132,7 @@ n = c.slice, exports.options = l = {
   u = null != this.__s && this.__s !== this.state ? this.__s : this.__s = a({}, this.state), "function" == typeof n && (n = n(a({}, u), this.props)), n && a(u, n), null != n && this.__v && (l && this.__h.push(l), m(this));
 }, _.prototype.forceUpdate = function (n) {
   this.__v && (this.__e = !0, n && this.__h.push(n), m(this));
-}, _.prototype.render = d, t = [], o = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, g.__r = 0, f = 0;
+}, _.prototype.render = d, t = [], r = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, g.__r = 0, f = 0;
 },{}],"../node_modules/clsx/dist/clsx.m.js":[function(require,module,exports) {
 "use strict";
 
@@ -6927,17 +7194,17 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.useState = l;
-exports.useReducer = p;
+exports.useCallback = F;
+exports.useContext = T;
+exports.useDebugValue = d;
 exports.useEffect = y;
-exports.useLayoutEffect = h;
-exports.useRef = s;
-exports.useImperativeHandle = _;
-exports.useMemo = d;
-exports.useCallback = A;
-exports.useContext = F;
-exports.useDebugValue = T;
 exports.useErrorBoundary = q;
+exports.useImperativeHandle = _;
+exports.useLayoutEffect = h;
+exports.useMemo = A;
+exports.useReducer = p;
+exports.useRef = s;
+exports.useState = l;
 
 var _preact = require("preact");
 
@@ -6984,7 +7251,7 @@ function h(r, o) {
 }
 
 function s(n) {
-  return o = 5, d(function () {
+  return o = 5, A(function () {
     return {
       current: n
     };
@@ -6997,24 +7264,24 @@ function _(n, t, u) {
   }, null == u ? u : u.concat(n));
 }
 
-function d(n, u) {
+function A(n, u) {
   var r = m(t++, 7);
   return k(r.__H, u) && (r.__ = n(), r.__H = u, r.__h = n), r.__;
 }
 
-function A(n, t) {
-  return o = 8, d(function () {
+function F(n, t) {
+  return o = 8, A(function () {
     return n;
   }, t);
 }
 
-function F(n) {
+function T(n) {
   var r = u.context[n.__c],
       o = m(t++, 9);
   return o.c = n, r ? (null == o.__ && (o.__ = !0, r.sub(u)), r.props.value) : n.__;
 }
 
-function T(t, u) {
+function d(t, u) {
   _preact.options.useDebugValue && _preact.options.useDebugValue(u ? u(t) : t);
 }
 
@@ -7055,7 +7322,7 @@ _preact.options.__b = function (n) {
         r = setTimeout(u, 100);
 
     b && (t = requestAnimationFrame(u));
-  })(x)), u = void 0;
+  })(x)), u = null;
 }, _preact.options.__c = function (t, u) {
   u.some(function (t) {
     try {
@@ -8982,6 +9249,10 @@ class WalletLinkSdkUI extends WalletLinkUI_1.WalletLinkUI {
 
   setConnectDisabled(connectDisabled) {
     this.linkFlow.setConnectDisabled(connectDisabled);
+  } // @ts-ignore
+
+
+  switchEthereumChain(options) {// no-op
   }
 
   requestEthereumAccounts(options) {
@@ -9025,6 +9296,10 @@ class WalletLinkSdkUI extends WalletLinkUI_1.WalletLinkUI {
   }
 
   inlineAccountsResponse() {
+    return false;
+  }
+
+  inlineSwitchEthereumChain() {
     return false;
   }
 
@@ -10293,6 +10568,8 @@ var Web3Method;
   Web3Method["scanQRCode"] = "scanQRCode";
   Web3Method["arbitrary"] = "arbitrary";
   Web3Method["childRequestEthereumAccounts"] = "childRequestEthereumAccounts";
+  Web3Method["addEthereumChain"] = "addEthereumChain";
+  Web3Method["switchEthereumChain"] = "switchEthereumChain";
 })(Web3Method = exports.Web3Method || (exports.Web3Method = {}));
 },{}],"../node_modules/walletlink/dist/relay/RelayMessage.js":[function(require,module,exports) {
 "use strict"; // Copyright (c) 2018-2020 WalletLink.org <https://www.walletlink.org/>
@@ -10361,7 +10638,7 @@ exports.Web3RequestMessage = Web3RequestMessage;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ChildRequestEthereumAccountsResponse = exports.isRequestEthereumAccountsResponse = exports.RequestEthereumAccountsResponse = exports.ErrorResponse = void 0;
+exports.ChildRequestEthereumAccountsResponse = exports.isRequestEthereumAccountsResponse = exports.RequestEthereumAccountsResponse = exports.SwitchEthereumChainResponse = exports.ErrorResponse = void 0;
 
 const Web3Method_1 = require("./Web3Method");
 
@@ -10373,6 +10650,15 @@ function ErrorResponse(method, errorMessage) {
 }
 
 exports.ErrorResponse = ErrorResponse;
+
+function SwitchEthereumChainResponse(isApproved) {
+  return {
+    method: Web3Method_1.Web3Method.switchEthereumChain,
+    result: isApproved
+  };
+}
+
+exports.SwitchEthereumChainResponse = SwitchEthereumChainResponse;
 
 function RequestEthereumAccountsResponse(addresses) {
   return {
@@ -10723,6 +11009,19 @@ class WalletLinkRelay {
       }
     });
   }
+
+  addEthereumChain(chainId, blockExplorerUrls, chainName, iconUrls, nativeCurrency) {
+    return this.sendRequest({
+      method: Web3Method_1.Web3Method.addEthereumChain,
+      params: {
+        chainId,
+        blockExplorerUrls,
+        chainName,
+        iconUrls,
+        nativeCurrency
+      }
+    });
+  }
   /**
    *
    * @param request a request to connect the child session using a parent session's connection
@@ -10760,6 +11059,7 @@ class WalletLinkRelay {
       let hideSnackbarItem = null;
       const id = util_1.randomBytesHex(8);
       const isRequestAccounts = request.method === Web3Method_1.Web3Method.requestEthereumAccounts;
+      const isSwitchEthereumChain = request.method === Web3Method_1.Web3Method.switchEthereumChain;
 
       const cancel = () => {
         this.publishWeb3RequestCanceledEvent(id);
@@ -10788,7 +11088,7 @@ class WalletLinkRelay {
 
           this.ui.requestEthereumAccounts({
             onCancel: cancel,
-            onAccounts: onAccounts
+            onAccounts
           });
         } else {
           this.ui.requestEthereumAccounts({
@@ -10797,6 +11097,33 @@ class WalletLinkRelay {
         }
 
         WalletLinkRelay.accountRequestCallbackIds.add(id);
+      } else if (request.method === Web3Method_1.Web3Method.switchEthereumChain || request.method === Web3Method_1.Web3Method.addEthereumChain) {
+        const cancel = () => {
+          this.handleWeb3ResponseMessage(Web3ResponseMessage_1.Web3ResponseMessage({
+            id,
+            response: Web3Response_1.SwitchEthereumChainResponse(false)
+          }));
+        };
+
+        const approve = () => {
+          this.handleWeb3ResponseMessage(Web3ResponseMessage_1.Web3ResponseMessage({
+            id,
+            response: Web3Response_1.SwitchEthereumChainResponse(true)
+          }));
+        };
+
+        this.ui.switchEthereumChain({
+          onCancel: cancel,
+          onApprove: approve,
+          chainId: request.params.chainId
+        });
+
+        if (!this.ui.inlineSwitchEthereumChain()) {
+          hideSnackbarItem = this.ui.showConnecting({
+            onCancel: cancel,
+            onResetConnection: this.resetAndReload
+          });
+        }
       } else {
         hideSnackbarItem = this.ui.showConnecting({
           onCancel: cancel,
@@ -10815,9 +11142,11 @@ class WalletLinkRelay {
         resolve(response);
       });
 
-      if (!isRequestAccounts || !this.ui.inlineAccountsResponse()) {
-        this.publishWeb3RequestEvent(id, request);
+      if (isRequestAccounts && this.ui.inlineAccountsResponse() || isSwitchEthereumChain && this.ui.inlineSwitchEthereumChain()) {
+        return;
       }
+
+      this.publishWeb3RequestEvent(id, request);
     });
   }
 
@@ -10917,6 +11246,15 @@ class WalletLinkRelay {
     }
   }
 
+  switchEthereumChain(chainId) {
+    return this.sendRequest({
+      method: Web3Method_1.Web3Method.switchEthereumChain,
+      params: {
+        chainId
+      }
+    });
+  }
+
 }
 
 WalletLinkRelay.accountRequestCallbackIds = new Set();
@@ -10963,7 +11301,7 @@ exports.WalletLinkRelayEventManager = WalletLinkRelayEventManager;
 },{"../util":"../node_modules/walletlink/dist/util.js"}],"../node_modules/walletlink/package.json":[function(require,module,exports) {
 module.exports = {
   "name": "walletlink",
-  "version": "2.1.9",
+  "version": "2.1.11",
   "description": "WalletLink JavaScript SDK",
   "keywords": ["cipher", "cipherbrowser", "coinbase", "coinbasewallet", "eth", "ether", "ethereum", "etherium", "injection", "toshi", "wallet", "walletlink", "web3"],
   "main": "dist/index.js",
@@ -11256,7 +11594,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58597" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61626" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

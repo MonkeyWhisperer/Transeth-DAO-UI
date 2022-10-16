@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index$1 = require('./index-37353731.js');
@@ -15,14 +15,14 @@ var constants = require('./constants.js');
 var textStyles = require('./text-styles.js');
 var environment = require('./environment.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./defineProperty-fdbd3c46.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./defineProperty-3cad0327.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./getPrototypeOf-e2e819f3.js');
-require('./toConsumableArray-0f2dcfe0.js');
-require('./Viewport-d2dce1b4.js');
+require('./getPrototypeOf-55c9e80c.js');
+require('./toConsumableArray-cc0d28a9.js');
+require('./Viewport-71f7efe6.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./css.js');
@@ -77,12 +77,12 @@ function Box(_ref) {
   var heading = _ref.heading,
       children = _ref.children,
       padding = _ref.padding,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["heading", "children", "padding"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["heading", "children", "padding"]);
 
   var theme = Theme.useTheme();
 
   var _useInside = index.o('Split:primary'),
-      _useInside2 = slicedToArray._slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray.slicedToArray(_useInside, 1),
       insideSplitPrimary = _useInside2[0];
 
   var _useLayout = Layout.useLayout(),
@@ -104,7 +104,7 @@ function Box(_ref) {
   var contentPadding = padding === undefined ? defaultPadding : padding;
   return /*#__PURE__*/React__default['default'].createElement(index.i, {
     name: "Box"
-  }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends({
+  }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends_1({
     as: heading ? 'section' : 'div'
   }, props, {
     _css: fullWidth ? 0 : constants.RADIUS,

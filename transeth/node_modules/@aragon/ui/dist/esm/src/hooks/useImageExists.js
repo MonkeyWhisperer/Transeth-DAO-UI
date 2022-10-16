@@ -1,4 +1,4 @@
-import _slicedToArray from '../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import slicedToArray from '../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import { useState, useEffect, useMemo } from 'react';
 import cachedMap from '../lib/cached-map.js';
 
@@ -8,17 +8,17 @@ function useImageExists(src) {
   var timeUntilFallback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 50;
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       exists = _useState2[0],
       setExists = _useState2[1];
 
   var _useState3 = useState(true),
-      _useState4 = _slicedToArray(_useState3, 2),
+      _useState4 = slicedToArray(_useState3, 2),
       loading = _useState4[0],
       setLoading = _useState4[1];
 
   var _useState5 = useState(false),
-      _useState6 = _slicedToArray(_useState5, 2),
+      _useState6 = slicedToArray(_useState5, 2),
       displayFallback = _useState6[0],
       setDisplayFallback = _useState6[1];
 

@@ -1,5 +1,5 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useRef, useState, useEffect, useCallback, useMemo } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -11,7 +11,7 @@ import Labels from './Labels.js';
 import { START_DATE, END_DATE } from './consts.js';
 import { handleDateSelect } from './utils.js';
 import Popover from '../Popover/Popover.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { RADIUS, GU } from '../../style/constants.js';
 
 var _StyledPopover = _styled(Popover).withConfig({
@@ -73,17 +73,17 @@ function DateRangePicker(_ref) {
   var labelsRef = useRef();
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       showPicker = _useState2[0],
       setShowPicker = _useState2[1];
 
   var _useState3 = useState(startDateProp),
-      _useState4 = _slicedToArray(_useState3, 2),
+      _useState4 = slicedToArray(_useState3, 2),
       startDate = _useState4[0],
       setStartDate = _useState4[1];
 
   var _useState5 = useState(endDateProp),
-      _useState6 = _slicedToArray(_useState5, 2),
+      _useState6 = slicedToArray(_useState5, 2),
       endDate = _useState6[0],
       setEndDate = _useState6[1]; // on closing the picked, reset state
 
@@ -147,7 +147,7 @@ function DateRangePicker(_ref) {
     var propsDatesInSameMonth = startDateProp && endDateProp && dayjs_min(startDateProp).isSame(dayjs_min(endDateProp), 'month');
     return !compactMode && (propsDatesInSameMonth || !startDateProp);
   }, [compactMode, endDateProp, startDateProp]);
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Labels, _extends({
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Labels, _extends_1({
     ref: labelsRef,
     enabled: showPicker,
     hasSetDates: Boolean(startDateProp && endDateProp),

@@ -2,10 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var React = require('react');
-require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -23,7 +22,7 @@ function initContainsComponent() {
       var children = _ref.children;
 
       var _useState = React.useState(0),
-          _useState2 = slicedToArray._slicedToArray(_useState, 2),
+          _useState2 = slicedToArray.slicedToArray(_useState, 2),
           count = _useState2[0],
           setCount = _useState2[1];
 

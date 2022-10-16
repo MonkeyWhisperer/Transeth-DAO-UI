@@ -8,7 +8,7 @@ var ADDRESS_REGEX = /^0x[0-9a-fA-F]{40}$/;
 var TRUST_WALLET_BASE_URL = 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum';
 var ETHERSCAN_URL = 'etherscan.io';
 var POLYGON_URL = 'polygonscan.com';
-var NETWORK_TYPES_URLS = new Map([['main', ETHERSCAN_URL], ['kovan', "kovan.".concat(ETHERSCAN_URL)], ['rinkeby', "rinkeby.".concat(ETHERSCAN_URL)], ['ropsten', "ropsten.".concat(ETHERSCAN_URL)], ['goerli', "goerli.".concat(ETHERSCAN_URL)], ['matic', POLYGON_URL], ['mumbai', "mumbai.".concat(POLYGON_URL)]]);
+var NETWORK_TYPES_URLS = new Map([['main', ETHERSCAN_URL], ['kovan', "kovan.".concat(ETHERSCAN_URL)], ['rinkeby', "rinkeby.".concat(ETHERSCAN_URL)], ['ropsten', "ropsten.".concat(ETHERSCAN_URL)], ['goerli', "goerli.".concat(ETHERSCAN_URL)], ['matic', POLYGON_URL], ['mumbai', "mumbai.".concat(POLYGON_URL)], ['harmony', "explorer.harmony.one"], ['harmonyTest', "explorer.pops.one"]]);
 var URL_TYPES = new Map([['block', 'block'], ['transaction', 'tx'], ['address', 'address'], ['token', 'token']]);
 
 function _getBlockExplorer(_ref) {

@@ -2,23 +2,23 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
 var Theme = require('./Theme.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./defineProperty-fdbd3c46.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./defineProperty-3cad0327.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./getPrototypeOf-e2e819f3.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./getPrototypeOf-55c9e80c.js');
+require('./toConsumableArray-cc0d28a9.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -50,10 +50,10 @@ function Table(_ref) {
   var header = _ref.header,
       children = _ref.children,
       noSideBorders = _ref.noSideBorders,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["header", "children", "noSideBorders"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["header", "children", "noSideBorders"]);
 
   var theme = Theme.useTheme();
-  return /*#__PURE__*/React__default['default'].createElement(_StyledTable, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledTable, _extends._extends_1({}, props, {
     _css: theme.border,
     _css2: theme.border,
     _css3: noSideBorders ? '0' : "1px solid ".concat(theme.border),

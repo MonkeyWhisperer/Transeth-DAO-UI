@@ -2,33 +2,32 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _commonjsHelpers = require('./_commonjsHelpers-1b94f6bc.js');
-var _extends = require('./extends-5150c1f4.js');
+var _extends = require('./extends-023d783e.js');
 var React = require('react');
 var index = require('./index-37353731.js');
 var _styled = require('styled-components');
-var PublicUrl = require('./PublicUrl-4684cbb6.js');
+var PublicUrl = require('./PublicUrl-a6067988.js');
 var Theme = require('./Theme.js');
 var font = require('./font.js');
 var textStyles = require('./text-styles.js');
-require('./getPrototypeOf-e2e819f3.js');
-require('./defineProperty-fdbd3c46.js');
+require('./_commonjsHelpers-1b94f6bc.js');
+require('./getPrototypeOf-55c9e80c.js');
+require('./defineProperty-3cad0327.js');
 require('./getDisplayName-7f913e84.js');
 require('./url.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-var taggedTemplateLiteral = _commonjsHelpers.createCommonjsModule(function (module) {
 function _taggedTemplateLiteral(strings, raw) {
   if (!raw) {
     raw = strings.slice(0);
@@ -41,11 +40,7 @@ function _taggedTemplateLiteral(strings, raw) {
   }));
 }
 
-module.exports = _taggedTemplateLiteral;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-});
-
-var _taggedTemplateLiteral = /*@__PURE__*/_commonjsHelpers.unwrapExports(taggedTemplateLiteral);
+var taggedTemplateLiteral = _taggedTemplateLiteral;
 
 var overpassLightWoff2 = "cf790334a5a6d45c.woff2";
 
@@ -56,7 +51,7 @@ var overpassSemiBoldWoff2 = "5cfe62515c2f9b42.woff2";
 var overpassMonoLightWoff2 = "3dd21d4f0d28fecb.woff2";
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n\n  // @font-face declarations\n  ", "\n\n  *, *:before, *:after {\n    box-sizing: border-box;\n  }\n  html {\n    -webkit-overflow-scrolling: touch;\n  }\n  body {\n    height: 0;\n    min-height: 100vh;\n    color: ", ";\n    background: ", ";\n    font-family: ", ";\n    ", ";\n  }\n  html, body {\n    overflow: hidden;\n  }\n  body, ul, p, h1, h2, h3, h4, h5, h6 {\n    margin: 0;\n    padding: 0;\n  }\n  button, select, input, textarea, h1, h2, h3, h4, h5, h6 {\n    font-size: inherit;\n    font-family: inherit;\n    font-weight: inherit;\n    line-height: inherit;\n  }\n  a, button, select, input, textarea {\n    color: inherit;\n  }\n  strong, b {\n    font-weight: 600;\n  }\n  ::selection {\n    background: ", ";\n    color: ", ";\n  }\n"]);
+  var data = taggedTemplateLiteral(["\n\n  // @font-face declarations\n  ", "\n\n  *, *:before, *:after {\n    box-sizing: border-box;\n  }\n  html {\n    -webkit-overflow-scrolling: touch;\n  }\n  body {\n    height: 0;\n    min-height: 100vh;\n    color: ", ";\n    background: ", ";\n    font-family: ", ";\n    ", ";\n  }\n  html, body {\n    overflow: hidden;\n  }\n  body, ul, p, h1, h2, h3, h4, h5, h6 {\n    margin: 0;\n    padding: 0;\n  }\n  button, select, input, textarea, h1, h2, h3, h4, h5, h6 {\n    font-size: inherit;\n    font-family: inherit;\n    font-weight: inherit;\n    line-height: inherit;\n  }\n  a, button, select, input, textarea {\n    color: inherit;\n  }\n  strong, b {\n    font-weight: 600;\n  }\n  ::selection {\n    background: ", ";\n    color: ", ";\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -105,7 +100,7 @@ function fontFaceDeclarations(_ref2) {
 
 var BaseStyles = /*#__PURE__*/React__default['default'].memo(function BaseStyles(props) {
   var theme = Theme.useTheme();
-  return /*#__PURE__*/React__default['default'].createElement(GlobalStyle, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(GlobalStyle, _extends._extends_1({}, props, {
     theme: theme,
     fontFaces: fontFaceDeclarations(props),
     textStyleCss: textStyles.textStyle('body2')

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var web3 = require('./web3-3474f303.js');
+var web3 = require('./web3-4ef44cda.js');
 require('./environment.js');
 require('./_commonjsHelpers-1b94f6bc.js');
 require('./miscellaneous.js');

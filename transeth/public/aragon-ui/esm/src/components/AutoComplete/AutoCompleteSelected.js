@@ -1,10 +1,10 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
 import _styled from 'styled-components';
 import React, { useRef, useCallback } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
 import AutoComplete from './AutoComplete.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { RADIUS } from '../../style/constants.js';
 import { noop, identity } from '../../utils/miscellaneous.js';
 
@@ -100,7 +100,7 @@ AutoCompleteSelected.propTypes = {
 };
 var AutoCompleteSelectedMemo = /*#__PURE__*/React.memo(AutoCompleteSelected);
 var AutoCompleteSelected$1 = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  return /*#__PURE__*/React.createElement(AutoCompleteSelectedMemo, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(AutoCompleteSelectedMemo, _extends_1({}, props, {
     forwardedRef: ref
   }));
 });

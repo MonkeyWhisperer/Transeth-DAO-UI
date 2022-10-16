@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -17,10 +17,10 @@ var css = require('./css.js');
 var textStyles = require('./text-styles.js');
 var constants = require('./constants.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./defineProperty-fdbd3c46.js');
-require('./Viewport-d2dce1b4.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./defineProperty-3cad0327.js');
+require('./Viewport-71f7efe6.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./FocusVisible.js');
@@ -29,7 +29,7 @@ require('./miscellaneous.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./font.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -212,7 +212,7 @@ function Button(_ref) {
       mode = _ref.mode,
       size = _ref.size,
       wide = _ref.wide,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["children", "disabled", "display", "icon", "iconOnly", "innerRef", "label", "mode", "size", "wide"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["children", "disabled", "display", "icon", "iconOnly", "innerRef", "label", "mode", "size", "wide"]);
 
   // backward compatibility and deprecated props
   if (iconOnly) {
@@ -245,11 +245,11 @@ function Button(_ref) {
       layoutName = _useLayout.layoutName;
 
   var _useInside = index$1.o('EmptyStateCard'),
-      _useInside2 = slicedToArray._slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray.slicedToArray(_useInside, 1),
       insideEmptyStateCard = _useInside2[0];
 
   var _useInside3 = index$1.o('Header:secondary'),
-      _useInside4 = slicedToArray._slicedToArray(_useInside3, 1),
+      _useInside4 = slicedToArray.slicedToArray(_useInside3, 1),
       insideHeaderSecondary = _useInside4[0]; // Always wide + strong when used as an empty state card action
 
 
@@ -298,7 +298,7 @@ function Button(_ref) {
   var insideData = {
     size: size
   };
-  return /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends_1({
     ref: innerRef,
     focusRingSpacing: border === '0' ? 0 : 1,
     focusRingRadius: constants.RADIUS,
@@ -354,13 +354,13 @@ Button.defaultProps = {
   wide: false
 };
 var ButtonWithRef = /*#__PURE__*/React__default['default'].forwardRef(function (props, ref) {
-  return /*#__PURE__*/React__default['default'].createElement(Button, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(Button, _extends._extends_1({
     innerRef: ref
   }, props));
 });
 ButtonWithRef.Anchor = /*#__PURE__*/React__default['default'].forwardRef(function (props, ref) {
   environment.warnOnce('Button.Anchor', 'Button.Anchor is deprecated: please use Button with a href prop instead.');
-  return /*#__PURE__*/React__default['default'].createElement(ButtonWithRef, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(ButtonWithRef, _extends._extends_1({
     ref: ref
   }, props));
 });

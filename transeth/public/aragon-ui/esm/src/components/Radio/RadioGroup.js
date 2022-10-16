@@ -1,18 +1,18 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { stylingProps } from '../../utils/components.js';
 import { noop } from '../../utils/miscellaneous.js';
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
@@ -21,14 +21,14 @@ var _React$createContext = /*#__PURE__*/React.createContext({}),
     Consumer = _React$createContext.Consumer;
 
 var RadioGroup = /*#__PURE__*/function (_React$PureComponent) {
-  _inherits(RadioGroup, _React$PureComponent);
+  inherits(RadioGroup, _React$PureComponent);
 
   var _super = _createSuper(RadioGroup);
 
   function RadioGroup() {
     var _this;
 
-    _classCallCheck(this, RadioGroup);
+    classCallCheck(this, RadioGroup);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -36,16 +36,16 @@ var RadioGroup = /*#__PURE__*/function (_React$PureComponent) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    defineProperty(assertThisInitialized(_this), "state", {
       // keep track of the radios buttons to handle keyboard navigation
       radios: new Set()
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleChange", function (id) {
+    defineProperty(assertThisInitialized(_this), "handleChange", function (id) {
       _this.props.onChange(id);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "addRadio", function (id) {
+    defineProperty(assertThisInitialized(_this), "addRadio", function (id) {
       _this.setState(function (state) {
         var radios = new Set(state.radios);
         radios.add(id);
@@ -55,7 +55,7 @@ var RadioGroup = /*#__PURE__*/function (_React$PureComponent) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "removeRadio", function (id) {
+    defineProperty(assertThisInitialized(_this), "removeRadio", function (id) {
       _this.setState(function (state) {
         var radios = new Set(state.radios);
         radios.delete(id);
@@ -65,7 +65,7 @@ var RadioGroup = /*#__PURE__*/function (_React$PureComponent) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "selectPrev", function () {
+    defineProperty(assertThisInitialized(_this), "selectPrev", function () {
       var id = _this.getSiblingId(-1);
 
       if (id !== null) {
@@ -73,7 +73,7 @@ var RadioGroup = /*#__PURE__*/function (_React$PureComponent) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "selectNext", function () {
+    defineProperty(assertThisInitialized(_this), "selectNext", function () {
       var id = _this.getSiblingId(1);
 
       if (id !== null) {
@@ -84,12 +84,12 @@ var RadioGroup = /*#__PURE__*/function (_React$PureComponent) {
     return _this;
   }
 
-  _createClass(RadioGroup, [{
+  createClass(RadioGroup, [{
     key: "getSiblingId",
     value: function getSiblingId(position) {
       var selected = this.props.selected;
 
-      var radios = _toConsumableArray(this.state.radios);
+      var radios = toConsumableArray(this.state.radios);
 
       var selectedIndex = selected === undefined ? 0 : radios.indexOf(selected);
       var newSelectedIndex = selectedIndex + position; // no radios
@@ -123,7 +123,7 @@ var RadioGroup = /*#__PURE__*/function (_React$PureComponent) {
       var _this$props = this.props,
           children = _this$props.children,
           selected = _this$props.selected;
-      var focusableId = radios.has(selected) ? selected : _toConsumableArray(radios)[0];
+      var focusableId = radios.has(selected) ? selected : toConsumableArray(radios)[0];
       return /*#__PURE__*/React.createElement(Provider, {
         value: {
           selected: selected,
@@ -134,7 +134,7 @@ var RadioGroup = /*#__PURE__*/function (_React$PureComponent) {
           selectPrev: this.selectPrev,
           selectNext: this.selectNext
         }
-      }, /*#__PURE__*/React.createElement("div", _extends({
+      }, /*#__PURE__*/React.createElement("div", _extends_1({
         role: "radiogroup"
       }, stylingProps(this)), children));
     }
@@ -143,13 +143,13 @@ var RadioGroup = /*#__PURE__*/function (_React$PureComponent) {
   return RadioGroup;
 }(React.PureComponent);
 
-_defineProperty(RadioGroup, "propTypes", {
+defineProperty(RadioGroup, "propTypes", {
   children: propTypes.node,
   selected: propTypes.oneOfType([propTypes.string, propTypes.number]),
   onChange: propTypes.func
 });
 
-_defineProperty(RadioGroup, "defaultProps", {
+defineProperty(RadioGroup, "defaultProps", {
   onChange: noop
 });
 

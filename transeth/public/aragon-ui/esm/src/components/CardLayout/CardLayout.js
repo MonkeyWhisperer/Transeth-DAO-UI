@@ -1,5 +1,5 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -28,7 +28,7 @@ function CardLayout(_ref) {
   var children = _ref.children,
       columnWidthMin = _ref.columnWidthMin,
       rowHeight = _ref.rowHeight,
-      props = _objectWithoutProperties(_ref, ["children", "columnWidthMin", "rowHeight"]);
+      props = objectWithoutProperties(_ref, ["children", "columnWidthMin", "rowHeight"]);
 
   var _useLayout = useLayout(),
       layoutName = _useLayout.layoutName;
@@ -37,7 +37,7 @@ function CardLayout(_ref) {
   var gridAutoRowValue = rowHeight === 'auto' ? rowHeight : "".concat(rowHeight, "px");
   return /*#__PURE__*/React.createElement(i, {
     name: "CardLayout"
-  }, /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+  }, /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
     _css: 2 * GU,
     _css2: fullWidth ? 'auto-fit' : 'auto-fill',
     _css3: columnWidthMin,

@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index$1 = require('./index-37353731.js');
@@ -13,11 +13,11 @@ var Theme = require('./Theme.js');
 var constants = require('./constants.js');
 var textStyles = require('./text-styles.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./defineProperty-fdbd3c46.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./Viewport-d2dce1b4.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./defineProperty-3cad0327.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./Viewport-71f7efe6.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./css.js');
@@ -26,7 +26,7 @@ require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./font.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -72,7 +72,7 @@ function Header(_ref) {
   var primary = _ref.primary,
       secondary = _ref.secondary,
       children = _ref.children,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["primary", "secondary", "children"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["primary", "secondary", "children"]);
 
   var theme = Theme.useTheme();
 
@@ -82,7 +82,7 @@ function Header(_ref) {
   var fullWidth = layoutName === 'small';
   return /*#__PURE__*/React__default['default'].createElement(index.i, {
     name: "Header"
-  }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends({}, props, {
+  }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends_1({}, props, {
     _css: fullWidth ? 0 : 3 * constants.GU,
     _css2: fullWidth ? theme.surface : 'none',
     _css3: fullWidth ? 2 * constants.GU : 0,
@@ -116,7 +116,7 @@ var _StyledH = _styled__default['default']("h1").withConfig({
 
 Header.Title = function HeaderTitle(_ref2) {
   var children = _ref2.children,
-      props = objectWithoutProperties._objectWithoutProperties(_ref2, ["children"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref2, ["children"]);
 
   var theme = Theme.useTheme();
 
@@ -124,7 +124,7 @@ Header.Title = function HeaderTitle(_ref2) {
       layoutName = _useLayout2.layoutName;
 
   var fullWidth = layoutName === 'small';
-  return /*#__PURE__*/React__default['default'].createElement(_StyledH, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledH, _extends._extends_1({}, props, {
     _css8: theme.content,
     _css9: textStyles.textStyle(fullWidth ? 'title3' : 'title2')
   }), children);

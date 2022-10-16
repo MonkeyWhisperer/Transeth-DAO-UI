@@ -1,6 +1,6 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { useMemo } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -8,7 +8,7 @@ import { useInside as o, Inside as i } from '../../../node_modules/use-inside/di
 import { useLayout } from '../Layout/Layout.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
 import { warnOnce, warn } from '../../utils/environment.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { unselectable } from '../../utils/css.js';
 import { textStyle } from '../../style/text-styles.js';
 import { RADIUS, GU } from '../../style/constants.js';
@@ -188,7 +188,7 @@ function Button(_ref) {
       mode = _ref.mode,
       size = _ref.size,
       wide = _ref.wide,
-      props = _objectWithoutProperties(_ref, ["children", "disabled", "display", "icon", "iconOnly", "innerRef", "label", "mode", "size", "wide"]);
+      props = objectWithoutProperties(_ref, ["children", "disabled", "display", "icon", "iconOnly", "innerRef", "label", "mode", "size", "wide"]);
 
   // backward compatibility and deprecated props
   if (iconOnly) {
@@ -221,11 +221,11 @@ function Button(_ref) {
       layoutName = _useLayout.layoutName;
 
   var _useInside = o('EmptyStateCard'),
-      _useInside2 = _slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray(_useInside, 1),
       insideEmptyStateCard = _useInside2[0];
 
   var _useInside3 = o('Header:secondary'),
-      _useInside4 = _slicedToArray(_useInside3, 1),
+      _useInside4 = slicedToArray(_useInside3, 1),
       insideHeaderSecondary = _useInside4[0]; // Always wide + strong when used as an empty state card action
 
 
@@ -274,7 +274,7 @@ function Button(_ref) {
   var insideData = {
     size: size
   };
-  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends({
+  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends_1({
     ref: innerRef,
     focusRingSpacing: border === '0' ? 0 : 1,
     focusRingRadius: RADIUS,
@@ -330,13 +330,13 @@ Button.defaultProps = {
   wide: false
 };
 var ButtonWithRef = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  return /*#__PURE__*/React.createElement(Button, _extends({
+  return /*#__PURE__*/React.createElement(Button, _extends_1({
     innerRef: ref
   }, props));
 });
 ButtonWithRef.Anchor = /*#__PURE__*/React.forwardRef(function (props, ref) {
   warnOnce('Button.Anchor', 'Button.Anchor is deprecated: please use Button with a href prop instead.');
-  return /*#__PURE__*/React.createElement(ButtonWithRef, _extends({
+  return /*#__PURE__*/React.createElement(ButtonWithRef, _extends_1({
     ref: ref
   }, props));
 });

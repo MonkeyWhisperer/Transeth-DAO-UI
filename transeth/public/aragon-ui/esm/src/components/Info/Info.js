@@ -1,9 +1,9 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { useMemo } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { RADIUS, GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
 
@@ -77,7 +77,7 @@ function Info(_ref) {
       background = _ref.background,
       borderColor = _ref.borderColor,
       title = _ref.title,
-      props = _objectWithoutProperties(_ref, ["children", "mode", "color", "titleColor", "background", "borderColor", "title"]);
+      props = objectWithoutProperties(_ref, ["children", "mode", "color", "titleColor", "background", "borderColor", "title"]);
 
   var theme = useTheme(); // Get styles from the current mode
 
@@ -85,7 +85,7 @@ function Info(_ref) {
     var styles = getModeStyles(theme, mode);
     return styles;
   }, [mode, theme]);
-  return /*#__PURE__*/React.createElement(_StyledSection, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledSection, _extends_1({}, props, {
     _css: color || modeStyles.color,
     _css2: background || modeStyles.background,
     _css3: borderColor || modeStyles.borderColor,
@@ -109,7 +109,7 @@ Info.propTypes = {
 }; // Backward compatibility
 
 function Warning(props) {
-  return /*#__PURE__*/React.createElement(Info, _extends({
+  return /*#__PURE__*/React.createElement(Info, _extends_1({
     mode: "warning"
   }, props));
 }

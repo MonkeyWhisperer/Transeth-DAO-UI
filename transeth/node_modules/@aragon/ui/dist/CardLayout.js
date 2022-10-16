@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index$1 = require('./index-37353731.js');
@@ -11,11 +11,11 @@ var index = require('./index-c33eeeef.js');
 var Layout = require('./Layout.js');
 var constants = require('./constants.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./defineProperty-fdbd3c46.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./Viewport-d2dce1b4.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./defineProperty-3cad0327.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./Viewport-71f7efe6.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./css.js');
@@ -46,7 +46,7 @@ function CardLayout(_ref) {
   var children = _ref.children,
       columnWidthMin = _ref.columnWidthMin,
       rowHeight = _ref.rowHeight,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["children", "columnWidthMin", "rowHeight"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["children", "columnWidthMin", "rowHeight"]);
 
   var _useLayout = Layout.useLayout(),
       layoutName = _useLayout.layoutName;
@@ -55,7 +55,7 @@ function CardLayout(_ref) {
   var gridAutoRowValue = rowHeight === 'auto' ? rowHeight : "".concat(rowHeight, "px");
   return /*#__PURE__*/React__default['default'].createElement(index.i, {
     name: "CardLayout"
-  }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends({}, props, {
+  }, /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends_1({}, props, {
     _css: 2 * constants.GU,
     _css2: fullWidth ? 'auto-fit' : 'auto-fill',
     _css3: columnWidthMin,

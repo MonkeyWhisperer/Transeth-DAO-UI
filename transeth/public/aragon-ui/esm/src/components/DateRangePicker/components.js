@@ -1,8 +1,8 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
 import _styled, { css } from 'styled-components';
 import React from 'react';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import IconLeft from '../../icons/components/IconLeft.js';
 import IconRight from '../../icons/components/IconRight.js';
 import { GU } from '../../style/constants.js';
@@ -26,7 +26,7 @@ var _StyledButtonBase = _styled(ButtonBaseWithFocus).withConfig({
 
 var ArrowButton = function ArrowButton(props) {
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends({
+  return /*#__PURE__*/React.createElement(_StyledButtonBase, _extends_1({
     focusRingRadius: GU * 2
   }, props, {
     _css: theme.hint

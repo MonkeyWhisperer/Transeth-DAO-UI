@@ -1,9 +1,9 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import ExtendedPropTypes from '../../proptypes.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { GU } from '../../style/constants.js';
 
 var _StyledDiv = _styled("div").withConfig({
@@ -15,9 +15,9 @@ var _StyledDiv = _styled("div").withConfig({
 
 function ContentContainerDefault(_ref) {
   var align = _ref.align,
-      props = _objectWithoutProperties(_ref, ["align"]);
+      props = objectWithoutProperties(_ref, ["align"]);
 
-  return /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
     _css: align === 'right' ? 'flex-end' : 'space-between'
   }));
 }
@@ -41,10 +41,10 @@ function TableCell(_ref2) {
   var children = _ref2.children,
       Container = _ref2.contentContainer,
       align = _ref2.align,
-      props = _objectWithoutProperties(_ref2, ["children", "contentContainer", "align"]);
+      props = objectWithoutProperties(_ref2, ["children", "contentContainer", "align"]);
 
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(_StyledTd, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledTd, _extends_1({}, props, {
     _css2: 2.5 * GU,
     _css3: theme.surface,
     _css4: align

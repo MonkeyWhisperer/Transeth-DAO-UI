@@ -1,5 +1,5 @@
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { useState } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -33,10 +33,10 @@ function DatePicker(_ref) {
       monthYearFormat = _ref.monthYearFormat,
       hideWeekDays = _ref.hideWeekDays,
       weekDayFormat = _ref.weekDayFormat,
-      props = _objectWithoutProperties(_ref, ["initialDate", "onSelect", "datesRangeStart", "datesRangeEnd", "hideYearSelector", "yearFormat", "hideMonthSelector", "monthFormat", "monthYearFormat", "hideWeekDays", "weekDayFormat"]);
+      props = objectWithoutProperties(_ref, ["initialDate", "onSelect", "datesRangeStart", "datesRangeEnd", "hideYearSelector", "yearFormat", "hideMonthSelector", "monthFormat", "monthYearFormat", "hideWeekDays", "weekDayFormat"]);
 
   var _useState = useState(initialDate),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       selectedDate = _useState2[0],
       setSelectedDate = _useState2[1];
 

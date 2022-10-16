@@ -1,4 +1,4 @@
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import React, { useMemo, useCallback } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import DataView from '../DataView/DataView.js';
@@ -12,13 +12,13 @@ var Accordion = /*#__PURE__*/React.memo(function Accordion(_ref) {
     return [null];
   }, []);
   var renderEntry = useCallback(function (_ref2) {
-    var _ref3 = _slicedToArray(_ref2, 1),
+    var _ref3 = slicedToArray(_ref2, 1),
         row = _ref3[0];
 
     return [row];
   }, []);
   var renderEntryExpansion = useCallback(function (_ref4) {
-    var _ref5 = _slicedToArray(_ref4, 2);
+    var _ref5 = slicedToArray(_ref4, 2);
         _ref5[0];
         var expansion = _ref5[1];
 

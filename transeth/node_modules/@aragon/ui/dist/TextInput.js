@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var defineProperty = require('./defineProperty-fdbd3c46.js');
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -13,13 +13,13 @@ var constants = require('./constants.js');
 var textStyles = require('./text-styles.js');
 var environment = require('./environment.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./getPrototypeOf-e2e819f3.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./getPrototypeOf-55c9e80c.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./font.js');
 require('./miscellaneous.js');
 
@@ -30,7 +30,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty._defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty.defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 var _StyledInput = _styled__default['default']("input").withConfig({
   displayName: "TextInput___StyledInput",
@@ -66,7 +66,7 @@ var TextInput = /*#__PURE__*/React__default['default'].forwardRef(function (_ref
   var autofocus = _ref2.autofocus,
       multiline = _ref2.multiline,
       type = _ref2.type,
-      props = objectWithoutProperties._objectWithoutProperties(_ref2, ["autofocus", "multiline", "type"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref2, ["autofocus", "multiline", "type"]);
 
   var theme = Theme.useTheme();
   var handleRef = React.useCallback(function (element) {
@@ -78,7 +78,7 @@ var TextInput = /*#__PURE__*/React__default['default'].forwardRef(function (_ref
       element.focus();
     }
   }, [autofocus, ref]);
-  return /*#__PURE__*/React__default['default'].createElement(_StyledInput, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(_StyledInput, _extends._extends_1({
     ref: handleRef,
     as: multiline ? 'textarea' : 'input',
     type: multiline ? undefined : type
@@ -145,19 +145,19 @@ var WrapperTextInput = /*#__PURE__*/React__default['default'].forwardRef(functio
       adornmentWidth = _ref3$adornmentSettin2 === void 0 ? 36 : _ref3$adornmentSettin2,
       _ref3$adornmentSettin3 = _ref3$adornmentSettin.padding,
       adornmentPadding = _ref3$adornmentSettin3 === void 0 ? 4 : _ref3$adornmentSettin3,
-      props = objectWithoutProperties._objectWithoutProperties(_ref3, ["adornment", "adornmentPosition", "adornmentSettings"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref3, ["adornment", "adornmentPosition", "adornmentSettings"]);
 
   var theme = Theme.useTheme();
 
   if (!adornment) {
-    return /*#__PURE__*/React__default['default'].createElement(TextInput, _extends._extends({
+    return /*#__PURE__*/React__default['default'].createElement(TextInput, _extends._extends_1({
       ref: ref
     }, props));
   }
 
   return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, {
     _css12: props.wide ? '100%' : 'max-content'
-  }, /*#__PURE__*/React__default['default'].createElement(_StyledTextInput, _extends._extends({
+  }, /*#__PURE__*/React__default['default'].createElement(_StyledTextInput, _extends._extends_1({
     ref: ref
   }, props, {
     _css13: adornmentPosition === 'end' ? 'padding-right' : 'padding-left',
@@ -184,14 +184,14 @@ WrapperTextInput.defaultProps = _objectSpread(_objectSpread({}, TextInput.defaul
 
 function TextInputNumber(props) {
   environment.warnOnce('TextInputNumber', 'TextInputNumber is deprecated. Please use TextInput instead.');
-  return /*#__PURE__*/React__default['default'].createElement(TextInput, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(TextInput, _extends._extends_1({
     type: "number"
   }, props));
 } // Multiline input (textarea element)
 
 
 function TextInputMultiline(props) {
-  return /*#__PURE__*/React__default['default'].createElement(TextInput, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(TextInput, _extends._extends_1({
     multiline: true
   }, props));
 }

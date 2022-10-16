@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -12,13 +12,13 @@ var ButtonBase = require('./ButtonBase.js');
 var environment = require('./environment.js');
 var constants = require('./constants.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./index-c33eeeef.js');
 require('./Layout.js');
-require('./defineProperty-fdbd3c46.js');
-require('./Viewport-d2dce1b4.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./defineProperty-3cad0327.js');
+require('./Viewport-71f7efe6.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./css.js');
@@ -26,7 +26,7 @@ require('./Theme.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./text-styles.js');
 require('./font.js');
 require('./FocusVisible.js');
@@ -51,21 +51,21 @@ function ButtonIcon(_ref) {
   var label = _ref.label,
       children = _ref.children,
       mode = _ref.mode,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["label", "children", "mode"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["label", "children", "mode"]);
 
   if (mode !== undefined) {
     environment.warnOnce('ButtonIcon:mode', 'ButtonIcon: the mode prop is deprecated. Please use Button with the icon prop instead.');
   }
 
   if (mode === 'button') {
-    return /*#__PURE__*/React__default['default'].createElement(Button['default'], _extends._extends({
+    return /*#__PURE__*/React__default['default'].createElement(Button['default'], _extends._extends_1({
       label: label,
       icon: children,
       display: "icon"
     }, props));
   }
 
-  return /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends_1({
     title: label
   }, props, {
     _css: 4 * constants.GU,

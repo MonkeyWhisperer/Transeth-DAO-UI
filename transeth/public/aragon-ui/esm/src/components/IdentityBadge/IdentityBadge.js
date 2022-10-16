@@ -1,6 +1,6 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { useRef, useState, useCallback } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -35,7 +35,7 @@ var IdentityBadge = /*#__PURE__*/React.memo(function IdentityBadge(_ref) {
       shorten = _ref.shorten,
       customLabel = _ref.customLabel,
       fontSize = _ref.fontSize,
-      props = _objectWithoutProperties(_ref, ["badgeOnly", "compact", "connectedAccount", "entity", "label", "labelStyle", "networkType", "popoverAction", "popoverTitle", "shorten", "customLabel", "fontSize"]);
+      props = objectWithoutProperties(_ref, ["badgeOnly", "compact", "connectedAccount", "entity", "label", "labelStyle", "networkType", "popoverAction", "popoverTitle", "shorten", "customLabel", "fontSize"]);
 
   if (customLabel) {
     warnOnce('IdentityBadge:customLabel', 'The “customLabel” prop is deprecated. Please use “label” instead.');
@@ -49,7 +49,7 @@ var IdentityBadge = /*#__PURE__*/React.memo(function IdentityBadge(_ref) {
   var badgeRef = useRef(null);
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       opened = _useState2[0],
       setOpened = _useState2[1];
 
@@ -61,7 +61,7 @@ var IdentityBadge = /*#__PURE__*/React.memo(function IdentityBadge(_ref) {
   }, []);
   var address = isAddress(entity) ? entity : null;
   var displayLabel = label || (address && shorten ? shortenAddress(address) : entity);
-  return /*#__PURE__*/React.createElement(BadgeBase, _extends({
+  return /*#__PURE__*/React.createElement(BadgeBase, _extends_1({
     badgeRef: badgeRef,
     compact: compact,
     disabled: badgeOnly,

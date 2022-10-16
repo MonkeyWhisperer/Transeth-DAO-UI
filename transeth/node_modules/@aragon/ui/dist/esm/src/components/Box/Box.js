@@ -1,11 +1,11 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { useInside as o, Inside as i } from '../../../node_modules/use-inside/dist/index.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { useLayout } from '../Layout/Layout.js';
 import { RADIUS, GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
@@ -54,12 +54,12 @@ function Box(_ref) {
   var heading = _ref.heading,
       children = _ref.children,
       padding = _ref.padding,
-      props = _objectWithoutProperties(_ref, ["heading", "children", "padding"]);
+      props = objectWithoutProperties(_ref, ["heading", "children", "padding"]);
 
   var theme = useTheme();
 
   var _useInside = o('Split:primary'),
-      _useInside2 = _slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray(_useInside, 1),
       insideSplitPrimary = _useInside2[0];
 
   var _useLayout = useLayout(),
@@ -81,7 +81,7 @@ function Box(_ref) {
   var contentPadding = padding === undefined ? defaultPadding : padding;
   return /*#__PURE__*/React.createElement(i, {
     name: "Box"
-  }, /*#__PURE__*/React.createElement(_StyledDiv, _extends({
+  }, /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({
     as: heading ? 'section' : 'div'
   }, props, {
     _css: fullWidth ? 0 : RADIUS,

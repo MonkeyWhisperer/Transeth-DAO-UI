@@ -2,21 +2,21 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var toConsumableArray = require('./toConsumableArray-0f2dcfe0.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var _extends = require('./extends-023d783e.js');
+var toConsumableArray = require('./toConsumableArray-cc0d28a9.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var _styled = require('styled-components');
 var React = require('react');
-var web = require('./web-7e5f0d11.js');
-var proptypes = require('./proptypes-0337766e.js');
+var web = require('./web-46d746d6.js');
+var proptypes = require('./proptypes-316e1def.js');
 var css = require('./css.js');
 var springs = require('./springs.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
-require('./defineProperty-fdbd3c46.js');
+require('./defineProperty-3cad0327.js');
 require('./index-37353731.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -31,7 +31,7 @@ function useMeasuredWidth() {
   var ref = React.useRef();
 
   var _useState = React.useState(WIDTH_DEFAULT),
-      _useState2 = slicedToArray._slicedToArray(_useState, 2),
+      _useState2 = slicedToArray.slicedToArray(_useState, 2),
       measuredWidth = _useState2[0],
       setMeasuredWidth = _useState2[1];
 
@@ -76,10 +76,10 @@ function LineChart(_ref) {
       springConfig = _ref.springConfig,
       total = _ref.total,
       widthProps = _ref.width,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["animDelay", "borderColor", "color", "dotRadius", "height", "label", "labelColor", "lines", "reset", "springConfig", "total", "width"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["animDelay", "borderColor", "color", "dotRadius", "height", "label", "labelColor", "lines", "reset", "springConfig", "total", "width"]);
 
   var _useMeasuredWidth = useMeasuredWidth(),
-      _useMeasuredWidth2 = slicedToArray._slicedToArray(_useMeasuredWidth, 2),
+      _useMeasuredWidth2 = slicedToArray.slicedToArray(_useMeasuredWidth, 2),
       width = _useMeasuredWidth2[0],
       onSvgRef = _useMeasuredWidth2[1];
 
@@ -112,7 +112,7 @@ function LineChart(_ref) {
     if (index === length - 1) return 'end';
     return 'middle';
   }, []);
-  var labels = label && totalCount > 0 ? toConsumableArray._toConsumableArray(Array(totalCount).keys()).map(label) : null;
+  var labels = label && totalCount > 0 ? toConsumableArray.toConsumableArray(Array(totalCount).keys()).map(label) : null;
   var chartHeight = height - (labels ? LABELS_HEIGHT : 0);
   var rectangle = /*#__PURE__*/React__default['default'].createElement("rect", {
     width: width,
@@ -135,7 +135,7 @@ function LineChart(_ref) {
     reset: reset
   }, function (_ref2) {
     var progress = _ref2.progress;
-    return /*#__PURE__*/React__default['default'].createElement(_StyledSvg, _extends._extends({
+    return /*#__PURE__*/React__default['default'].createElement(_StyledSvg, _extends._extends_1({
       ref: onSvgRef,
       viewBox: "0 0 ".concat(width, " ").concat(height),
       width: widthProps || 'auto',
@@ -145,7 +145,7 @@ function LineChart(_ref) {
     }, rectangle), rectangle, /*#__PURE__*/React__default['default'].createElement("g", {
       mask: "url(#chart-mask)"
     }, totalCount > 0 && /*#__PURE__*/React__default['default'].createElement("path", {
-      d: "\n                  ".concat(toConsumableArray._toConsumableArray(new Array(totalCount - 1)).reduce(function (path, _, index) {
+      d: "\n                  ".concat(toConsumableArray.toConsumableArray(new Array(totalCount - 1)).reduce(function (path, _, index) {
         return "".concat(path, " M ").concat(getX(index), ",").concat(chartHeight, " l 0,-8");
       }, ''), "\n                "),
       stroke: borderColor,

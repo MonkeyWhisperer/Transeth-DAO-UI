@@ -2,7 +2,7 @@ import _styled, { css } from 'styled-components';
 import React, { useCallback } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { RADIUS, GU } from '../../style/constants.js';
 
 var _StyledButtonBase = _styled(ButtonBaseWithFocus).withConfig({

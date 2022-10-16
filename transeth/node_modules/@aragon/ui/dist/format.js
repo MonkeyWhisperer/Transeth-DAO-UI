@@ -2,12 +2,11 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var toConsumableArray = require('./toConsumableArray-0f2dcfe0.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var toConsumableArray = require('./toConsumableArray-cc0d28a9.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var math = require('./math-ecfd5d91.js');
 var characters = require('./characters.js');
-require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 
 /**
  * Formats an integer based on a limited range.
@@ -52,11 +51,11 @@ function formatNumber(number) {
   var numAsString = String(number);
 
   var _numAsString$split = numAsString.split('.'),
-      _numAsString$split2 = slicedToArray._slicedToArray(_numAsString$split, 2),
+      _numAsString$split2 = slicedToArray.slicedToArray(_numAsString$split, 2),
       integer = _numAsString$split2[0],
       decimals = _numAsString$split2[1];
 
-  return toConsumableArray._toConsumableArray(integer).reverse().reduce(function (result, digit, index) {
+  return toConsumableArray.toConsumableArray(integer).reverse().reduce(function (result, digit, index) {
     return digit + (index > 0 && index % 3 === 0 ? ',' : '') + result;
   }, decimals ? ".".concat(decimals) : '');
 }

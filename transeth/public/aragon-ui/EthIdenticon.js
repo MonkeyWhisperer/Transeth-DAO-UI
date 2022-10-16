@@ -2,19 +2,19 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var getPrototypeOf = require('./getPrototypeOf-e2e819f3.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
+var _extends = require('./extends-023d783e.js');
+var getPrototypeOf = require('./getPrototypeOf-55c9e80c.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
 var React = require('react');
 var index = require('./index-37353731.js');
 var _styled = require('styled-components');
 var _commonjsHelpers = require('./_commonjsHelpers-1b94f6bc.js');
-var web3 = require('./web3-3474f303.js');
+var web3 = require('./web3-4ef44cda.js');
 var components = require('./components.js');
 require('./environment.js');
 require('./miscellaneous.js');
-require('./toConsumableArray-0f2dcfe0.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./toConsumableArray-cc0d28a9.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -238,7 +238,7 @@ Identicon.propTypes = {
 
 var Blockies = /*@__PURE__*/_commonjsHelpers.unwrapExports(main);
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf._getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf._getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf._possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf.getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf.getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf.possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var PX_RATIO = typeof devicePixelRatio === 'undefined' ? 2 : devicePixelRatio;
@@ -247,17 +247,17 @@ var BLOCKIES_SQUARES = 8; // commonly used to represent Ethereum addresses
 var BASE_SCALE = 3;
 
 var EthIdenticon = /*#__PURE__*/function (_React$Component) {
-  getPrototypeOf._inherits(EthIdenticon, _React$Component);
+  getPrototypeOf.inherits(EthIdenticon, _React$Component);
 
   var _super = _createSuper(EthIdenticon);
 
   function EthIdenticon() {
-    getPrototypeOf._classCallCheck(this, EthIdenticon);
+    getPrototypeOf.classCallCheck(this, EthIdenticon);
 
     return _super.apply(this, arguments);
   }
 
-  getPrototypeOf._createClass(EthIdenticon, [{
+  getPrototypeOf.createClass(EthIdenticon, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -266,7 +266,7 @@ var EthIdenticon = /*#__PURE__*/function (_React$Component) {
           radius = _this$props.radius,
           soften = _this$props.soften;
       var blockiesScale = scale * BASE_SCALE;
-      return web3.isAddress(address) ? /*#__PURE__*/React__default['default'].createElement(Main, _extends._extends({
+      return web3.isAddress(address) ? /*#__PURE__*/React__default['default'].createElement(Main, _extends._extends_1({
         size: BLOCKIES_SQUARES * blockiesScale,
         radius: radius
       }, components.stylingProps(this)), /*#__PURE__*/React__default['default'].createElement(BlockiesScaling, {
@@ -292,14 +292,14 @@ var EthIdenticon = /*#__PURE__*/function (_React$Component) {
  */
 
 
-defineProperty._defineProperty(EthIdenticon, "propTypes", {
+defineProperty.defineProperty(EthIdenticon, "propTypes", {
   address: index.propTypes.string.isRequired,
   scale: index.propTypes.number,
   radius: index.propTypes.number,
   soften: index.propTypes.number
 });
 
-defineProperty._defineProperty(EthIdenticon, "defaultProps", {
+defineProperty.defineProperty(EthIdenticon, "defaultProps", {
   scale: 1,
   radius: 0,
   soften: 0.3

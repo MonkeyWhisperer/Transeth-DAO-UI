@@ -3,9 +3,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var palettes = require('./palettes.js');
-require('./slicedToArray-bb07ac16.js');
-require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./aragon.js');
 require('./environment.js');
 require('./miscellaneous.js');

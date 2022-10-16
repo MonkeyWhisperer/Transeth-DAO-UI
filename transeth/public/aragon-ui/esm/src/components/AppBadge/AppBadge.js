@@ -1,6 +1,6 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { useRef, useState, useCallback } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -42,12 +42,12 @@ var AppBadge = /*#__PURE__*/React.memo(function AppBadge(_ref) {
       networkType = _ref.networkType,
       popoverAction = _ref.popoverAction,
       popoverTitle = _ref.popoverTitle;
-      _objectWithoutProperties(_ref, ["appAddress", "badgeOnly", "compact", "iconSrc", "identifier", "label", "labelStyle", "networkType", "popoverAction", "popoverTitle"]);
+      objectWithoutProperties(_ref, ["appAddress", "badgeOnly", "compact", "iconSrc", "identifier", "label", "labelStyle", "networkType", "popoverAction", "popoverTitle"]);
 
   var badgeRef = useRef(null);
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       opened = _useState2[0],
       setOpened = _useState2[1];
 
@@ -130,10 +130,10 @@ var _StyledSpan2 = _styled("span").withConfig({
 var Icon = function Icon(_ref3) {
   var compact = _ref3.compact,
       src = _ref3.src,
-      props = _objectWithoutProperties(_ref3, ["compact", "src"]);
+      props = objectWithoutProperties(_ref3, ["compact", "src"]);
 
   var size = (compact ? 2.25 : 3) * GU;
-  return /*#__PURE__*/React.createElement(_StyledSpan2, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledSpan2, _extends_1({}, props, {
     _css2: size,
     _css3: size,
     _css4: 1 * GU,

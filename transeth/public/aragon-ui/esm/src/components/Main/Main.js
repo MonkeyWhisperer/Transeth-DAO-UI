@@ -8,7 +8,7 @@ import Layout from '../Layout/Layout.js';
 import ScrollView from '../ScrollView/ScrollView.js';
 import { initContainsComponent } from '../../utils/contains-component.js';
 import { Viewport } from '../../providers/Viewport/Viewport.js';
-import { Theme } from '../../theme/Theme.js';
+import { Theme } from '../../theme/Theme2.js';
 import { Root } from '../../providers/Root/Root.js';
 import { PublicUrl } from '../../providers/PublicUrl/PublicUrl.js';
 

@@ -2,31 +2,31 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
 var React = require('react');
 var index = require('./index-37353731.js');
 var Checkbox = require('./Checkbox.js');
 var Link = require('./Link.js');
 var NormalizedHtml = require('./NormalizedHtml.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./extends-5150c1f4.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./extends-023d783e.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('styled-components');
-require('./web-7e5f0d11.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./web-46d746d6.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 require('./FocusVisible.js');
-require('./springs.js');
 require('./Theme.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
+require('./springs.js');
 require('./constants.js');
 require('./ButtonBase.js');
 require('./keycodes.js');
@@ -57,7 +57,7 @@ var _extends=Object.assign||function(a){for(var b,c=1;c<arguments.length;c++)for
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty._defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty.defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function CustomInput(props) {
   props = _objectSpread({}, props);
@@ -81,7 +81,7 @@ function Markdown(_ref) {
       markdownToJsxOptions = _ref.markdownToJsxOptions,
       normalized = _ref.normalized,
       style = _ref.style;
-      objectWithoutProperties._objectWithoutProperties(_ref, ["allowHtml", "className", "content", "markdownToJsxOptions", "normalized", "style"]);
+      objectWithoutProperties.objectWithoutProperties(_ref, ["allowHtml", "className", "content", "markdownToJsxOptions", "normalized", "style"]);
 
   var markdownToJsxOptionsBase = {
     disableParsingRawHTML: !allowHtml,

@@ -1,12 +1,12 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { useRef, useImperativeHandle, useCallback } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import WrapperTextInput from '../Input/TextInput.js';
 import ButtonIcon from '../Button/ButtonIcon.js';
 import { useToast } from '../ToastHub/ToastHub.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import IconCopy from '../../icons/components/IconCopy.js';
 import { RADIUS, GU } from '../../style/constants.js';
 import { warn } from '../../utils/environment.js';
@@ -73,7 +73,7 @@ var TextCopy = /*#__PURE__*/React.memo( /*#__PURE__*/React.forwardRef(function T
       monospace = _ref.monospace,
       onCopy = _ref.onCopy,
       value = _ref.value,
-      props = _objectWithoutProperties(_ref, ["adornment", "autofocus", "message", "monospace", "onCopy", "value"]);
+      props = objectWithoutProperties(_ref, ["adornment", "autofocus", "message", "monospace", "onCopy", "value"]);
 
   var theme = useTheme();
   var toast = useToast();
@@ -104,7 +104,7 @@ var TextCopy = /*#__PURE__*/React.memo( /*#__PURE__*/React.forwardRef(function T
       }
     }
   }, [message, onCopyOrToast]);
-  return /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
     _css: 52.5 * GU,
     _css2: adornment ? "".concat(HEIGHT, "px") : '0'
   }), adornment && /*#__PURE__*/React.createElement(_StyledDiv2, {

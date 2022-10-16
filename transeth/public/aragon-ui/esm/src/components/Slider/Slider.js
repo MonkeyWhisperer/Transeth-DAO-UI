@@ -1,21 +1,21 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { animated as extendedAnimated, Spring } from '../../../node_modules/react-spring/web.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { unselectable } from '../../utils/css.js';
 import { springs } from '../../style/springs.js';
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var BAR_HEIGHT = 6;
@@ -57,14 +57,14 @@ var _StyledAnimatedDiv = _styled(extendedAnimated.div).withConfig({
 });
 
 var Slider = /*#__PURE__*/function (_React$Component) {
-  _inherits(Slider, _React$Component);
+  inherits(Slider, _React$Component);
 
   var _super = _createSuper(Slider);
 
   function Slider() {
     var _this;
 
-    _classCallCheck(this, Slider);
+    classCallCheck(this, Slider);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -72,16 +72,16 @@ var Slider = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    defineProperty(assertThisInitialized(_this), "state", {
       pressed: false
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleRef", function (element) {
+    defineProperty(assertThisInitialized(_this), "handleRef", function (element) {
       _this._mainElement = element;
       _this._document = element && element.ownerDocument;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getRect", function () {
+    defineProperty(assertThisInitialized(_this), "getRect", function () {
       var now = Date.now(); // Cache the rect if the last poll was less than a second ago
 
       if (_this._lastRect && now - _this._lastRectTime < 1000) {
@@ -93,7 +93,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
       return _this._lastRect;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "dragStart", function (event) {
+    defineProperty(assertThisInitialized(_this), "dragStart", function (event) {
       _this.dragStop();
 
       var clientX = _this.clientXFromEvent(event);
@@ -113,7 +113,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
       _this._document.addEventListener('touchmove', _this.dragMove);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "dragStop", function () {
+    defineProperty(assertThisInitialized(_this), "dragStop", function () {
       _this.setState({
         pressed: false
       });
@@ -127,7 +127,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
       _this._document.removeEventListener('touchmove', _this.dragMove);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "dragMove", function (event) {
+    defineProperty(assertThisInitialized(_this), "dragMove", function (event) {
       if (!_this.state.pressed) {
         return;
       }
@@ -138,7 +138,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(Slider, [{
+  createClass(Slider, [{
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       this.dragStop();
@@ -199,7 +199,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
           _this$props.onUpdate;
           var value = _this$props.value,
           theme = _this$props.theme,
-          props = _objectWithoutProperties(_this$props, ["onUpdate", "value", "theme"]);
+          props = objectWithoutProperties(_this$props, ["onUpdate", "value", "theme"]);
 
       return /*#__PURE__*/React.createElement(Spring, {
         native: true,
@@ -211,7 +211,7 @@ var Slider = /*#__PURE__*/function (_React$Component) {
       }, function (_ref) {
         var value = _ref.value,
             pressProgress = _ref.pressProgress;
-        return /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+        return /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
           _css: HANDLE_SIZE / 2 + PADDING
         }), /*#__PURE__*/React.createElement(_StyledDiv2, {
           ref: _this2.handleRef,
@@ -235,13 +235,13 @@ var Slider = /*#__PURE__*/function (_React$Component) {
   return Slider;
 }(React.Component);
 
-_defineProperty(Slider, "propTypes", {
+defineProperty(Slider, "propTypes", {
   value: propTypes.number,
   onUpdate: propTypes.func,
   theme: propTypes.object
 });
 
-_defineProperty(Slider, "defaultProps", {
+defineProperty(Slider, "defaultProps", {
   value: 0,
   onUpdate: function onUpdate() {}
 });
@@ -279,7 +279,7 @@ var HandlePosition = _styled(extendedAnimated.div).withConfig({
 })(["width:calc(100% - ", "px);height:100%;transform-origin:50% 50%;"], HANDLE_SIZE + HANDLE_SHADOW_MARGIN * 2);
 var Slider$1 = (function (props) {
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(Slider, _extends({
+  return /*#__PURE__*/React.createElement(Slider, _extends_1({
     theme: theme
   }, props));
 });

@@ -2,9 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var toConsumableArray = require('./toConsumableArray-0f2dcfe0.js');
-require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+var toConsumableArray = require('./toConsumableArray-cc0d28a9.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 
 // Forward some props of an instance to a child element.
 //
@@ -26,7 +25,7 @@ function forwardProps(instance, names) {
 
 function stylingProps(instance) {
   var names = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-  return forwardProps(instance, ['style', 'className'].concat(toConsumableArray._toConsumableArray(names)));
+  return forwardProps(instance, ['style', 'className'].concat(toConsumableArray.toConsumableArray(names)));
 }
 
 exports.forwardProps = forwardProps;

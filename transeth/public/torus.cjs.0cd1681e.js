@@ -241,7 +241,30 @@ function _inherits(subClass, superClass) {
 
 module.exports = _inherits;
 module.exports["default"] = module.exports, module.exports.__esModule = true;
-},{"./setPrototypeOf.js":"../node_modules/@babel/runtime/helpers/setPrototypeOf.js"}],"../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":[function(require,module,exports) {
+},{"./setPrototypeOf.js":"../node_modules/@babel/runtime/helpers/setPrototypeOf.js"}],"../node_modules/@babel/runtime/helpers/typeof.js":[function(require,module,exports) {
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    module.exports = _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
+  } else {
+    module.exports = _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
+  }
+
+  return _typeof(obj);
+}
+
+module.exports = _typeof;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+},{}],"../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":[function(require,module,exports) {
 var _typeof = require("@babel/runtime/helpers/typeof")["default"];
 
 var assertThisInitialized = require("./assertThisInitialized.js");
@@ -6946,7 +6969,7 @@ module.exports = function (e) {
 }, function (e, t, r) {
   (t = e.exports = r(186)).Stream = t, t.Readable = t, t.Writable = r(189), t.Duplex = r(48), t.Transform = r(190), t.PassThrough = r(363);
 }, function (e) {
-  e.exports = JSON.parse('{"a":"@toruslabs/torus-embed","b":"1.13.1"}');
+  e.exports = JSON.parse('{"a":"@toruslabs/torus-embed","b":"1.13.4"}');
 }, function (e, t, r) {
   "use strict";
 
@@ -28614,7 +28637,7 @@ module.exports = function (e) {
 
   var it,
       ot = (Qe = {}, l()(Qe, k.GOOGLE, !0), l()(Qe, k.FACEBOOK, !0), l()(Qe, k.REDDIT, !0), l()(Qe, k.TWITCH, !0), l()(Qe, k.DISCORD, !0), Qe),
-      at = "sha384-KCF964mt+8QxT5r0MCFG39uGIExcdI4CgA91ZlqZy9fLtEgqsHhLT6EExrWAVgEf",
+      at = "sha384-0A1/+4bycGlAALDUI2z93fDdWHPweoH7JxmSkLhQx2wICnnnhI3G1lbvdqLh8tiQ",
       st = ["eth_sendTransaction", "eth_signTypedData", "eth_signTypedData_v3", "eth_signTypedData_v4", "personal_sign", "eth_getEncryptionPublicKey", "eth_decrypt"],
       ut = function (e) {
     var t;
@@ -29792,7 +29815,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58597" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61626" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

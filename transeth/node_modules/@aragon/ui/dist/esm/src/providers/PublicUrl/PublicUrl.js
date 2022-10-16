@@ -1,16 +1,16 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import React, { useContext } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import getDisplayName from '../../../node_modules/react-display-name/lib/getDisplayName.js';
 import { prefixUrl } from '../../utils/url.js';
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var PublicUrlContext = /*#__PURE__*/React.createContext('');
@@ -18,17 +18,17 @@ var Provider = PublicUrlContext.Provider,
     Consumer = PublicUrlContext.Consumer;
 
 var PublicUrlProvider = /*#__PURE__*/function (_React$PureComponent) {
-  _inherits(PublicUrlProvider, _React$PureComponent);
+  inherits(PublicUrlProvider, _React$PureComponent);
 
   var _super = _createSuper(PublicUrlProvider);
 
   function PublicUrlProvider() {
-    _classCallCheck(this, PublicUrlProvider);
+    classCallCheck(this, PublicUrlProvider);
 
     return _super.apply(this, arguments);
   }
 
-  _createClass(PublicUrlProvider, [{
+  createClass(PublicUrlProvider, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -44,7 +44,7 @@ var PublicUrlProvider = /*#__PURE__*/function (_React$PureComponent) {
 }(React.PureComponent); // HOC wrapper
 
 
-_defineProperty(PublicUrlProvider, "propTypes", {
+defineProperty(PublicUrlProvider, "propTypes", {
   url: propTypes.string.isRequired,
   children: propTypes.node
 });
@@ -52,7 +52,7 @@ _defineProperty(PublicUrlProvider, "propTypes", {
 var hocWrap = function hocWrap(Component) {
   var HOC = function HOC(props) {
     return /*#__PURE__*/React.createElement(Consumer, null, function (url) {
-      return /*#__PURE__*/React.createElement(Component, _extends({}, props, {
+      return /*#__PURE__*/React.createElement(Component, _extends_1({}, props, {
         publicUrl: url
       }));
     });

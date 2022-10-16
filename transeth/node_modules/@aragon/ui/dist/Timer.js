@@ -2,10 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var getPrototypeOf = require('./getPrototypeOf-e2e819f3.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
-var toConsumableArray = require('./toConsumableArray-0f2dcfe0.js');
+var _extends = require('./extends-023d783e.js');
+var getPrototypeOf = require('./getPrototypeOf-55c9e80c.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
+var toConsumableArray = require('./toConsumableArray-cc0d28a9.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -14,20 +14,20 @@ var dayjs_min = require('./dayjs.min-ac79806e.js');
 var date = require('./date.js');
 var Theme = require('./Theme.js');
 var IconClock = require('./IconClock.js');
-var Redraw = require('./Redraw-53d2c4f3.js');
+var Redraw = require('./Redraw-ec0ae004.js');
 var textStyles = require('./text-styles.js');
 var css = require('./css.js');
 var constants = require('./constants.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./slicedToArray-bb07ac16.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./slicedToArray-a8a77f0e.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./objectWithoutProperties-5d2c0728.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./objectWithoutProperties-c6d3675c.js');
+require('./IconPropTypes-b9997416.js');
 require('./index-c33eeeef.js');
 require('./getDisplayName-7f913e84.js');
 require('./font.js');
@@ -746,7 +746,7 @@ memoize.Cache = _MapCache;
 
 var memoize_1 = memoize;
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf._getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf._getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf._possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf.getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf.getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf.possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 var RENDER_EVERY = 1000;
@@ -783,7 +783,7 @@ var unitNames = {
 };
 var getFormat = memoize_1(function (format) {
   return ['y', 'M', 'd', 'h', 'm', 's'].reduce(function (units, symbol) {
-    return formats[format].includes(symbol) ? [].concat(toConsumableArray._toConsumableArray(units), [unitNames[symbol]]) : units;
+    return formats[format].includes(symbol) ? [].concat(toConsumableArray.toConsumableArray(units), [unitNames[symbol]]) : units;
   }, []);
 });
 
@@ -866,14 +866,14 @@ var _StyledSpan5 = _styled__default['default']("span").withConfig({
 });
 
 var Timer = /*#__PURE__*/function (_React$Component) {
-  getPrototypeOf._inherits(Timer, _React$Component);
+  getPrototypeOf.inherits(Timer, _React$Component);
 
   var _super = _createSuper(Timer);
 
   function Timer() {
     var _this;
 
-    getPrototypeOf._classCallCheck(this, Timer);
+    getPrototypeOf.classCallCheck(this, Timer);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -881,7 +881,7 @@ var Timer = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "renderTime", function () {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "renderTime", function () {
       var _this$props = _this.props,
           start = _this$props.start,
           end = _this$props.end,
@@ -936,7 +936,7 @@ var Timer = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  getPrototypeOf._createClass(Timer, [{
+  getPrototypeOf.createClass(Timer, [{
     key: "render",
     value: function render() {
       var _this$props2 = this.props,
@@ -961,7 +961,7 @@ var Timer = /*#__PURE__*/function (_React$Component) {
   return Timer;
 }(React__default['default'].Component);
 
-defineProperty._defineProperty(Timer, "propTypes", {
+defineProperty.defineProperty(Timer, "propTypes", {
   end: index.propTypes.instanceOf(Date),
   format: index.propTypes.oneOf(Object.keys(formats)),
   maxUnits: index.propTypes.number,
@@ -971,7 +971,7 @@ defineProperty._defineProperty(Timer, "propTypes", {
   theme: index.propTypes.object
 });
 
-defineProperty._defineProperty(Timer, "defaultProps", {
+defineProperty.defineProperty(Timer, "defaultProps", {
   format: formats.yMdhms,
   maxUnits: -1,
   showEmpty: false,
@@ -980,7 +980,7 @@ defineProperty._defineProperty(Timer, "defaultProps", {
 
 var Timer$1 = (function (props) {
   var theme = Theme.useTheme();
-  return /*#__PURE__*/React__default['default'].createElement(Timer, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(Timer, _extends._extends_1({}, props, {
     theme: theme
   }));
 });

@@ -1,32 +1,32 @@
-import _toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import toConsumableArray from '../../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { font } from '../../utils/font.js';
 import { noop } from '../../utils/miscellaneous.js';
 import { unselectable } from '../../utils/css.js';
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 var TabBar = /*#__PURE__*/function (_React$Component) {
-  _inherits(TabBar, _React$Component);
+  inherits(TabBar, _React$Component);
 
   var _super = _createSuper(TabBar);
 
   function TabBar() {
     var _this;
 
-    _classCallCheck(this, TabBar);
+    classCallCheck(this, TabBar);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -34,17 +34,17 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    defineProperty(assertThisInitialized(_this), "state", {
       displayFocusRing: false
     });
 
-    _defineProperty(_assertThisInitialized(_this), "_barRef", /*#__PURE__*/React.createRef());
+    defineProperty(assertThisInitialized(_this), "_barRef", /*#__PURE__*/React.createRef());
 
-    _defineProperty(_assertThisInitialized(_this), "handleMouseDown", function () {
+    defineProperty(assertThisInitialized(_this), "handleMouseDown", function () {
       _this.disableFocusRing();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleKeydown", function (_ref) {
+    defineProperty(assertThisInitialized(_this), "handleKeydown", function (_ref) {
       var key = _ref.key;
 
       if (key === 'Enter') {
@@ -58,7 +58,7 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleTabMouseDown", function (_ref2) {
+    defineProperty(assertThisInitialized(_this), "handleTabMouseDown", function (_ref2) {
       var currentTarget = _ref2.currentTarget;
 
       // We would usually avoid using the DOM when possible, and prefer using a
@@ -73,7 +73,7 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(TabBar, [{
+  createClass(TabBar, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       document.addEventListener('keydown', this.handleKeydown);
@@ -106,7 +106,7 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
         return;
       }
 
-      var index = _toConsumableArray(this._barRef.current.childNodes).indexOf(element);
+      var index = toConsumableArray(this._barRef.current.childNodes).indexOf(element);
 
       if (index === -1) {
         return;
@@ -148,14 +148,14 @@ var TabBar = /*#__PURE__*/function (_React$Component) {
 /* eslint-disable react/prop-types */
 
 
-_defineProperty(TabBar, "propTypes", {
+defineProperty(TabBar, "propTypes", {
   items: propTypes.arrayOf(propTypes.node).isRequired,
   selected: propTypes.number,
   onChange: propTypes.func,
   inAppBar: propTypes.bool
 });
 
-_defineProperty(TabBar, "defaultProps", {
+defineProperty(TabBar, "defaultProps", {
   selected: 0,
   onChange: noop
 });

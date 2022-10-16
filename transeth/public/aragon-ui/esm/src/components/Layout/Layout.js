@@ -1,7 +1,7 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useContext, useMemo } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -12,11 +12,11 @@ import { BREAKPOINTS } from '../../style/breakpoints.js';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function getSizes(breakpoints) {
   return Object.entries(breakpoints).filter(function (_ref) {
-    var _ref2 = _slicedToArray(_ref, 1),
+    var _ref2 = slicedToArray(_ref, 1),
         name = _ref2[0];
 
     return name !== 'min';
@@ -77,13 +77,13 @@ function Layout(_ref3) {
       children = _ref3.children,
       paddingBottom = _ref3.paddingBottom,
       parentWidth = _ref3.parentWidth,
-      props = _objectWithoutProperties(_ref3, ["breakpoints", "children", "paddingBottom", "parentWidth"]);
+      props = objectWithoutProperties(_ref3, ["breakpoints", "children", "paddingBottom", "parentWidth"]);
 
   var mergedBreakpoints = useMergeBreakpoints(breakpoints);
   return /*#__PURE__*/React.createElement(LayoutProvider, {
     parentWidth: parentWidth,
     breakpoints: breakpoints
-  }, /*#__PURE__*/React.createElement(LayoutWidthLimiter, _extends({
+  }, /*#__PURE__*/React.createElement(LayoutWidthLimiter, _extends_1({
     minWidth: mergedBreakpoints.min,
     paddingBottom: paddingBottom
   }, props), children));
@@ -113,7 +113,7 @@ function LayoutProvider(_ref4) {
   var _useMemo = useMemo(function () {
     return getLayoutSize(parentWidth === undefined ? viewportWidth : parentWidth, mergedBreakpoints);
   }, [viewportWidth, parentWidth, mergedBreakpoints]),
-      _useMemo2 = _slicedToArray(_useMemo, 2),
+      _useMemo2 = slicedToArray(_useMemo, 2),
       layoutName = _useMemo2[0],
       layoutWidth = _useMemo2[1];
 
@@ -150,13 +150,13 @@ function LayoutWidthLimiter(_ref5) {
   var children = _ref5.children,
       minWidth = _ref5.minWidth,
       paddingBottom = _ref5.paddingBottom,
-      props = _objectWithoutProperties(_ref5, ["children", "minWidth", "paddingBottom"]);
+      props = objectWithoutProperties(_ref5, ["children", "minWidth", "paddingBottom"]);
 
   var _useLayout = useLayout(),
       layoutName = _useLayout.layoutName,
       layoutWidth = _useLayout.layoutWidth;
 
-  return /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
     _css: layoutName === 'small' ? 'auto' : "".concat(layoutWidth, "px"),
     _css2: minWidth,
     _css3: cssPx(paddingBottom)

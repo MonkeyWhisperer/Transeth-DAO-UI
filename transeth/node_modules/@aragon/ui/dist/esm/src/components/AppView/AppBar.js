@@ -1,26 +1,26 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import _styled, { css } from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
-import { Transition, animated as extendedAnimated } from '../../../node_modules/react-spring/web.js';
+import { animated as extendedAnimated, Transition } from '../../../node_modules/react-spring/web.js';
 import { Inside as i } from '../../../node_modules/use-inside/dist/index.js';
 import Text from '../Text/Text.js';
 import chevronSvg from './assets/chevron.svg.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
+import { PublicUrl } from '../../providers/PublicUrl/PublicUrl.js';
 import { unselectable } from '../../utils/css.js';
 import { springs } from '../../style/springs.js';
 import { noop } from '../../utils/miscellaneous.js';
-import { PublicUrl } from '../../providers/PublicUrl/PublicUrl.js';
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
@@ -59,14 +59,14 @@ var _StyledDiv4 = _styled("div").withConfig({
 });
 
 var AppBar = /*#__PURE__*/function (_React$Component) {
-  _inherits(AppBar, _React$Component);
+  inherits(AppBar, _React$Component);
 
   var _super = _createSuper(AppBar);
 
   function AppBar() {
     var _this;
 
-    _classCallCheck(this, AppBar);
+    classCallCheck(this, AppBar);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -74,16 +74,16 @@ var AppBar = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    defineProperty(assertThisInitialized(_this), "state", {
       tabsHeight: 0
     });
 
-    _defineProperty(_assertThisInitialized(_this), "_tabsRef", /*#__PURE__*/React.createRef());
+    defineProperty(assertThisInitialized(_this), "_tabsRef", /*#__PURE__*/React.createRef());
 
     return _this;
   }
 
-  _createClass(AppBar, [{
+  createClass(AppBar, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.updateTabsHeight();
@@ -121,7 +121,7 @@ var AppBar = /*#__PURE__*/function (_React$Component) {
           tabs = _this$props.tabs,
           title = _this$props.title,
           theme = _this$props.theme,
-          props = _objectWithoutProperties(_this$props, ["children", "endContent", "onTitleClick", "padding", "tabs", "title", "theme"]);
+          props = objectWithoutProperties(_this$props, ["children", "endContent", "onTitleClick", "padding", "tabs", "title", "theme"]);
 
       return /*#__PURE__*/React.createElement(i, {
         name: "AppBar"
@@ -129,7 +129,7 @@ var AppBar = /*#__PURE__*/function (_React$Component) {
         _css: theme.surface,
         _css2: unselectable(),
         _css3: theme.border
-      }, /*#__PURE__*/React.createElement(_StyledDiv2, _extends({}, props, {
+      }, /*#__PURE__*/React.createElement(_StyledDiv2, _extends_1({}, props, {
         _css4: BAR_HEIGHT - 1
       }), title && /*#__PURE__*/React.createElement(_StyledDiv3, {
         _css5: padding
@@ -174,7 +174,7 @@ var AppBar = /*#__PURE__*/function (_React$Component) {
   return AppBar;
 }(React.Component);
 
-_defineProperty(AppBar, "propTypes", {
+defineProperty(AppBar, "propTypes", {
   children: propTypes.node,
   endContent: propTypes.node,
   onTitleClick: propTypes.func,
@@ -184,7 +184,7 @@ _defineProperty(AppBar, "propTypes", {
   title: propTypes.node
 });
 
-_defineProperty(AppBar, "defaultProps", {
+defineProperty(AppBar, "defaultProps", {
   onTitleClick: noop,
   padding: 30,
   title: ''
@@ -206,7 +206,7 @@ var TabsWrapper = _styled(extendedAnimated.div).withConfig({
 })(["position:relative;z-index:1;"]);
 function AppBar$1 (props) {
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(AppBar, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(AppBar, _extends_1({}, props, {
     theme: theme
   }));
 }

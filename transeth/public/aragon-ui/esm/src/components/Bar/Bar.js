@@ -1,10 +1,10 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { Inside as i } from '../../../node_modules/use-inside/dist/index.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { useLayout } from '../Layout/Layout.js';
 import { RADIUS, GU } from '../../style/constants.js';
 
@@ -46,7 +46,7 @@ function Bar(_ref) {
   var children = _ref.children,
       primary = _ref.primary,
       secondary = _ref.secondary,
-      props = _objectWithoutProperties(_ref, ["children", "primary", "secondary"]);
+      props = objectWithoutProperties(_ref, ["children", "primary", "secondary"]);
 
   var theme = useTheme();
 
@@ -61,7 +61,7 @@ function Bar(_ref) {
   }, secondary)));
   return /*#__PURE__*/React.createElement(i, {
     name: "Bar"
-  }, /*#__PURE__*/React.createElement(_StyledDiv4, _extends({}, props, {
+  }, /*#__PURE__*/React.createElement(_StyledDiv4, _extends_1({}, props, {
     _css: fullScreen ? 0 : RADIUS,
     _css2: theme.surface,
     _css3: theme.border,

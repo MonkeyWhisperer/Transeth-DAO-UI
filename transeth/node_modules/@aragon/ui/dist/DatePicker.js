@@ -2,35 +2,35 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
 var dayjs_min = require('./dayjs.min-ac79806e.js');
-var MonthDay = require('./MonthDay-d28b47dd.js');
+var MonthDay = require('./MonthDay-fdf848ef.js');
 var date = require('./date.js');
 var constants = require('./constants.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./extends-5150c1f4.js');
+require('./extends-023d783e.js');
 require('./ButtonBase.js');
-require('./defineProperty-fdbd3c46.js');
+require('./defineProperty-3cad0327.js');
 require('./FocusVisible.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./Theme.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./keycodes.js');
 require('./css.js');
 require('./text-styles.js');
 require('./font.js');
 require('./IconLeft.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./IconPropTypes-b9997416.js');
 require('./index-c33eeeef.js');
 require('./IconRight.js');
 
@@ -63,10 +63,10 @@ function DatePicker(_ref) {
       monthYearFormat = _ref.monthYearFormat,
       hideWeekDays = _ref.hideWeekDays,
       weekDayFormat = _ref.weekDayFormat,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["initialDate", "onSelect", "datesRangeStart", "datesRangeEnd", "hideYearSelector", "yearFormat", "hideMonthSelector", "monthFormat", "monthYearFormat", "hideWeekDays", "weekDayFormat"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["initialDate", "onSelect", "datesRangeStart", "datesRangeEnd", "hideYearSelector", "yearFormat", "hideMonthSelector", "monthFormat", "monthYearFormat", "hideWeekDays", "weekDayFormat"]);
 
   var _useState = React.useState(initialDate),
-      _useState2 = slicedToArray._slicedToArray(_useState, 2),
+      _useState2 = slicedToArray.slicedToArray(_useState, 2),
       selectedDate = _useState2[0],
       setSelectedDate = _useState2[1];
 

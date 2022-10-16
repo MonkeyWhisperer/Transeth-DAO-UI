@@ -201,7 +201,7 @@ export { BREAKPOINTS, breakpoint } from './style/breakpoints.js';
 export { GU, RADIUS } from './style/constants.js';
 export { springs } from './style/springs.js';
 export { TEXT_STYLES, textStyle } from './style/text-styles.js';
-export { Theme, useTheme } from './theme/Theme.js';
+export { Theme, useTheme } from './theme/Theme2.js';
 export { brand, colors, theme, themeDark } from './theme-legacy/palettes.js';
 export { forwardProps, stylingProps } from './utils/components.js';
 export { initContainsComponent } from './utils/contains-component.js';

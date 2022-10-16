@@ -1,4 +1,4 @@
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -32,7 +32,7 @@ function RadioList(_ref) {
       onChange = _ref.onChange,
       selected = _ref.selected,
       title = _ref.title,
-      props = _objectWithoutProperties(_ref, ["description", "items", "onChange", "selected", "title"]);
+      props = objectWithoutProperties(_ref, ["description", "items", "onChange", "selected", "title"]);
 
   return /*#__PURE__*/React.createElement("div", props, title && /*#__PURE__*/React.createElement(_StyledH, {
     _css: 0.5 * GU

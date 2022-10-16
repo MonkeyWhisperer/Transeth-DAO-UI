@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -27,9 +27,9 @@ function ScrollView(_ref) {
   var children = _ref.children,
       horizontal = _ref.horizontal,
       vertical = _ref.vertical,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["children", "horizontal", "vertical"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["children", "horizontal", "vertical"]);
 
-  return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledDiv, _extends._extends_1({}, props, {
     _css: horizontal ? 'auto' : 'hidden',
     _css2: vertical ? 'auto' : 'hidden'
   }), children);

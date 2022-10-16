@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -11,11 +11,11 @@ var ButtonBase = require('./ButtonBase.js');
 var Theme = require('./Theme.js');
 var constants = require('./constants.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./defineProperty-fdbd3c46.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./defineProperty-3cad0327.js');
 require('./FocusVisible.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./keycodes.js');
 require('./css.js');
 require('./environment.js');
@@ -25,7 +25,7 @@ require('./font.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -49,10 +49,10 @@ var DiscButton = /*#__PURE__*/React__default['default'].forwardRef(function (_re
   var children = _ref.children,
       description = _ref.description,
       size = _ref.size,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["children", "description", "size"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["children", "description", "size"]);
 
   var theme = Theme.useTheme();
-  return /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(_StyledButtonBase, _extends._extends_1({
     ref: ref,
     focusRingSpacing: 4,
     focusRingRadius: size,

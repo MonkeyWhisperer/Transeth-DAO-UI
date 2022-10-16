@@ -2,14 +2,14 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var _extends = require('./extends-023d783e.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
 var dayjs_min = require('./dayjs.min-ac79806e.js');
 var Button = require('./Button.js');
-var Viewport = require('./Viewport-d2dce1b4.js');
+var Viewport = require('./Viewport-71f7efe6.js');
 var DatePicker = require('./DatePicker.js');
 var Labels = require('./Labels.js');
 var consts = require('./consts.js');
@@ -18,16 +18,16 @@ var Popover = require('./Popover.js');
 var Theme = require('./Theme.js');
 var constants = require('./constants.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./objectWithoutProperties-5d2c0728.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./objectWithoutProperties-c6d3675c.js');
 require('./index-c33eeeef.js');
 require('./Layout.js');
-require('./defineProperty-fdbd3c46.js');
+require('./defineProperty-3cad0327.js');
 require('./css.js');
 require('./breakpoints.js');
 require('./ButtonBase.js');
 require('./FocusVisible.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./keycodes.js');
 require('./environment.js');
 require('./miscellaneous.js');
@@ -36,22 +36,22 @@ require('./font.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./_baseGetTag-6ec23aaa.js');
-require('./MonthDay-d28b47dd.js');
+require('./MonthDay-fdf848ef.js');
 require('./IconLeft.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./IconPropTypes-b9997416.js');
 require('./IconRight.js');
 require('./date.js');
 require('./IconCalendar.js');
-require('./proptypes-0337766e.js');
-require('./web-7e5f0d11.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./proptypes-316e1def.js');
+require('./web-46d746d6.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 require('./RootPortal.js');
-require('./Root-ffe1134e.js');
-require('./components.js');
+require('./Root-07f851a6.js');
 require('./springs.js');
+require('./components.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -117,17 +117,17 @@ function DateRangePicker(_ref) {
   var labelsRef = React.useRef();
 
   var _useState = React.useState(false),
-      _useState2 = slicedToArray._slicedToArray(_useState, 2),
+      _useState2 = slicedToArray.slicedToArray(_useState, 2),
       showPicker = _useState2[0],
       setShowPicker = _useState2[1];
 
   var _useState3 = React.useState(startDateProp),
-      _useState4 = slicedToArray._slicedToArray(_useState3, 2),
+      _useState4 = slicedToArray.slicedToArray(_useState3, 2),
       startDate = _useState4[0],
       setStartDate = _useState4[1];
 
   var _useState5 = React.useState(endDateProp),
-      _useState6 = slicedToArray._slicedToArray(_useState5, 2),
+      _useState6 = slicedToArray.slicedToArray(_useState5, 2),
       endDate = _useState6[0],
       setEndDate = _useState6[1]; // on closing the picked, reset state
 
@@ -191,7 +191,7 @@ function DateRangePicker(_ref) {
     var propsDatesInSameMonth = startDateProp && endDateProp && dayjs_min.dayjs_min(startDateProp).isSame(dayjs_min.dayjs_min(endDateProp), 'month');
     return !compactMode && (propsDatesInSameMonth || !startDateProp);
   }, [compactMode, endDateProp, startDateProp]);
-  return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(Labels['default'], _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(Labels['default'], _extends._extends_1({
     ref: labelsRef,
     enabled: showPicker,
     hasSetDates: Boolean(startDateProp && endDateProp),

@@ -1,13 +1,13 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { useRef, useState, useCallback, useEffect, useMemo } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { animated as extendedAnimated, Spring } from '../../../node_modules/react-spring/web.js';
 import { useInside as o } from '../../../node_modules/use-inside/dist/index.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { GU } from '../../style/constants.js';
 import { springs } from '../../style/springs.js';
 import { textStyle } from '../../style/text-styles.js';
@@ -94,16 +94,16 @@ function Details(_ref) {
       label = _ref.label,
       onToggle = _ref.onToggle,
       openedProp = _ref.opened,
-      props = _objectWithoutProperties(_ref, ["children", "label", "onToggle", "opened"]);
+      props = objectWithoutProperties(_ref, ["children", "label", "onToggle", "opened"]);
 
   var theme = useTheme();
 
   var _useInside = o('Box'),
-      _useInside2 = _slicedToArray(_useInside, 1),
+      _useInside2 = slicedToArray(_useInside, 1),
       insideBox = _useInside2[0];
 
   var _useInside3 = o('SidePanel'),
-      _useInside4 = _slicedToArray(_useInside3, 1),
+      _useInside4 = slicedToArray(_useInside3, 1),
       insideSidePanel = _useInside4[0];
 
   var contentRef = useRef(null);
@@ -111,7 +111,7 @@ function Details(_ref) {
   // or controlled (external state).
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       openedManaged = _useState2[0],
       setOpenedManaged = _useState2[1];
 
@@ -144,7 +144,7 @@ function Details(_ref) {
   }, []); // Use height: 'auto' when opened
 
   var _useState3 = useState(false),
-      _useState4 = _slicedToArray(_useState3, 2),
+      _useState4 = slicedToArray(_useState3, 2),
       forceHeight = _useState4[0],
       setForceHeight = _useState4[1];
 
@@ -192,7 +192,7 @@ function Details(_ref) {
     native: true
   }, function (_ref2) {
     var openProgress = _ref2.openProgress;
-    return /*#__PURE__*/React.createElement(_StyledSection, _extends({}, props, {
+    return /*#__PURE__*/React.createElement(_StyledSection, _extends_1({}, props, {
       _css: spacingCss.section
     }), /*#__PURE__*/React.createElement(_StyledButtonBase, {
       onClick: handleToggle,
@@ -209,7 +209,7 @@ function Details(_ref) {
           return v;
         })
       }
-    }, /*#__PURE__*/React.createElement(_StyledDiv2, null))), /*#__PURE__*/React.createElement(_StyledH, _extends({}, props, {
+    }, /*#__PURE__*/React.createElement(_StyledDiv2, null))), /*#__PURE__*/React.createElement(_StyledH, _extends_1({}, props, {
       _css5: 5 * GU,
       _css6: 3 * GU,
       _css7: theme.surfaceContentSecondary,

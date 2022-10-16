@@ -2,11 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var aragon = require('./aragon.js');
 var environment = require('./environment.js');
-require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./miscellaneous.js');
 
 var THEME_NAME = 'Aragon UI';
@@ -28,7 +27,7 @@ var resolveColor = function resolveColor(value, palettes) {
   }
 
   var _value$slice$split = value.slice(1).split('.'),
-      _value$slice$split2 = slicedToArray._slicedToArray(_value$slice$split, 2),
+      _value$slice$split2 = slicedToArray.slicedToArray(_value$slice$split, 2),
       paletteName = _value$slice$split2[0],
       key = _value$slice$split2[1];
 
@@ -49,7 +48,7 @@ var resolveColor = function resolveColor(value, palettes) {
 
 var resolveColors = function resolveColors(palette, palettes) {
   return Object.entries(palette).reduce(function (pal, _ref) {
-    var _ref2 = slicedToArray._slicedToArray(_ref, 2),
+    var _ref2 = slicedToArray.slicedToArray(_ref, 2),
         name = _ref2[0],
         value = _ref2[1];
 
@@ -64,7 +63,7 @@ var resolveColors = function resolveColors(palette, palettes) {
 
 var generateGroups = function generateGroups(palettes) {
   return Object.entries(palettes).reduce(function (groups, _ref3) {
-    var _ref4 = slicedToArray._slicedToArray(_ref3, 2),
+    var _ref4 = slicedToArray.slicedToArray(_ref3, 2),
         paletteName = _ref4[0],
         palette = _ref4[1];
 
@@ -84,7 +83,7 @@ var generateGroups = function generateGroups(palettes) {
 
 
 var _Object$fromEntries = Object.fromEntries(Object.entries(generateGroups(aragon['default'])).map(function (_ref5) {
-  var _ref6 = slicedToArray._slicedToArray(_ref5, 2),
+  var _ref6 = slicedToArray.slicedToArray(_ref5, 2),
       name = _ref6[0],
       group = _ref6[1];
 

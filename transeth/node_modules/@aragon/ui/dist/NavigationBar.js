@@ -2,17 +2,17 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var getPrototypeOf = require('./getPrototypeOf-e2e819f3.js');
-var defineProperty = require('./defineProperty-fdbd3c46.js');
+var _extends = require('./extends-023d783e.js');
+var getPrototypeOf = require('./getPrototypeOf-55c9e80c.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
 var React = require('react');
 var index = require('./index-37353731.js');
 var _styled = require('styled-components');
-var web = require('./web-7e5f0d11.js');
+var web = require('./web-46d746d6.js');
 var LeftIcon = require('./LeftIcon.js');
 var springs = require('./springs.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -22,21 +22,21 @@ var _styled__default = /*#__PURE__*/_interopDefaultLegacy(_styled);
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty._defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty.defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf._getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf._getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf._possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf.getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf.getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return getPrototypeOf.possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 var NavigationBar = /*#__PURE__*/function (_React$Component) {
-  getPrototypeOf._inherits(NavigationBar, _React$Component);
+  getPrototypeOf.inherits(NavigationBar, _React$Component);
 
   var _super = _createSuper(NavigationBar);
 
   function NavigationBar() {
     var _this;
 
-    getPrototypeOf._classCallCheck(this, NavigationBar);
+    getPrototypeOf.classCallCheck(this, NavigationBar);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -44,7 +44,7 @@ var NavigationBar = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    defineProperty._defineProperty(getPrototypeOf._assertThisInitialized(_this), "state", {
+    defineProperty.defineProperty(getPrototypeOf.assertThisInitialized(_this), "state", {
       cachedItems: null,
       direction: -1
     });
@@ -52,7 +52,7 @@ var NavigationBar = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  getPrototypeOf._createClass(NavigationBar, [{
+  getPrototypeOf.createClass(NavigationBar, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -90,7 +90,7 @@ var NavigationBar = /*#__PURE__*/function (_React$Component) {
         native: true
       }, function (item) {
         return function (styles) {
-          return /*#__PURE__*/React__default['default'].createElement(Item, _extends._extends({
+          return /*#__PURE__*/React__default['default'].createElement(Item, _extends._extends_1({
             label: item.node,
             onBack: onBack,
             displayBack: item.index > 0,
@@ -119,13 +119,13 @@ var NavigationBar = /*#__PURE__*/function (_React$Component) {
   return NavigationBar;
 }(React__default['default'].Component);
 
-defineProperty._defineProperty(NavigationBar, "propTypes", {
+defineProperty.defineProperty(NavigationBar, "propTypes", {
   onBack: index.propTypes.func,
   items: index.propTypes.arrayOf(index.propTypes.node),
   compact: index.propTypes.bool
 });
 
-defineProperty._defineProperty(NavigationBar, "defaultProps", {
+defineProperty.defineProperty(NavigationBar, "defaultProps", {
   onBack: function onBack() {},
   items: [],
   compact: false

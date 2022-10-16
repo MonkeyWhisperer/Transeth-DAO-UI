@@ -1,4 +1,4 @@
-import _toConsumableArray from '../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
+import toConsumableArray from '../../node_modules/@babel/runtime/helpers/toConsumableArray.js';
 
 // Forward some props of an instance to a child element.
 //
@@ -20,7 +20,7 @@ function forwardProps(instance, names) {
 
 function stylingProps(instance) {
   var names = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-  return forwardProps(instance, ['style', 'className'].concat(_toConsumableArray(names)));
+  return forwardProps(instance, ['style', 'className'].concat(toConsumableArray(names)));
 }
 
 export { forwardProps, stylingProps };

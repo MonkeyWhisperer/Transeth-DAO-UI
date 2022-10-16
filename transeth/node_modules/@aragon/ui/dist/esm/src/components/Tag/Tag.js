@@ -1,9 +1,9 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { useMemo } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { unselectable } from '../../utils/css.js';
 import { GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
@@ -124,7 +124,7 @@ function Tag(_ref3) {
       mode = _ref3.mode,
       size = _ref3.size,
       uppercase = _ref3.uppercase,
-      props = _objectWithoutProperties(_ref3, ["background", "children", "color", "limitDigits", "icon", "label", "mode", "size", "uppercase"]);
+      props = objectWithoutProperties(_ref3, ["background", "children", "color", "limitDigits", "icon", "label", "mode", "size", "uppercase"]);
 
   if ((icon || label !== undefined) && children !== undefined) {
     throw new Error('Tag: you cannot use icon or label with children.');
@@ -146,7 +146,7 @@ function Tag(_ref3) {
   // to make the characters look more aligned.
 
   var alignmentCorrection = finalSize === SIZE_NORMAL && (uppercase || typeof label === 'number' || limitDigits !== false);
-  return /*#__PURE__*/React.createElement(_StyledSpan, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledSpan, _extends_1({}, props, {
     _css: sizeStyles,
     _css2: !uppercase ? 'text-transform: unset' : '',
     _css3: color || modeProps.color,

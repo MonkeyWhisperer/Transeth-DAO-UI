@@ -1,6 +1,6 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useRef, useState, useCallback } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -30,7 +30,7 @@ var TokenBadge = /*#__PURE__*/React.memo(function TokenBadge(_ref) {
   var badgeRef = useRef(null);
 
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       opened = _useState2[0],
       setOpened = _useState2[1];
 
@@ -110,10 +110,10 @@ var _StyledSpan2 = _styled("span").withConfig({
 function Icon(_ref3) {
   var compact = _ref3.compact,
       src = _ref3.src,
-      props = _objectWithoutProperties(_ref3, ["compact", "src"]);
+      props = objectWithoutProperties(_ref3, ["compact", "src"]);
 
   var margin = 1 * GU;
-  return /*#__PURE__*/React.createElement(_StyledSpan2, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(_StyledSpan2, _extends_1({}, props, {
     _css2: compact ? margin : 0,
     _css3: compact ? 0 : margin,
     _css4: src

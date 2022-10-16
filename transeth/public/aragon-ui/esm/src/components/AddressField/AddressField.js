@@ -1,4 +1,4 @@
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -21,7 +21,7 @@ var AddressField = /*#__PURE__*/React.forwardRef(function AddressField(_ref, ref
       autofocus = _ref.autofocus,
       icon = _ref.icon,
       onCopy = _ref.onCopy;
-      _objectWithoutProperties(_ref, ["address", "autofocus", "icon", "onCopy"]);
+      objectWithoutProperties(_ref, ["address", "autofocus", "icon", "onCopy"]);
 
   return /*#__PURE__*/React.createElement(TextCopy, {
     ref: ref,

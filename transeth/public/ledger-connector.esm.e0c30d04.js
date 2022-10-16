@@ -27579,7 +27579,9 @@ var configured_bignumber_1 = require("./configured_bignumber");
  */
 
 
-var AbiDecoder = function () {
+var AbiDecoder =
+/** @class */
+function () {
   /**
    * Instantiate an AbiDecoder
    * @param abiArrays An array of contract ABI's
@@ -29927,11 +29929,11 @@ exports.errorUtils = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.DOMException = void 0;
 exports.Headers = Headers;
 exports.Request = Request;
 exports.Response = Response;
 exports.fetch = fetch;
-exports.DOMException = void 0;
 var global = typeof globalThis !== 'undefined' && globalThis || typeof self !== 'undefined' && self || typeof global !== 'undefined' && global;
 var support = {
   searchParams: 'URLSearchParams' in global,
@@ -31438,7 +31440,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var ethUtil = require("ethereumjs-util");
 
-var CalldataBlock = function () {
+var CalldataBlock =
+/** @class */
+function () {
   function CalldataBlock(name, signature, parentName, headerSizeInBytes, bodySizeInBytes) {
     this._name = name;
     this._signature = signature;
@@ -31535,7 +31539,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var calldata_block_1 = require("../calldata_block");
 
-var BlobCalldataBlock = function (_super) {
+var BlobCalldataBlock =
+/** @class */
+function (_super) {
   __extends(BlobCalldataBlock, _super);
 
   function BlobCalldataBlock(name, signature, parentName, blob) {
@@ -31633,7 +31639,9 @@ var constants_1 = require("../../utils/constants");
 
 var calldata_block_1 = require("../calldata_block");
 
-var PointerCalldataBlock = function (_super) {
+var PointerCalldataBlock =
+/** @class */
+function (_super) {
   __extends(PointerCalldataBlock, _super);
 
   function PointerCalldataBlock(name, signature, parentName, dependency, parent) {
@@ -31731,7 +31739,9 @@ var _ = require("lodash");
 
 var calldata_block_1 = require("../calldata_block");
 
-var SetCalldataBlock = function (_super) {
+var SetCalldataBlock =
+/** @class */
+function (_super) {
   __extends(SetCalldataBlock, _super);
 
   function SetCalldataBlock(name, signature, parentName) {
@@ -31791,7 +31801,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var Queue = function () {
+var Queue =
+/** @class */
+function () {
   function Queue() {
     this._store = [];
   }
@@ -31911,7 +31923,9 @@ var set_1 = require("./blocks/set");
  */
 
 
-var BaseIterator = function () {
+var BaseIterator =
+/** @class */
+function () {
   function BaseIterator(root) {
     this._root = root;
     this._queue = BaseIterator._createQueue(root);
@@ -31972,7 +31986,9 @@ var BaseIterator = function () {
   return BaseIterator;
 }();
 
-var CalldataIterator = function (_super) {
+var CalldataIterator =
+/** @class */
+function (_super) {
   __extends(CalldataIterator, _super);
 
   function CalldataIterator(root) {
@@ -31988,7 +32004,9 @@ var CalldataIterator = function (_super) {
 
 exports.CalldataIterator = CalldataIterator;
 
-var ReverseCalldataIterator = function (_super) {
+var ReverseCalldataIterator =
+/** @class */
+function (_super) {
   __extends(ReverseCalldataIterator, _super);
 
   function ReverseCalldataIterator(root) {
@@ -32038,7 +32056,9 @@ var set_1 = require("./blocks/set");
 
 var iterator_1 = require("./iterator");
 
-var Calldata = function () {
+var Calldata =
+/** @class */
+function () {
   function Calldata(rules) {
     this._rules = rules;
     this._selector = '';
@@ -32370,7 +32390,9 @@ var constants_1 = require("../utils/constants");
 
 var queue_1 = require("../utils/queue");
 
-var RawCalldata = function () {
+var RawCalldata =
+/** @class */
+function () {
   function RawCalldata(value, hasSelector) {
     if (hasSelector === void 0) {
       hasSelector = true;
@@ -32484,7 +32506,9 @@ var raw_calldata_1 = require("../calldata/raw_calldata");
 
 var constants_1 = require("../utils/constants");
 
-var DataType = function () {
+var DataType =
+/** @class */
+function () {
   function DataType(dataItem, factory) {
     this._dataItem = dataItem;
     this._factory = factory;
@@ -32582,7 +32606,9 @@ var blob_1 = require("../../calldata/blocks/blob");
 
 var data_type_1 = require("../data_type");
 
-var AbstractBlobDataType = function (_super) {
+var AbstractBlobDataType =
+/** @class */
+function (_super) {
   __extends(AbstractBlobDataType, _super);
 
   function AbstractBlobDataType(dataItem, factory, sizeKnownAtCompileTime) {
@@ -32655,7 +32681,9 @@ var blob_1 = require("../abstract_data_types/types/blob");
 
 var constants_1 = require("../utils/constants");
 
-var AddressDataType = function (_super) {
+var AddressDataType =
+/** @class */
+function (_super) {
   __extends(AddressDataType, _super);
 
   function AddressDataType(dataItem, dataTypeFactory) {
@@ -32750,7 +32778,9 @@ var constants_1 = require("../../utils/constants");
 
 var data_type_1 = require("../data_type");
 
-var AbstractPointerDataType = function (_super) {
+var AbstractPointerDataType =
+/** @class */
+function (_super) {
   __extends(AbstractPointerDataType, _super);
 
   function AbstractPointerDataType(dataItem, factory, destination, parent) {
@@ -32870,7 +32900,9 @@ var data_type_1 = require("../data_type");
 
 var pointer_1 = require("./pointer");
 
-var AbstractSetDataType = function (_super) {
+var AbstractSetDataType =
+/** @class */
+function (_super) {
   __extends(AbstractSetDataType, _super);
 
   function AbstractSetDataType(dataItem, factory, isArray, arrayLength, arrayElementType) {
@@ -33202,7 +33234,9 @@ var set_1 = require("../abstract_data_types/types/set");
 
 var constants_1 = require("../utils/constants");
 
-var ArrayDataType = function (_super) {
+var ArrayDataType =
+/** @class */
+function (_super) {
   __extends(ArrayDataType, _super);
 
   function ArrayDataType(dataItem, dataTypeFactory) {
@@ -33328,7 +33362,9 @@ var blob_1 = require("../abstract_data_types/types/blob");
 
 var constants_1 = require("../utils/constants");
 
-var BoolDataType = function (_super) {
+var BoolDataType =
+/** @class */
+function (_super) {
   __extends(BoolDataType, _super);
 
   function BoolDataType(dataItem, dataTypeFactory) {
@@ -33428,7 +33464,9 @@ var blob_1 = require("../abstract_data_types/types/blob");
 
 var constants_1 = require("../utils/constants");
 
-var DynamicBytesDataType = function (_super) {
+var DynamicBytesDataType =
+/** @class */
+function (_super) {
   __extends(DynamicBytesDataType, _super);
 
   function DynamicBytesDataType(dataItem, dataTypeFactory) {
@@ -33688,7 +33726,9 @@ var constants_1 = require("../utils/constants");
 
 var EncoderMath = require("../utils/math");
 
-var IntDataType = function (_super) {
+var IntDataType =
+/** @class */
+function (_super) {
   __extends(IntDataType, _super);
 
   function IntDataType(dataItem, dataTypeFactory) {
@@ -33791,7 +33831,9 @@ var _ = require("lodash");
 
 var set_1 = require("../abstract_data_types/types/set");
 
-var TupleDataType = function (_super) {
+var TupleDataType =
+/** @class */
+function (_super) {
   __extends(TupleDataType, _super);
 
   function TupleDataType(dataItem, dataTypeFactory) {
@@ -33872,7 +33914,9 @@ var constants_1 = require("../utils/constants");
 
 var tuple_1 = require("./tuple");
 
-var MethodDataType = function (_super) {
+var MethodDataType =
+/** @class */
+function (_super) {
   __extends(MethodDataType, _super);
 
   function MethodDataType(abi, dataTypeFactory) {
@@ -34018,7 +34062,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var pointer_1 = require("../abstract_data_types/types/pointer");
 
-var PointerDataType = function (_super) {
+var PointerDataType =
+/** @class */
+function (_super) {
   __extends(PointerDataType, _super);
 
   function PointerDataType(destDataType, parentDataType, dataTypeFactory) {
@@ -34092,7 +34138,9 @@ var blob_1 = require("../abstract_data_types/types/blob");
 
 var constants_1 = require("../utils/constants");
 
-var StaticBytesDataType = function (_super) {
+var StaticBytesDataType =
+/** @class */
+function (_super) {
   __extends(StaticBytesDataType, _super);
 
   function StaticBytesDataType(dataItem, dataTypeFactory) {
@@ -34212,7 +34260,9 @@ var blob_1 = require("../abstract_data_types/types/blob");
 
 var constants_1 = require("../utils/constants");
 
-var StringDataType = function (_super) {
+var StringDataType =
+/** @class */
+function (_super) {
   __extends(StringDataType, _super);
 
   function StringDataType(dataItem, dataTypeFactory) {
@@ -34317,7 +34367,9 @@ var constants_1 = require("../utils/constants");
 
 var EncoderMath = require("../utils/math");
 
-var UIntDataType = function (_super) {
+var UIntDataType =
+/** @class */
+function (_super) {
   __extends(UIntDataType, _super);
 
   function UIntDataType(dataItem, dataTypeFactory) {
@@ -34440,7 +34492,9 @@ var tuple_1 = require("./evm_data_types/tuple");
 
 var uint_1 = require("./evm_data_types/uint");
 
-var Address = function (_super) {
+var Address =
+/** @class */
+function (_super) {
   __extends(Address, _super);
 
   function Address(dataItem) {
@@ -34452,7 +34506,9 @@ var Address = function (_super) {
 
 exports.Address = Address;
 
-var Bool = function (_super) {
+var Bool =
+/** @class */
+function (_super) {
   __extends(Bool, _super);
 
   function Bool(dataItem) {
@@ -34464,7 +34520,9 @@ var Bool = function (_super) {
 
 exports.Bool = Bool;
 
-var Int = function (_super) {
+var Int =
+/** @class */
+function (_super) {
   __extends(Int, _super);
 
   function Int(dataItem) {
@@ -34476,7 +34534,9 @@ var Int = function (_super) {
 
 exports.Int = Int;
 
-var UInt = function (_super) {
+var UInt =
+/** @class */
+function (_super) {
   __extends(UInt, _super);
 
   function UInt(dataItem) {
@@ -34488,7 +34548,9 @@ var UInt = function (_super) {
 
 exports.UInt = UInt;
 
-var StaticBytes = function (_super) {
+var StaticBytes =
+/** @class */
+function (_super) {
   __extends(StaticBytes, _super);
 
   function StaticBytes(dataItem) {
@@ -34500,7 +34562,9 @@ var StaticBytes = function (_super) {
 
 exports.StaticBytes = StaticBytes;
 
-var DynamicBytes = function (_super) {
+var DynamicBytes =
+/** @class */
+function (_super) {
   __extends(DynamicBytes, _super);
 
   function DynamicBytes(dataItem) {
@@ -34512,7 +34576,9 @@ var DynamicBytes = function (_super) {
 
 exports.DynamicBytes = DynamicBytes;
 
-var String = function (_super) {
+var String =
+/** @class */
+function (_super) {
   __extends(String, _super);
 
   function String(dataItem) {
@@ -34524,7 +34590,9 @@ var String = function (_super) {
 
 exports.String = String;
 
-var Pointer = function (_super) {
+var Pointer =
+/** @class */
+function (_super) {
   __extends(Pointer, _super);
 
   function Pointer(destDataType, parentDataType) {
@@ -34536,7 +34604,9 @@ var Pointer = function (_super) {
 
 exports.Pointer = Pointer;
 
-var Tuple = function (_super) {
+var Tuple =
+/** @class */
+function (_super) {
   __extends(Tuple, _super);
 
   function Tuple(dataItem) {
@@ -34548,7 +34618,9 @@ var Tuple = function (_super) {
 
 exports.Tuple = Tuple;
 
-var Array = function (_super) {
+var Array =
+/** @class */
+function (_super) {
   __extends(Array, _super);
 
   function Array(dataItem) {
@@ -34560,7 +34632,9 @@ var Array = function (_super) {
 
 exports.Array = Array;
 
-var Method = function (_super) {
+var Method =
+/** @class */
+function (_super) {
   __extends(Method, _super);
 
   function Method(abi) {
@@ -34573,7 +34647,9 @@ var Method = function (_super) {
 exports.Method = Method;
 /* tslint:disable no-construct */
 
-var EvmDataTypeFactory = function () {
+var EvmDataTypeFactory =
+/** @class */
+function () {
   /* tslint:enable prefer-function-over-method */
   function EvmDataTypeFactory() {}
 
@@ -34977,7 +35053,9 @@ var utils_1 = require("@0x/utils");
  */
 
 
-var Subprovider = function () {
+var Subprovider =
+/** @class */
+function () {
   function Subprovider() {}
 
   Subprovider._createFinalPayload = function (payload) {
@@ -35222,7 +35300,9 @@ var subprovider_1 = require("./subprovider");
  */
 
 
-var EmptyWalletSubprovider = function (_super) {
+var EmptyWalletSubprovider =
+/** @class */
+function (_super) {
   __extends(EmptyWalletSubprovider, _super);
 
   function EmptyWalletSubprovider() {
@@ -35446,7 +35526,9 @@ var subprovider_1 = require("./subprovider"); // HACK: We need this so that our 
  */
 
 
-var FakeGasEstimateSubprovider = function (_super) {
+var FakeGasEstimateSubprovider =
+/** @class */
+function (_super) {
   __extends(FakeGasEstimateSubprovider, _super);
   /**
    * Instantiates an instance of the FakeGasEstimateSubprovider
@@ -38709,7 +38791,9 @@ var schemas_1 = require("./schemas");
  */
 
 
-var SchemaValidator = function () {
+var SchemaValidator =
+/** @class */
+function () {
   /**
    * Instantiates a SchemaValidator instance
    */
@@ -39593,7 +39677,9 @@ var uniqueVersionIds = {
  * An alternative to the Web3.js library that provides a consistent, clean, promise-based interface.
  */
 
-var Web3Wrapper = function () {
+var Web3Wrapper =
+/** @class */
+function () {
   /**
    * Instantiates a new Web3Wrapper.
    * @param   provider    The Web3 provider instance you would like the Web3Wrapper to use for interacting with
@@ -41064,7 +41150,9 @@ var subprovider_1 = require("./subprovider");
  */
 
 
-var SignerSubprovider = function (_super) {
+var SignerSubprovider =
+/** @class */
+function (_super) {
   __extends(SignerSubprovider, _super);
   /**
    * Instantiates a new SignerSubprovider.
@@ -41479,7 +41567,9 @@ var subprovider_1 = require("./subprovider");
  */
 
 
-var RedundantSubprovider = function (_super) {
+var RedundantSubprovider =
+/** @class */
+function (_super) {
   __extends(RedundantSubprovider, _super);
   /**
    * Instantiates a new RedundantSubprovider
@@ -41813,7 +41903,7 @@ module.exports = {
   createValidator: createValidator
 }
 
-},{"bs58":"../node_modules/coinstring/node_modules/bs58/lib/bs58.js","create-hash":"../node_modules/create-hash/browser.js","buffer":"../node_modules/node-libs-browser/node_modules/buffer/index.js"}],"../node_modules/secp256k1/lib/assert.js":[function(require,module,exports) {
+},{"bs58":"../node_modules/coinstring/node_modules/bs58/lib/bs58.js","create-hash":"../node_modules/create-hash/browser.js","buffer":"../node_modules/node-libs-browser/node_modules/buffer/index.js"}],"../node_modules/hdkey/node_modules/secp256k1/lib/assert.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -41975,7 +42065,7 @@ module.exports = {
   encode: encode
 }
 
-},{"safe-buffer":"../node_modules/safe-buffer/index.js"}],"../node_modules/secp256k1/lib/der.js":[function(require,module,exports) {
+},{"safe-buffer":"../node_modules/safe-buffer/index.js"}],"../node_modules/hdkey/node_modules/secp256k1/lib/der.js":[function(require,module,exports) {
 
 'use strict';
 
@@ -42133,7 +42223,7 @@ exports.signatureImportLax = function (sig) {
     s: s
   };
 };
-},{"safe-buffer":"../node_modules/safe-buffer/index.js","bip66":"../node_modules/bip66/index.js"}],"../node_modules/secp256k1/lib/messages.json":[function(require,module,exports) {
+},{"safe-buffer":"../node_modules/safe-buffer/index.js","bip66":"../node_modules/bip66/index.js"}],"../node_modules/hdkey/node_modules/secp256k1/lib/messages.json":[function(require,module,exports) {
 module.exports = {
   "COMPRESSED_TYPE_INVALID": "compressed should be a boolean",
   "EC_PRIVATE_KEY_TYPE_INVALID": "private key should be a Buffer",
@@ -42171,7 +42261,7 @@ module.exports = {
   "TWEAK_TYPE_INVALID": "tweak should be a Buffer",
   "TWEAK_LENGTH_INVALID": "tweak length is invalid"
 };
-},{}],"../node_modules/secp256k1/lib/index.js":[function(require,module,exports) {
+},{}],"../node_modules/hdkey/node_modules/secp256k1/lib/index.js":[function(require,module,exports) {
 'use strict';
 
 var assert = require('./assert');
@@ -42359,7 +42449,7 @@ module.exports = function (secp256k1) {
     }
   };
 };
-},{"./assert":"../node_modules/secp256k1/lib/assert.js","./der":"../node_modules/secp256k1/lib/der.js","./messages.json":"../node_modules/secp256k1/lib/messages.json"}],"../node_modules/secp256k1/lib/elliptic/index.js":[function(require,module,exports) {
+},{"./assert":"../node_modules/hdkey/node_modules/secp256k1/lib/assert.js","./der":"../node_modules/hdkey/node_modules/secp256k1/lib/der.js","./messages.json":"../node_modules/hdkey/node_modules/secp256k1/lib/messages.json"}],"../node_modules/hdkey/node_modules/secp256k1/lib/elliptic/index.js":[function(require,module,exports) {
 
 'use strict';
 
@@ -42619,11 +42709,11 @@ exports.ecdhUnsafe = function (publicKey, privateKey, compressed) {
   if (scalar.cmp(ecparams.n) >= 0 || scalar.isZero()) throw new Error(messages.ECDH_FAIL);
   return Buffer.from(pair.pub.mul(scalar).encode(true, compressed));
 };
-},{"safe-buffer":"../node_modules/safe-buffer/index.js","create-hash":"../node_modules/create-hash/browser.js","bn.js":"../node_modules/bn.js/lib/bn.js","elliptic":"../node_modules/elliptic/lib/elliptic.js","../messages.json":"../node_modules/secp256k1/lib/messages.json"}],"../node_modules/secp256k1/elliptic.js":[function(require,module,exports) {
+},{"safe-buffer":"../node_modules/safe-buffer/index.js","create-hash":"../node_modules/create-hash/browser.js","bn.js":"../node_modules/bn.js/lib/bn.js","elliptic":"../node_modules/elliptic/lib/elliptic.js","../messages.json":"../node_modules/hdkey/node_modules/secp256k1/lib/messages.json"}],"../node_modules/hdkey/node_modules/secp256k1/elliptic.js":[function(require,module,exports) {
 'use strict';
 
 module.exports = require('./lib')(require('./lib/elliptic'));
-},{"./lib":"../node_modules/secp256k1/lib/index.js","./lib/elliptic":"../node_modules/secp256k1/lib/elliptic/index.js"}],"../node_modules/hdkey/lib/hdkey.js":[function(require,module,exports) {
+},{"./lib":"../node_modules/hdkey/node_modules/secp256k1/lib/index.js","./lib/elliptic":"../node_modules/hdkey/node_modules/secp256k1/lib/elliptic/index.js"}],"../node_modules/hdkey/lib/hdkey.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 var assert = require('assert')
 var crypto = require('crypto')
@@ -42853,7 +42943,7 @@ function hash160 (buf) {
 HDKey.HARDENED_OFFSET = HARDENED_OFFSET
 module.exports = HDKey
 
-},{"assert":"../node_modules/assert/assert.js","crypto":"../node_modules/crypto-browserify/index.js","coinstring":"../node_modules/coinstring/lib/coinstring.js","secp256k1":"../node_modules/secp256k1/elliptic.js","buffer":"../node_modules/node-libs-browser/node_modules/buffer/index.js"}],"../node_modules/semaphore-async-await/dist/Semaphore.js":[function(require,module,exports) {
+},{"assert":"../node_modules/assert/assert.js","crypto":"../node_modules/crypto-browserify/index.js","coinstring":"../node_modules/coinstring/lib/coinstring.js","secp256k1":"../node_modules/hdkey/node_modules/secp256k1/elliptic.js","buffer":"../node_modules/node-libs-browser/node_modules/buffer/index.js"}],"../node_modules/semaphore-async-await/dist/Semaphore.js":[function(require,module,exports) {
 "use strict";
 
 var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
@@ -43353,7 +43443,9 @@ var ethUtil = require("ethereumjs-util");
 
 var DEFAULT_ADDRESS_SEARCH_LIMIT = 1000;
 
-var DerivedHDKeyInfoIterator = function () {
+var DerivedHDKeyInfoIterator =
+/** @class */
+function () {
   function DerivedHDKeyInfoIterator(initialDerivedKey, searchLimit) {
     if (searchLimit === void 0) {
       searchLimit = DEFAULT_ADDRESS_SEARCH_LIMIT;
@@ -43673,7 +43765,9 @@ var types_1 = require("../types");
 
 var subprovider_1 = require("./subprovider");
 
-var BaseWalletSubprovider = function (_super) {
+var BaseWalletSubprovider =
+/** @class */
+function (_super) {
   __extends(BaseWalletSubprovider, _super);
 
   function BaseWalletSubprovider() {
@@ -44261,7 +44355,9 @@ var DEFAULT_ADDRESS_SEARCH_LIMIT = 1000;
  * re-routes them to a Ledger device plugged into the users computer.
  */
 
-var LedgerSubprovider = function (_super) {
+var LedgerSubprovider =
+/** @class */
+function (_super) {
   __extends(LedgerSubprovider, _super);
   /**
    * Instantiates a LedgerSubprovider. Defaults to derivationPath set to `44'/60'/0'`.
@@ -45217,7 +45313,9 @@ var subprovider_1 = require("./subprovider");
  */
 
 
-var RPCSubprovider = function (_super) {
+var RPCSubprovider =
+/** @class */
+function (_super) {
   __extends(RPCSubprovider, _super);
   /**
    * @param rpcUrl URL to the backing Ethereum node to which JSON RPC requests should be sent
@@ -45526,7 +45624,9 @@ var subprovider_1 = require("./subprovider");
  */
 
 
-var GanacheSubprovider = function (_super) {
+var GanacheSubprovider =
+/** @class */
+function (_super) {
   __extends(GanacheSubprovider, _super);
   /**
    * Instantiates a GanacheSubprovider
@@ -45758,7 +45858,9 @@ var NONCE_TOO_LOW_ERROR_MESSAGE = 'Transaction nonce is too low';
  * We added the additional feature of clearing the cached nonce value when a `nonce value too low` error occurs.
  */
 
-var NonceTrackerSubprovider = function (_super) {
+var NonceTrackerSubprovider =
+/** @class */
+function (_super) {
   __extends(NonceTrackerSubprovider, _super);
 
   function NonceTrackerSubprovider() {
@@ -46090,7 +46192,9 @@ var base_wallet_subprovider_1 = require("./base_wallet_subprovider");
  */
 
 
-var PrivateKeyWalletSubprovider = function (_super) {
+var PrivateKeyWalletSubprovider =
+/** @class */
+function (_super) {
   __extends(PrivateKeyWalletSubprovider, _super);
   /**
    * Instantiates a PrivateKeyWalletSubprovider.
@@ -71613,7 +71717,9 @@ var DEFAULT_ADDRESS_SEARCH_LIMIT = 1000;
  * all requests with accounts derived from the supplied mnemonic.
  */
 
-var MnemonicWalletSubprovider = function (_super) {
+var MnemonicWalletSubprovider =
+/** @class */
+function (_super) {
   __extends(MnemonicWalletSubprovider, _super);
   /**
    * Instantiates a MnemonicWalletSubprovider. Defaults to baseDerivationPath set to `44'/60'/0'/0`.
@@ -72047,7 +72153,9 @@ var subprovider_1 = require("./subprovider");
  */
 
 
-var MetamaskSubprovider = function (_super) {
+var MetamaskSubprovider =
+/** @class */
+function (_super) {
   __extends(MetamaskSubprovider, _super);
   /**
    * Instantiates a new MetamaskSubprovider
@@ -72496,7 +72604,9 @@ var PRIVATE_KEY_PATH = "44'/60'/0'/0";
 var DEFAULT_NUM_ADDRESSES_TO_FETCH = 10;
 var DEFAULT_ADDRESS_SEARCH_LIMIT = 1000;
 
-var TrezorSubprovider = function (_super) {
+var TrezorSubprovider =
+/** @class */
+function (_super) {
   __extends(TrezorSubprovider, _super);
   /**
    * Instantiates a TrezorSubprovider. Defaults to private key path set to `44'/60'/0'/0/`.
@@ -73762,7 +73872,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58597" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61626" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

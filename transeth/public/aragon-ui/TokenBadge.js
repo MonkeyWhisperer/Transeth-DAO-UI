@@ -2,55 +2,55 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
-var slicedToArray = require('./slicedToArray-bb07ac16.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
+var slicedToArray = require('./slicedToArray-a8a77f0e.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
 var BadgeBase = require('./BadgeBase.js');
 var TokenBadgePopover = require('./TokenBadgePopover.js');
-var web3 = require('./web3-3474f303.js');
+var web3 = require('./web3-4ef44cda.js');
 var environment = require('./environment.js');
 var useImageExists = require('./useImageExists.js');
 var constants = require('./constants.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
+require('./unsupportedIterableToArray-f175acfa.js');
 require('./index-c33eeeef.js');
 require('./ButtonBase.js');
-require('./defineProperty-fdbd3c46.js');
+require('./defineProperty-3cad0327.js');
 require('./FocusVisible.js');
-require('./getPrototypeOf-e2e819f3.js');
+require('./getPrototypeOf-55c9e80c.js');
 require('./Theme.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./color.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./keycodes.js');
 require('./css.js');
 require('./text-styles.js');
 require('./font.js');
 require('./miscellaneous.js');
-require('./proptypes-0337766e.js');
+require('./proptypes-316e1def.js');
 require('./AddressField.js');
 require('./TextCopy.js');
 require('./TextInput.js');
 require('./ButtonIcon.js');
 require('./Button.js');
 require('./Layout.js');
-require('./Viewport-d2dce1b4.js');
+require('./Viewport-71f7efe6.js');
 require('./_baseGetTag-6ec23aaa.js');
 require('./breakpoints.js');
 require('./ToastHub.js');
-require('./web-7e5f0d11.js');
-require('./objectWithoutPropertiesLoose-34dfcdd4.js');
+require('./web-46d746d6.js');
+require('./objectWithoutPropertiesLoose-1af20ad0.js');
 require('react-dom');
 require('./RootPortal.js');
-require('./Root-ffe1134e.js');
+require('./Root-07f851a6.js');
 require('./components.js');
 require('./springs.js');
 require('./IconCopy.js');
-require('./IconPropTypes-f5b14dc5.js');
+require('./IconPropTypes-b9997416.js');
 require('./EthIdenticon.js');
 require('./BadgePopoverBase.js');
 require('./Popover.js');
@@ -82,7 +82,7 @@ var TokenBadge = /*#__PURE__*/React__default['default'].memo(function TokenBadge
   var badgeRef = React.useRef(null);
 
   var _useState = React.useState(false),
-      _useState2 = slicedToArray._slicedToArray(_useState, 2),
+      _useState2 = slicedToArray.slicedToArray(_useState, 2),
       opened = _useState2[0],
       setOpened = _useState2[1];
 
@@ -162,10 +162,10 @@ var _StyledSpan2 = _styled__default['default']("span").withConfig({
 function Icon(_ref3) {
   var compact = _ref3.compact,
       src = _ref3.src,
-      props = objectWithoutProperties._objectWithoutProperties(_ref3, ["compact", "src"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref3, ["compact", "src"]);
 
   var margin = 1 * constants.GU;
-  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan2, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan2, _extends._extends_1({}, props, {
     _css2: compact ? margin : 0,
     _css3: compact ? 0 : margin,
     _css4: src

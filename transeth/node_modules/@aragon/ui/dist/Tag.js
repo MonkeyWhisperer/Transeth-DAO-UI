@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -12,16 +12,16 @@ var css = require('./css.js');
 var constants = require('./constants.js');
 var textStyles = require('./text-styles.js');
 require('./_commonjsHelpers-1b94f6bc.js');
-require('./slicedToArray-bb07ac16.js');
-require('./unsupportedIterableToArray-d5a3ce67.js');
-require('./defineProperty-fdbd3c46.js');
+require('./slicedToArray-a8a77f0e.js');
+require('./unsupportedIterableToArray-f175acfa.js');
+require('./defineProperty-3cad0327.js');
 require('./theme-dark.js');
 require('./theme-light.js');
 require('./environment.js');
 require('./miscellaneous.js');
 require('./color.js');
-require('./getPrototypeOf-e2e819f3.js');
-require('./toConsumableArray-0f2dcfe0.js');
+require('./getPrototypeOf-55c9e80c.js');
+require('./toConsumableArray-cc0d28a9.js');
 require('./font.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -145,7 +145,7 @@ function Tag(_ref3) {
       mode = _ref3.mode,
       size = _ref3.size,
       uppercase = _ref3.uppercase,
-      props = objectWithoutProperties._objectWithoutProperties(_ref3, ["background", "children", "color", "limitDigits", "icon", "label", "mode", "size", "uppercase"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref3, ["background", "children", "color", "limitDigits", "icon", "label", "mode", "size", "uppercase"]);
 
   if ((icon || label !== undefined) && children !== undefined) {
     throw new Error('Tag: you cannot use icon or label with children.');
@@ -167,7 +167,7 @@ function Tag(_ref3) {
   // to make the characters look more aligned.
 
   var alignmentCorrection = finalSize === SIZE_NORMAL && (uppercase || typeof label === 'number' || limitDigits !== false);
-  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan, _extends._extends_1({}, props, {
     _css: sizeStyles,
     _css2: !uppercase ? 'text-transform: unset' : '',
     _css3: color || modeProps.color,

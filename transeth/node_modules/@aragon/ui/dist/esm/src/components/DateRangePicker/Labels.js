@@ -1,12 +1,12 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
 import _styled from 'styled-components';
 import React, { forwardRef } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import { INPUT_BORDER, START_DATE, END_DATE } from './consts.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
 import IconCalendar from '../../icons/components/IconCalendar.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { RADIUS, GU } from '../../style/constants.js';
 import { textStyle } from '../../style/text-styles.js';
 
@@ -71,7 +71,7 @@ var Labels = /*#__PURE__*/forwardRef(function Labels(_ref, ref) {
       endText = _ref.endText,
       hasSetDates = _ref.hasSetDates,
       onClick = _ref.onClick,
-      props = _objectWithoutProperties(_ref, ["enabled", "startText", "endText", "hasSetDates", "onClick"]);
+      props = objectWithoutProperties(_ref, ["enabled", "startText", "endText", "hasSetDates", "onClick"]);
 
   var theme = useTheme();
   var hasNoStart = startText === START_DATE;
@@ -80,7 +80,7 @@ var Labels = /*#__PURE__*/forwardRef(function Labels(_ref, ref) {
     focusRingRadius: RADIUS,
     ref: ref,
     onClick: onClick
-  }, /*#__PURE__*/React.createElement(_StyledDiv, _extends({}, props, {
+  }, /*#__PURE__*/React.createElement(_StyledDiv, _extends_1({}, props, {
     _css: 27.5 * GU,
     _css2: hasSetDates ? theme.accent : theme.border,
     _css3: theme.surface,

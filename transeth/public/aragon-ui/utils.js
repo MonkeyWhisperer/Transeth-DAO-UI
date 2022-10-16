@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var defineProperty = require('./defineProperty-fdbd3c46.js');
+var defineProperty = require('./defineProperty-3cad0327.js');
 var dayjs_min = require('./dayjs.min-ac79806e.js');
 require('./_commonjsHelpers-1b94f6bc.js');
 
@@ -59,7 +59,7 @@ function handleDateSelect(_ref) {
   }
 
   if (isValidDate) {
-    return defineProperty._defineProperty({}, startDate ? 'endDate' : 'startDate', date);
+    return defineProperty.defineProperty({}, startDate ? 'endDate' : 'startDate', date);
   }
 }
 

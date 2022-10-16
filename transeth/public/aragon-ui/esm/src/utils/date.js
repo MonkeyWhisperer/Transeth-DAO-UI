@@ -1,4 +1,4 @@
-import _slicedToArray from '../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import slicedToArray from '../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import dayjs_min from '../../node_modules/dayjs/dayjs.min.js';
 
 var UNITS = [['years', 'year'], ['months', 'month'], ['days', 'day'], ['hours', 'hour'], ['minutes', 'minute'], ['seconds', 'second']];
@@ -15,7 +15,7 @@ var difference = function difference(date1, date2) {
 
   var getRightMostUnitIndex = function getRightMostUnitIndex() {
     return [].concat(UNITS).reverse().find(function (_ref) {
-      var _ref2 = _slicedToArray(_ref, 1),
+      var _ref2 = slicedToArray(_ref, 1),
           unit = _ref2[0];
 
       return units.includes(unit);
@@ -23,7 +23,7 @@ var difference = function difference(date1, date2) {
   };
 
   return UNITS.reduce(function (result, _ref3, index) {
-    var _ref4 = _slicedToArray(_ref3, 2),
+    var _ref4 = slicedToArray(_ref3, 2),
         name = _ref4[0],
         unitName = _ref4[1];
 

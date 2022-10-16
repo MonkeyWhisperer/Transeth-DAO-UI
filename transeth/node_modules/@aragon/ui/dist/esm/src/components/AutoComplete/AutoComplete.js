@@ -1,5 +1,5 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -9,7 +9,7 @@ import SearchInput from '../Input/SearchInput.js';
 import { useArrowKeysFocus } from '../../hooks/useArrowKeysFocus.js';
 import { useClickOutside } from '../../hooks/useClickOutside.js';
 import { useKeyDown } from '../../hooks/useKeyDown.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import { noop, identity } from '../../utils/miscellaneous.js';
 import { useFocusLeave } from '../../hooks/useFocusLeave.js';
 import { KEY_ESC } from '../../utils/keycodes.js';
@@ -41,7 +41,7 @@ function AutoComplete(_ref) {
   var uniqueItems = new Set(items);
 
   var _useState = useState(true),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       opened = _useState2[0],
       setOpened = _useState2[1];
 
@@ -209,7 +209,7 @@ var _StyledAnimatedUl = _styled(extendedAnimated.ul).withConfig({
 
 var Items = function Items(props) {
   var theme = useTheme();
-  return /*#__PURE__*/React.createElement(_StyledAnimatedUl, _extends({
+  return /*#__PURE__*/React.createElement(_StyledAnimatedUl, _extends_1({
     role: "listbox"
   }, props, {
     _css4: theme.surfaceContent,
@@ -222,7 +222,7 @@ var Items = function Items(props) {
 
 var AutoCompleteMemo = /*#__PURE__*/React.memo(AutoComplete);
 var AutoComplete$1 = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  return /*#__PURE__*/React.createElement(AutoCompleteMemo, _extends({}, props, {
+  return /*#__PURE__*/React.createElement(AutoCompleteMemo, _extends_1({}, props, {
     forwardedRef: ref
   }));
 });

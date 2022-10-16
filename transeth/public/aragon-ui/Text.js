@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var _extends = require('./extends-5150c1f4.js');
-var objectWithoutProperties = require('./objectWithoutProperties-5d2c0728.js');
+var _extends = require('./extends-023d783e.js');
+var objectWithoutProperties = require('./objectWithoutProperties-c6d3675c.js');
 var _styled = require('styled-components');
 var React = require('react');
 var index = require('./index-37353731.js');
@@ -34,13 +34,13 @@ function Text(_ref) {
       size = _ref.size,
       smallcaps = _ref.smallcaps,
       weight = _ref.weight,
-      props = objectWithoutProperties._objectWithoutProperties(_ref, ["children", "color", "deprecationNotice", "monospace", "size", "smallcaps", "weight"]);
+      props = objectWithoutProperties.objectWithoutProperties(_ref, ["children", "color", "deprecationNotice", "monospace", "size", "smallcaps", "weight"]);
 
   if (deprecationNotice) {
     environment.warnOnce('Text', 'Text, Text.Block and Text.Paragraph are deprecated. ' + 'Please use the textStyle() utility function instead.');
   }
 
-  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan, _extends._extends({}, props, {
+  return /*#__PURE__*/React__default['default'].createElement(_StyledSpan, _extends._extends_1({}, props, {
     _css: font.font({
       deprecationNotice: false,
       monospace: monospace,
@@ -53,13 +53,13 @@ function Text(_ref) {
 }
 
 var Block = function Block(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Text, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(Text, _extends._extends_1({
     as: "div"
   }, props));
 };
 
 var Paragraph = function Paragraph(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Text, _extends._extends({
+  return /*#__PURE__*/React__default['default'].createElement(Text, _extends._extends_1({
     as: "p"
   }, props));
 };

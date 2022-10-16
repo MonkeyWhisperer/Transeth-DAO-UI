@@ -1,11 +1,11 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
-import _createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
-import _assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
-import _inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
-import _possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
-import _getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
-import _defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import classCallCheck from '../../../node_modules/@babel/runtime/helpers/classCallCheck.js';
+import createClass from '../../../node_modules/@babel/runtime/helpers/createClass.js';
+import assertThisInitialized from '../../../node_modules/@babel/runtime/helpers/assertThisInitialized.js';
+import inherits from '../../../node_modules/@babel/runtime/helpers/inherits.js';
+import possibleConstructorReturn from '../../../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js';
+import getPrototypeOf from '../../../node_modules/@babel/runtime/helpers/getPrototypeOf.js';
+import defineProperty from '../../../node_modules/@babel/runtime/helpers/defineProperty.js';
 import React from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
 import _styled from 'styled-components';
@@ -15,21 +15,21 @@ import { springs } from '../../style/springs.js';
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 var NavigationBar = /*#__PURE__*/function (_React$Component) {
-  _inherits(NavigationBar, _React$Component);
+  inherits(NavigationBar, _React$Component);
 
   var _super = _createSuper(NavigationBar);
 
   function NavigationBar() {
     var _this;
 
-    _classCallCheck(this, NavigationBar);
+    classCallCheck(this, NavigationBar);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -37,7 +37,7 @@ var NavigationBar = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    defineProperty(assertThisInitialized(_this), "state", {
       cachedItems: null,
       direction: -1
     });
@@ -45,7 +45,7 @@ var NavigationBar = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(NavigationBar, [{
+  createClass(NavigationBar, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -83,7 +83,7 @@ var NavigationBar = /*#__PURE__*/function (_React$Component) {
         native: true
       }, function (item) {
         return function (styles) {
-          return /*#__PURE__*/React.createElement(Item, _extends({
+          return /*#__PURE__*/React.createElement(Item, _extends_1({
             label: item.node,
             onBack: onBack,
             displayBack: item.index > 0,
@@ -112,13 +112,13 @@ var NavigationBar = /*#__PURE__*/function (_React$Component) {
   return NavigationBar;
 }(React.Component);
 
-_defineProperty(NavigationBar, "propTypes", {
+defineProperty(NavigationBar, "propTypes", {
   onBack: propTypes.func,
   items: propTypes.arrayOf(propTypes.node),
   compact: propTypes.bool
 });
 
-_defineProperty(NavigationBar, "defaultProps", {
+defineProperty(NavigationBar, "defaultProps", {
   onBack: function onBack() {},
   items: [],
   compact: false

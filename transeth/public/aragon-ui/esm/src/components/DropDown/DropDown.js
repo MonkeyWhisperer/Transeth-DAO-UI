@@ -1,6 +1,6 @@
-import _extends from '../../../node_modules/@babel/runtime/helpers/extends.js';
-import _objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
-import _slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
+import _extends_1 from '../../../node_modules/@babel/runtime/helpers/extends.js';
+import objectWithoutProperties from '../../../node_modules/@babel/runtime/helpers/objectWithoutProperties.js';
+import slicedToArray from '../../../node_modules/@babel/runtime/helpers/slicedToArray.js';
 import _styled from 'styled-components';
 import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import propTypes from '../../../node_modules/prop-types/index.js';
@@ -8,7 +8,7 @@ import { Inside as i } from '../../../node_modules/use-inside/dist/index.js';
 import { useViewport } from '../../providers/Viewport/Viewport.js';
 import ButtonBaseWithFocus from '../ButtonBase/ButtonBase.js';
 import Popover from '../Popover/Popover.js';
-import { useTheme } from '../../theme/Theme.js';
+import { useTheme } from '../../theme/Theme2.js';
 import IconDown from '../../icons/components/IconDown.js';
 import { warnOnce } from '../../utils/environment.js';
 import { RADIUS, GU } from '../../style/constants.js';
@@ -26,12 +26,12 @@ function useDropDown(_ref) {
       var selected = _ref.selected;
 
   var _useState = useState(displayedLabel),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = slicedToArray(_useState, 2),
       selectedLabel = _useState2[0],
       setSelectedLabel = _useState2[1];
 
   var _useState3 = useState(false),
-      _useState4 = _slicedToArray(_useState3, 2),
+      _useState4 = slicedToArray(_useState3, 2),
       opened = _useState4[0],
       setOpened = _useState4[1];
 
@@ -146,7 +146,7 @@ var DropDown = /*#__PURE__*/React.memo(function DropDown(_ref2) {
       width = _ref2.width,
       active = _ref2.active,
       label = _ref2.label,
-      props = _objectWithoutProperties(_ref2, ["disabled", "header", "items", "onChange", "placeholder", "renderLabel", "selected", "wide", "width", "active", "label"]);
+      props = objectWithoutProperties(_ref2, ["disabled", "header", "items", "onChange", "placeholder", "renderLabel", "selected", "wide", "width", "active", "label"]);
 
   if (active !== undefined) {
     warnOnce('DropDown:active', 'The “active” prop is deprecated. Please use “selected” to pass the selected index instead.');
@@ -162,23 +162,23 @@ var DropDown = /*#__PURE__*/React.memo(function DropDown(_ref2) {
       vw = _useViewport.width;
 
   var _split = (width || '').split('px'),
-      _split2 = _slicedToArray(_split, 1),
+      _split2 = slicedToArray(_split, 1),
       _split2$ = _split2[0],
       widthNoPx = _split2$ === void 0 ? MIN_WIDTH : _split2$;
 
   var _useState5 = useState(0),
-      _useState6 = _slicedToArray(_useState5, 2),
+      _useState6 = slicedToArray(_useState5, 2),
       buttonWidth = _useState6[0],
       setButtonWidth = _useState6[1];
 
   var _useState7 = useState(true),
-      _useState8 = _slicedToArray(_useState7, 2),
+      _useState8 = slicedToArray(_useState7, 2),
       measureWidth = _useState8[0],
       setMeasureWidth = _useState8[1]; // Adjust the button width if the item widths are larger than declared width
 
 
   var _useState9 = useState(Math.min(widthNoPx, MIN_WIDTH)),
-      _useState10 = _slicedToArray(_useState9, 2),
+      _useState10 = slicedToArray(_useState9, 2),
       placeholderMinWidth = _useState10[0],
       setPlaceholderMinWidth = _useState10[1];
 
@@ -237,7 +237,7 @@ var DropDown = /*#__PURE__*/React.memo(function DropDown(_ref2) {
   var Label = renderLabel;
   return /*#__PURE__*/React.createElement(i, {
     name: "DropDown"
-  }, /*#__PURE__*/React.createElement(_StyledButtonBase, _extends({
+  }, /*#__PURE__*/React.createElement(_StyledButtonBase, _extends_1({
     ref: refCallback,
     disabled: disabled,
     onClick: toggle,
