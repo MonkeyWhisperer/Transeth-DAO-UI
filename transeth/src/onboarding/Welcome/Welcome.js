@@ -49,7 +49,7 @@ const Welcome = React.memo(function Welcome({
       }}
     >
       <Header
-        title="Welcome to Aragon"
+        title="Welcome to Transeth"
         subtitle="Create your own organization in a few minutes!"
       />
 
@@ -69,8 +69,8 @@ const Welcome = React.memo(function Welcome({
           color: ${theme.contentSecondary};
         `}
       >
-        Do you need more information about Aragon?{' '}
-        <Link href="https://aragon.org/" external>
+        Do you need more information about Transeth?{' '}
+        <Link href="https://transeth.org/" external>
           Visit our homepage
         </Link>
       </p>
@@ -105,7 +105,7 @@ function CreateSubtitle({ error }) {
       </span>
     )
   }
-  return 'Start your organization with Aragon'
+  return 'Start your organization with Transeth'
 }
 
 CreateSubtitle.propTypes = {
