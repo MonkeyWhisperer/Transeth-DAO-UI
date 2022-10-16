@@ -13,7 +13,7 @@ import header from './header.svg'
 import icon from './icon.svg'
 
 function completeDomain(domain) {
-  return domain ? `${domain}` : ''
+  return domain ? `${domain}.aragonid.eth` : ''
 }
 
 function adjustVotingSettings(support, quorum) {
@@ -44,10 +44,10 @@ export default {
     made based on one-member-one-vote governance.
   `,
   userGuideUrl:
-  'https://transeth.org/create-a-new-membership-organization',
-sourceCodeUrl:
-  'https://github.com/transeth/dao-templates/template-membership',
-registry: 'In Progress',
+    'https://help.aragon.org/article/34-create-a-new-membership-organization',
+  sourceCodeUrl:
+    'https://github.com/aragon/dao-templates/tree/templates-membership-v1.0.0/templates/membership',
+  registry: 'aragonpm.eth',
   apps: [
     { appName: 'voting.aragonpm.eth', label: 'Voting' },
     { appName: 'token-manager.aragonpm.eth', label: 'Tokens' },
@@ -118,12 +118,7 @@ registry: 'In Progress',
     const adjustedDuration = new BN(duration).toString()
     const votingSettings = [adjustedSupport, adjustedQuorum, adjustedDuration]
 
-    // Rinkeby has its gas limit capped at 7M, so some larger 6.5M+ transactions are
-    // often not mined
-    const forceMultipleTransactions =
-      networkType === 'rinkeby' && members.length > 1
-
-    if (!hasPayroll && !forceMultipleTransactions) {
+    if (!hasPayroll) {
       return [
         {
           name: 'Create organization',

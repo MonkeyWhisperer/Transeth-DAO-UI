@@ -44,10 +44,10 @@ export default {
     using reputation-weighted voting.
   `,
   userGuideUrl:
-    'https://transeth.org/create-a-new-reputation-organization',
+    'https://help.aragon.org/article/32-create-a-new-reputation-organization',
   sourceCodeUrl:
-    'https://github.com/transeth/dao-templates/template-reputation',
-  registry: 'In Progress',
+    'https://github.com/aragon/dao-templates/tree/templates-reputation-v1.0.0/templates/reputation',
+  registry: 'aragonpm.eth',
   apps: [
     { appName: 'voting.aragonpm.eth', label: 'Voting' },
     { appName: 'token-manager.aragonpm.eth', label: 'Tokens' },
@@ -119,12 +119,7 @@ export default {
     const adjustedDuration = new BN(duration).toString()
     const votingSettings = [adjustedSupport, adjustedQuorum, adjustedDuration]
 
-    // Rinkeby has its gas limit capped at 7M, so some larger 6.5M+ transactions are
-    // often not mined
-    const forceMultipleTransactions =
-      networkType === 'rinkeby' && members.length > 1
-
-    if (!hasPayroll && !forceMultipleTransactions) {
+    if (!hasPayroll) {
       return [
         {
           name: 'Create organization',

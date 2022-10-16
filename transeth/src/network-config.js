@@ -1,14 +1,15 @@
 import { getEnsRegistryAddress } from './local-settings'
-import { useWallet, KNOWN_CHAINS } from './contexts/wallet'
+import { useWallet } from './contexts/wallet'
+import { chains } from 'use-wallet'
 
 const localEnsRegistryAddress = getEnsRegistryAddress()
 const DAI_MAINNET_TOKEN_ADDRESS = '0x6b175474e89094c44da98b954eedeac495271d0f'
-const DAI_RINKEBY_TOKEN_ADDRESS = '0x0527e400502d0cb4f214dd0d2f2a323fc88ff924'
+const DAI_GOERLI_TOKEN_ADDRESS = '0xdc31ee1784292379fbb2964b3b9c4124d8f89c60'
 
 // TODO stop exposing data object [vr 17-09-2021]
 // cconnectGraphEndpoint is https://github.com/aragon/connect/tree/master/packages/connect-thegraph
 export const networkConfigs = {
-  [KNOWN_CHAINS.get(1).type]: {
+  [chains.getChainInformation(1).type]: {
     isActive: true,
     addresses: {
       ensRegistry:
@@ -24,33 +25,11 @@ export const networkConfigs = {
     settings: {
       chainId: 1,
       testnet: false,
-      ...KNOWN_CHAINS.get(1),
-      shortName: 'Ethereum',
+      ...chains.getChainInformation(1),
       live: true,
     },
   },
-  [KNOWN_CHAINS.get(4).type]: {
-    isActive: true,
-    addresses: {
-      ensRegistry:
-        localEnsRegistryAddress || '0x98df287b6c145399aaa709692c8d308357bc085d',
-      dai: DAI_RINKEBY_TOKEN_ADDRESS,
-      governExecutorProxy: '0x0451533f685fe028c439821b7502e4cf63b4c32f',
-    },
-    nodes: {
-      defaultEth: 'wss://rinkeby.eth.aragon.network/ws',
-    },
-    connectGraphEndpoint:
-      'https://api.thegraph.com/subgraphs/name/aragon/aragon-rinkeby',
-    settings: {
-      chainId: 4,
-      testnet: true,
-      ...KNOWN_CHAINS.get(4), // as returned by web3.eth.net.getNetworkType()
-      fullName: 'Rinkeby Testnet',
-      live: true,
-    },
-  },
-  [KNOWN_CHAINS.get(3).type]: {
+  [chains.getChainInformation(3).type]: {
     isActive: false,
     addresses: {
       ensRegistry:
@@ -64,11 +43,30 @@ export const networkConfigs = {
     settings: {
       chainId: 3,
       testnet: true,
-      ...KNOWN_CHAINS.get(3),
+      ...chains.getChainInformation(3),
+    },
+  },
+  [chains.getChainInformation(5).type]: {
+    isActive: true,
+    addresses: {
+      ensRegistry:
+        localEnsRegistryAddress || '0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e',
+      dai: DAI_GOERLI_TOKEN_ADDRESS,
+      governExecutorProxy: '0x0451533f685fe028c439821b7502e4cf63b4c32f',
+    },
+    nodes: {
+      defaultEth: 'wss://goerli.eth.aragon.network/ws',
+    },
+    connectGraphEndpoint:
+      'https://api.thegraph.com/subgraphs/name/aragon/aragon-goerli',
+    settings: {
+      chainId: 5,
+      testnet: true,
+      ...chains.getChainInformation(5), // as returned by web3.eth.net.getNetworkType()
       live: true,
     },
   },
-  [KNOWN_CHAINS.get(1337).type]: {
+  [chains.getChainInformation(1337).type]: {
     isActive: false,
     addresses: {
       ensRegistry: localEnsRegistryAddress,
@@ -84,14 +82,13 @@ export const networkConfigs = {
       // we expose a way to change this value.
       chainId: 1337,
       testnet: true,
-
-      ...KNOWN_CHAINS.get(1337),
+      ...chains.getChainInformation(1337),
       live: false,
     },
   },
   // xDai is an experimental chain in the Aragon Client. It's possible
   // and expected that a few things will break.
-  [KNOWN_CHAINS.get(100).type]: {
+  [chains.getChainInformation(100).type]: {
     isActive: false,
     addresses: {
       ensRegistry:
@@ -105,11 +102,10 @@ export const networkConfigs = {
     settings: {
       chainId: 100,
       testnet: false,
-      ...KNOWN_CHAINS.get(100),
-      live: true,
+      ...chains.getChainInformation(100),
     },
   },
-  [KNOWN_CHAINS.get(137).type]: {
+  [chains.getChainInformation(137).type]: {
     isActive: true,
     addresses: {
       ensRegistry:
@@ -118,18 +114,37 @@ export const networkConfigs = {
       dai: '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
     },
     nodes: {
-      defaultEth: 'wss://mainnet-polygon-1.aragon.network/ws',
+      defaultEth: 'wss://mainnet-polygon.aragon.network/ws',
     },
     connectGraphEndpoint: null,
     settings: {
       chainId: 137,
       testnet: false,
-      ...KNOWN_CHAINS.get(137),
-      shortName: 'Polygon',
+      ...chains.getChainInformation(137),
       live: true,
+      options: {
+        timeout: 30000, // ms
+
+        clientConfig: {
+          // Useful if requests are large
+          maxReceivedFrameSize: 100000000, // bytes - default: 1MiB
+          maxReceivedMessageSize: 100000000, // bytes - default: 8MiB
+          // Useful to keep a connection alive
+          keepalive: true,
+          keepaliveInterval: 60000, // ms
+        },
+
+        // Enable auto reconnection
+        reconnect: {
+          auto: true,
+          delay: 5000, // ms
+          maxAttempts: 5,
+          onTimeout: false,
+        },
+      },
     },
   },
-  [KNOWN_CHAINS.get(80001).type]: {
+  [chains.getChainInformation(80001).type]: {
     isActive: true,
     addresses: {
       ensRegistry:
@@ -138,17 +153,189 @@ export const networkConfigs = {
       dai: '0x94f417C155bB3fF7365828Bb7aCD26E84C17e830',
     },
     nodes: {
-      defaultEth: 'wss://matic-testnet-archive-ws.bwarelabs.com',
+      defaultEth:
+        'wss://polygon-mumbai.g.alchemy.com/v2/wgOXirpZVAKhsdwji9jzIE2rax8BsmHT',
     },
     connectGraphEndpoint: null,
     settings: {
       chainId: 80001,
       testnet: true,
-      ...KNOWN_CHAINS.get(80001),
-      fullName: 'Mumbai Testnet',
+      ...chains.getChainInformation(80001),
       live: true,
     },
   },
+  [chains.getChainInformation(56).type]: {
+    isActive: false,
+    addresses: {
+      ensRegistry:
+        localEnsRegistryAddress || '0x431f0eed904590b176f9ff8c36a1c4ff0ee9b982',
+      governExecutorProxy: null,
+      dai: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
+    },
+    nodes: {
+      // defaultEth: 'TO BE CREATED',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      chainId: 56,
+      testnet: false,
+      ...chains.getChainInformation(56),
+      live: true,
+    },
+  },
+  [chains.getChainInformation(97).type]: {
+    isActive: true,
+    addresses: {
+      ensRegistry:
+        localEnsRegistryAddress || '0x843ddfab8406e752d03fa75dbb275070f368658d',
+      governExecutorProxy: null,
+      dai: '0xec5dcb5dbf4b114c9d0f65bccab49ec54f6a0867',
+    },
+    nodes: {
+      defaultEth:
+        'wss://speedy-nodes-nyc.moralis.io/e2537fd4d6ad21265cf9d450/bsc/testnet/ws',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      chainId: 97,
+      testnet: true,
+      ...chains.getChainInformation(97),
+      live: true,
+    },
+  },
+
+  [chains.getChainInformation(1666600000).type]: {
+    isActive: true,
+    enableMigrateBanner: false,
+    addresses: {
+      ensRegistry:
+        localEnsRegistryAddress || '0x843ddfab8406e752d03fa75dbb275070f368658d',
+      governExecutorProxy: null,
+      dai: '0xef977d2f931c1978db5f6747666fa1eacb0d0339',
+    },
+    nodes: {
+      defaultEth: 'wss://ws.s0.t.hmny.io/',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      chainId: 1666600000,
+      ...chains.getChainInformation(1666600000),
+      live: false,
+      events: {
+        blockSizeLimit: 1024,
+      },
+      options: {
+        timeout: 30000, // ms
+
+        clientConfig: {
+          // Useful if requests are large
+          maxReceivedFrameSize: 100000000, // bytes - default: 1MiB
+          maxReceivedMessageSize: 100000000, // bytes - default: 8MiB
+          // Useful to keep a connection alive
+          keepalive: true,
+          keepaliveInterval: 60000, // ms
+        },
+
+        // Enable auto reconnection
+        reconnect: {
+          auto: true,
+          delay: 5000, // ms
+          maxAttempts: 5,
+          onTimeout: false,
+        },
+      },
+    },
+  },
+
+  [chains.getChainInformation(588).type]: {
+    isActive: true,
+    addresses: {
+      ensRegistry:
+        localEnsRegistryAddress || '0x843ddfab8406e752d03fa75dbb275070f368658d',
+      governExecutorProxy: null,
+    },
+    nodes: {
+      defaultEth: 'wss://stardust-ws.metis.io/',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      chainId: 588,
+      testnet: true,
+      customSyncDelays: {
+        MILD_PROVIDER_SYNC_DELAY: 25,
+        OK_PROVIDER_SYNC_DELAY: 15,
+      },
+      ...chains.getChainInformation(588),
+      live: true,
+    },
+  },
+  [chains.getChainInformation(1088).type]: {
+    isActive: true,
+    addresses: {
+      ensRegistry:
+        localEnsRegistryAddress || '0x843ddfab8406e752d03fa75dbb275070f368658d',
+      governExecutorProxy: null,
+    },
+    nodes: {
+      defaultEth: 'wss://andromeda-ws.metis.io/',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      chainId: 1088,
+      testnet: false,
+      customSyncDelays: {
+        MILD_PROVIDER_SYNC_DELAY: 25,
+        OK_PROVIDER_SYNC_DELAY: 15,
+      },
+      ...chains.getChainInformation(1088),
+      live: true,
+    },
+  },
+
+  [chains.getChainInformation(1666700000).type]: {
+    isActive: true,
+    enableMigrateBanner: false,
+    addresses: {
+      ensRegistry:
+        localEnsRegistryAddress || '0xbc7828fa8665c637901ad5abd5c7e647c9ab140f',
+      governExecutorProxy: null,
+      dai: '0x97F2f01096c1B6942220158c130662f35C3a3166',
+    },
+    nodes: {
+      defaultEth: 'wss://ws.s0.pops.one/',
+    },
+    connectGraphEndpoint: null,
+    settings: {
+      chainId: 1666700000,
+      ...chains.getChainInformation(1666700000),
+      live: true,
+      events: {
+        blockSizeLimit: 1024,
+      },
+      options: {
+        timeout: 30000, // ms
+
+        clientConfig: {
+          // Useful if requests are large
+          maxReceivedFrameSize: 100000000, // bytes - default: 1MiB
+          maxReceivedMessageSize: 100000000, // bytes - default: 8MiB
+
+          // Useful to keep a connection alive
+          keepalive: true,
+          keepaliveInterval: 60000, // ms
+        },
+
+        // Enable auto reconnection
+        reconnect: {
+          auto: true,
+          delay: 5000, // ms
+          maxAttempts: 5,
+          onTimeout: false,
+        },
+      },
+    },
+  },
+
   unknown: {
     isActive: false,
     addresses: {
@@ -161,8 +348,6 @@ export const networkConfigs = {
     connectGraphEndpoint: null,
     settings: {
       testnet: true,
-      name: `Unknown network`,
-      shortName: 'Unknown',
       type: 'unknown',
       live: false,
     },

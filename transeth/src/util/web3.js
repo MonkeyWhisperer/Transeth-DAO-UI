@@ -3,12 +3,10 @@
  * from this file.
  */
 import Web3 from 'web3'
-import { toWei } from 'web3-utils'
 import BN from 'bn.js'
 import { InvalidNetworkType, InvalidURI, NoConnection } from '../errors'
-import { log } from './utils'
 import { getEthNode } from '../environment'
-import { isOnEthMainnet } from '../util/network'
+import { getOptions } from '../util/network'
 
 const EMPTY_ADDRESS = '0x0000000000000000000000000000000000000000'
 const ETH_ADDRESS_SPLIT_REGEX = /(0x[a-fA-F0-9]{40}(?:\b|\.|,|\?|!|;))/g
@@ -142,61 +140,6 @@ export async function getIsContractAccount(web3, account) {
   }
 }
 
-const gasPriceApi = 'https://ethgasstation.info/json/ethgasAPI.json'
-export async function getGasPrice(
-  networkType,
-  { mainnet: { safeMinimum = '3', disableEstimate } = {} } = {}
-) {
-  if (!isOnEthMainnet(networkType)) {
-    // Hardcode 10 for non-mainnet networks
-    return toWei('10', 'gwei')
-  }
-
-  // Mainnet and gas estimation disabled; let the web3 provider handle gas price
-  if (disableEstimate) {
-    return
-  }
-
-  const safeMinimumInWei = toWei(safeMinimum, 'gwei')
-  let priceInWei
-
-  try {
-    const response = await fetch(gasPriceApi, {
-      method: 'GET',
-      mode: 'cors',
-      cache: 'no-cache',
-    })
-    const jsonResponse = await response.json()
-
-    // Note that all prices from ethgasstation need to be divided by 10 to be in gwei.
-    // The response contains a list of suggested gas prices from 2-120 in
-    // gasPriceRange, so 40 is "slightly higher than the recommended price".
-    let fasterPrice = parseInt(jsonResponse.gasPriceRange[40], 10)
-    fasterPrice = isNaN(fasterPrice) ? 0 : fasterPrice / 10
-
-    // Just in case, if this isn't available or is way too high,
-    // prefer the suggested safe low price.
-    let safePrice = parseInt(jsonResponse.safeLow, 10)
-    safePrice = isNaN(safePrice) ? 0 : safePrice / 10
-
-    const recommendedPrice = Math.max(
-      safePrice,
-      Math.min(fasterPrice, safePrice + 10)
-    )
-
-    priceInWei = toWei(recommendedPrice.toString(), 'gwei')
-  } catch (e) {
-    log('Error fetching gas price: ', e)
-  }
-
-  // If we couldn't find the price or it was lower than the safe minimum,
-  // use the safe minimum
-  priceInWei = new BN(priceInWei || 0).lt(new BN(safeMinimumInWei))
-    ? safeMinimumInWei
-    : priceInWei
-  return priceInWei
-}
-
 // Get the first account of a web3 instance
 export async function getMainAccount(web3) {
   try {
@@ -239,12 +182,17 @@ export function getWeb3(provider) {
 
 /**
  * Get the web3 provider by the network type
- * @param {string} networkType node network type, i.e. main, rinkeby
+ * @param {string} networkType node network type, i.e. main, goerli
  * @returns {object} web3 web socket provider
  */
 export function getWeb3Provider(networkType) {
   const host = getEthNode(networkType)
-  return new Web3.providers.WebsocketProvider(host)
+  const options = getOptions(networkType)
+
+  if (!options) {
+    return new Web3.providers.WebsocketProvider(host)
+  }
+  return new Web3.providers.WebsocketProvider(host, options)
 }
 
 export function isConnected(provider) {
@@ -306,6 +254,29 @@ export function transformAddresses(str, callback) {
     .map((part, index) =>
       callback(part, ETH_ADDRESS_TEST_REGEX.test(part), index)
     )
+}
+
+/**
+ * Calculates the current priority fee estimation
+ *
+ * @export
+ * @param {*} web3 The connected web3 instance
+ * @return {number | undefined} Returns the estimated priority fee or undefined
+ */
+export async function getPriorityFeeEstimation(web3) {
+  const priorityFeeHistory = await web3.eth.getFeeHistory('4', 'latest', [10])
+  if (priorityFeeHistory?.reward?.length > 0) {
+    // takes the top 10 of the last 4 blocks and take the average after removing zero values
+    const feeHistories = priorityFeeHistory.reward
+      .map(fee => web3.utils.hexToNumber(fee[0]))
+      .filter(fee => fee > 0)
+    if (feeHistories.length > 0) {
+      return Math.round(
+        feeHistories.reduce((acc, fee) => acc + fee, 0) / feeHistories.length
+      )
+    }
+  }
+  return undefined
 }
 
 // Re-export some utilities from web3-utils

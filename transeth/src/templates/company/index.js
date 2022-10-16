@@ -44,10 +44,10 @@ export default {
     organization. Decisions are made based on stake-weighted voting.
   `,
   userGuideUrl:
-    'https://transeth.org/create-a-new-company-organization',
+    'https://help.aragon.org/article/30-create-a-new-company-organization',
   sourceCodeUrl:
-    'https://github.com/transeth/dao-templates/template-company',
-  registry: 'In Progress',
+    'https://github.com/aragon/dao-templates/tree/templates-company-v1.0.0/templates/company',
+  registry: 'aragonpm.eth',
   apps: [
     { appName: 'voting.aragonpm.eth', label: 'Voting' },
     { appName: 'token-manager.aragonpm.eth', label: 'Tokens' },
@@ -119,12 +119,7 @@ export default {
     const adjustedDuration = new BN(duration).toString()
     const votingSettings = [adjustedSupport, adjustedQuorum, adjustedDuration]
 
-    // Rinkeby has its gas limit capped at 7M, so some larger 6.5M+ transactions are
-    // often not mined
-    const forceMultipleTransactions =
-      networkType === 'rinkeby' && members.length > 1
-
-    if (!hasPayroll && !forceMultipleTransactions) {
+    if (!hasPayroll) {
       return [
         {
           name: 'Create organization',
