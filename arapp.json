@@ -16,7 +16,7 @@
       "network": "harmonyTest"
     },
     "goerli": {
-      "registry": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
+      "registry": "0xE264d5bb84bA3b8061ADC38D3D76e6674aB91852",
       "appName": "aragon.aragonpm.eth",
       "network": "goerli"
     },
